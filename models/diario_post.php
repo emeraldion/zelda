@@ -22,6 +22,10 @@
 				sprintf("diario/read/%s", $this->id);
 		}
 
+		/**
+		 *	@fn is_external
+		 *	@short Returns true if the post is external
+		 */
 		function is_external()
 		{
 			return $this->external_url != NULL;
