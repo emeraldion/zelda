@@ -4,11 +4,13 @@ This is an [EmeRails](https://github.com/emeraldion/emerails) instance that back
 
 # Development
 
-Generate documentation (requires [Doxygen](https://github.com/doxygen/doxygen.git))
+Generate documentation (requires [Doxygen](https://github.com/doxygen/doxygen.git)):
 
 ```sh
 make docs
 ```
+
+Run tests (limited coverage):
 
 ```sh
 make test
