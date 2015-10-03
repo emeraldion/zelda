@@ -1,0 +1,115 @@
+ErrorDocument 404 /error/404.html
+ErrorDocument 403 /error/403.html
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	
+	# Legacy old URLs
+	
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(index|home)\.php$ / [L,R,QSA]
+
+	# Custom rules for Software
+
+	# Software version check for widgets
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/widgets/versioncheck/([^/]+)$ /router.php?controller=software&action=widgets_versioncheck&software_name=$1 [L,QSA]
+
+	# Software version check for widgets
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/widgets/versioncheck(.*)$ /router.php?controller=software&action=widgets_versioncheck [L,QSA]
+	
+	# Software details page
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^/]+)\.html$ /router.php?controller=software&action=show&software_type=$1&software_name=$2&subview=main [L,QSA]
+
+	# Software default details page
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^/]+)/([^/]+)\.html$ /router.php?controller=software&action=show&software_type=$1&software_name=$2&subview=$3 [L,QSA]
+
+	# Software actions
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(download)/([^/]+)/?(.+)?$ /router.php?controller=software&action=$1&id=$2 [L,QSA]
+
+	# Sparkle actions
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/appcast/([^/]+)/?$ /router.php?controller=sparkle&software_name=$1 [L,QSA]
+
+	# Sparkle actions
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^/]+)/appcast/?$ /router.php?controller=sparkle&software_name=$2 [L,QSA]
+
+	# Software, old pages
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^\./]+)/?$ /software/$1/$2.html [R,QSA]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^/]+)/([^0-9\./]+)/?$ /software/$1/$2/$3.html [R,QSA]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^software/(macosx|widgets)/([^/]+)/(download/)?([^/]+)\.(dmg|zip)$ /software/$1/$2.html [R,QSA]
+
+	# Feeds
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^atom/([^/]+).atom$ /router.php?controller=atom&action=$1 [L,QSA]
+		
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^feed/([^/]+).rss$ /router.php?controller=feed&action=$1 [L,QSA]
+
+	# KML
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^kml/([^/]+).kml$ /router.php?controller=kml&action=$1 [L,QSA]
+	
+	# Errors
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^error/([^/]+).html$ /router.php?controller=error&action=_$1 [L,QSA]
+	
+	# Diario, by date
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^diario/(calendar|date)/([0-9]{4})/?([0-9]{1,2})?/?([0-9]{1,2})?/?$ /router.php?controller=diario&action=$1&year=$2&month=$3&day=$4 [L,QSA]	
+	
+	# Text assets are zipped to save bandwidth
+	RewriteRule ^assets/(javascript|styles)((/[^/]+)*)/([^/]+)\.([^\.]+)$ /router.php?controller=asset&action=index&dir=$1$2&file=$4&ext=$5 [L,QSA]
+	
+	# Default rules
+
+	# Controller alone
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)\.(html|js(on)?|png|jpe?g|css)$ /router.php?controller=$1 [L,QSA]
+
+	# Controller, with action
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/([^/]+)\.(html|js(on)?|png|jpe?g|css)$ /router.php?controller=$1&action=$2 [L,QSA]
+	
+	# Controller, action and id of target
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/([^/]+)/([^/]+)$ /router.php?controller=$1&action=$2&id=$3 [L,QSA]
+
+	# Controller without extension
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/?$ /$1.html [R,L,QSA]
+
+	# Default controller
+	RewriteRule ^$ home.html [L,QSA]
+</IfModule>

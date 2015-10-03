@@ -1,0 +1,20 @@
+array (
+	/* login */
+	'Login' => 'Accedi',
+	'Username' => 'Nome utente',
+	'Password' => 'Password',
+	'Leave me registered' => 'Lasciami registrato',
+	'Enter' => 'Invia',
+	'Forgot your password?' => 'Hai dimenticato la password?',
+	'Bad username / password' => 'Nome utente o password errati',
+	'galatea-login' => 'Cerchi forse la <a href="http://galatea.emeraldion.it" class="external">vecchia Emeraldion Lodge</a>? ;)',
+	'By flagging this option, you will remain logged in until you perform a logout. Do not use this option on public computers.' => 'Attivando questa opzione, rimarrai autenticato finch&eacute; non effettuerai l&rsquo;uscita. Non utilizzarla su computer pubblici.',
+	
+	/* lost_password */
+	'Send request' => 'Invia richiesta',
+	'Retrieve lost password' => 'Recupera password smarrita',
+	'lost_password_para' => 'Hai smarrito la password di accesso? Inserisci il tuo indirizzo email, riceverai istruzioni per reinizializzare la tua password entro pochi minuti.',
+	
+	/* logout */
+	'Logout was performed successfully' => 'Uscita effettuata correttamente',
+);

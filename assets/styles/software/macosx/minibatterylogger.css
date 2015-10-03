@@ -1,0 +1,50 @@
+/* Created: 12/09/05 16.29.09 by claudio */
+
+p#charts,
+p#details,
+p#sharing,
+p#diagnostics,
+p#inspect,
+p#growl,
+p#ub
+{
+	padding-left: 47px;
+	background: transparent none no-repeat center left;
+}
+p#charts
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/sheets.png');
+}
+p#details
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/details.png');
+}
+p#sharing
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/sharing.png');
+}
+p#diagnostics
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/diagnostics.png');
+}
+p#inspect
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/inspect.png');
+}
+p#growl
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/growl.png');
+}
+p#ub
+{
+	background-image: url('/assets/images/software/macosx/minibatterylogger/universal.png');
+}
+
+dl#evaluation-license-key
+{
+	margin: 1em 2em;
+}
+dl#evaluation-license-key dt
+{
+	font-weight: bold;
+}

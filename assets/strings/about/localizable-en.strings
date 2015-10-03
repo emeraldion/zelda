@@ -1,0 +1,40 @@
+array (
+	/* claudio */
+	'About Claudio' => 'About Claudio',
+	'Picture:' => 'Picture:',
+	'Who I am' => 'Who I am',
+	'What I like' => 'What I like',
+	'Contact me' => 'Contact me',
+	'whoiam-para1' => 'My name is Claudio, I&rsquo;m %s years old and I&rsquo;m an Italian ' .
+		'software engineer. I&rsquo;m at that point of the journey when you ask yourself what you ' .
+		'are gonna do with your life, and still have enough freedom and strength to become what you want.',
+	'whoiam-para2' => 'I&rsquo;m a software developer, I like travelling and being with good ' .
+		'people. I&rsquo;m currently developing Web2.0 applications with Javascript, HTML and ' .
+		'CSS for the Lotus product family.',
+	'whoiam-para3' => 'I work for IBM in Dublin, Ireland and I&rsquo;m part of the Lotus Wikis team. ' .
+		'My development activity for the Mac OS platform ' .
+		'will hang for a while, but my software written so far will still be available to download.',
+	'whatilike-para1' => 'I like being with true, lively people. Enjoying unselfish friendship. Knowing ' .
+		'different cultures and traditions. Expressing thoughts and ideas. Facing challenging problems with a good degree of autonomy.',
+	'writeme-para1' => 'If you like what I do and want to drop me a line, feel free to <a href="/contact/index.html">contact me</a>. ' .
+		'I love to know what people think about what I do.',
+		
+	/* emeraldion_lodge */
+	'About the Emeraldion Lodge' => 'About the Emeraldion Lodge',
+	'Latest stuff' => 'Latest stuff',
+	'What else?' => 'What else?',
+	'about-para1' => 'The Emeraldion Lodge is built around EmePavilion, a ' .
+		'<acronym title="Content Management System">CMS</acronym> written in ' .
+		'<a href="http://www.php.net" class="external"><acronym title="PHP: Hypertext Processor">PHP</acronym></a>. ' .
+		'It&rsquo;s based on robust, open web standards: ' .
+		'<acronym title="Cascading Style Sheets">CSS</acronym>, ' .
+		'<acronym title="eXtensible HyperText Markup Language">XHTML</acronym> and JavaScript provide the ' .
+		'presentation layer, while RSS and Atom allow for content syndication and management. Data is stored ' .
+		'in a <a href="http://www.mysql.com" class="external">MySQL</a> database.',
+	'about-para2' => 'EmePavilion is dead. Long live EmeRails! Say hello to my new fully MVC web application framework with ORM support.',
+	'latest-para1' => 'I am migrating the applications to EmeRails at a steady pace. It is fun, and it takes no time. ' .
+		'There have been some errors so far due to a wrong initial configuration. Sorry for the inconvenience.',
+	'whatelse-para1' => 'It hosts my projects and my learning tests. Check out the ' .
+		'<a href="http://burgos.emeraldion.it/mbl/">Shared Battery Data Archive</a> project, to collect battery ' .
+		'data from Mac laptop computers, elaborate lifespan statistics and more.',
+);

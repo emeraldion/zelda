@@ -1,0 +1,10 @@
+array (
+	'Donate' => 'Donaci&oacute;n',
+	'donate-para1' => 'Si aterrizó en esta página, probablemente desea donar para el software que desarrollo de forma gratuita. ' .
+		'¡Muchas gracias! pero, por desgracia, no puedo aceptar en este momento las donaciones.',
+	'donate-para2' => 'Les invito a hacer una donación para los misioneros salesianos, que están comprometidos en todo el mundo para socorrer a los pobres, ' .
+		'enseñar a los niños y ayudar a hombres y mujeres jóvenes a ganarse la vida honradamente.',
+		
+	'donate-btn-src' => 'http://www.missionidonbosco.org/img/donbosco/dona_ora_4.gif',
+	'donate-url' => 'http://www.missionidonbosco.org/registrazione05/donaoraImm.asp?idlingua=4&amp;provenienza=emeraldion_lodge',
+);

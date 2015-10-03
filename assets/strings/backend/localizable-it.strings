@@ -1,0 +1,89 @@
+array (
+	/* _navbar */
+	'Server errors' => 'Errori del server',
+	'Blog posts' => 'Articoli del Diario',
+	'Blog comments' => 'Commenti del Diario',
+	'Software' => 'Software',
+	'Software comments' => 'Commenti sul Software',
+	
+	/* common */
+	'List is empty' => 'Nessun risultato',
+	'Select all' => 'Seleziona tutto',
+	'Deselect all' => 'Deseleziona tutto',
+	'Delete' => 'Elimina',
+	'Moderate' => 'Approva',
+	'With selected:' => 'Se selezionati:',
+	
+	/* software_list */
+	'New software' => 'Nuovo software',
+	'Type:' => 'Tipo:',
+	'Quotes' => 'Citazioni',
+	'Releases' => 'Release',
+	'Comments' => 'Commenti',
+	
+	/* software_release_list */
+	'Artifacts' => 'Artefatti',
+	
+	/* software_edit */
+	'Version' => 'Versione',
+	'Date' => 'Data',
+	'Changes' => 'Cambiamenti',
+	'Released' => 'Rilasciato',
+	
+	/* software_release_edit */
+	'Edit Software' => 'Modifica Software',
+	'Type' => 'Tipo',
+	'License' => 'Licenza',
+	'Description' => 'Descrizione',
+	'Save' => 'Salva',
+	
+	/* software_moderation_queue */
+	'Software comments moderation' => 'Moderazione commenti sul Software',
+	'%s wrote on %s' => '%s ha scritto %s',
+	'Comment on %s' => 'Commento su %s',
+	
+	/* software_release_list */
+	'New release' => 'Nuova release',
+	'Released on' => 'Rilasciato',
+	
+	/* software_artifact_list */
+	'Software Artifacts' => 'Artefatti Software',
+	'Back to software list' => 'Torna alla lista dei software',
+	'Back to release list' => 'Torna alla lista delle release',
+	'New artifact' => 'Nuovo artefatto',
+	'Delete' => 'Elimina',
+	'Edit' => 'Modifica',
+	
+	/* software_artifact_create */
+	'Back to list' => 'Torna alla lista',
+	'Title' => 'Titolo',
+	'File' => 'File',
+	'URL' => 'URL',
+	'Priority' => 'Priorità',
+	'Enabled' => 'Abilitato',
+	'Visible' => 'Visibile',
+	
+	/* diario_post_list */
+	'Written by %s on %s' => 'Scritto da %s %s',
+	'Tagged as:' => 'Tag:',
+	'New post' => 'Nuovo articolo',
+	'Next page &gt;' => 'Pagina successiva &gt;',
+	'&lt; Previous page' => '&lt; Pagina precedente',
+	
+	/* diario_post_edit */
+	'Compose' => 'Componi',
+	'Preview' => 'Anteprima',
+	'Tag cloud' => 'Nuvola dei tag',
+	
+	/* server_error_list */
+	'Error %s' => 'Errore %s',
+	'Occurred at' => 'Verificatosi',
+	'Details' => 'Dettagli',
+	
+	/* server_error_read */
+	'Gate:' => 'Porta:',
+	'Details:' => 'Dettagli:',
+	'show' => 'mostra',
+	'&lt; Previous' => '&lt; Precedente',
+	'Next &gt;' => 'Successivo &gt;',
+);

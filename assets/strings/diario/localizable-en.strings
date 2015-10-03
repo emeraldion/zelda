@@ -1,0 +1,4 @@
+array (
+	'diario-books-caption' => 'What I am reading right now&hellip;',
+	'diario-book-suggest' => 'Would you suggest me a book?',
+);

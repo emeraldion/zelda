@@ -1,0 +1,74 @@
+#queries-list li
+{
+	padding-top: 2px;
+}
+#queries-list li+li
+{
+	margin-top: 2px;
+	border-top: 2px dashed #eee;
+}
+#tree-container li dl
+{
+	margin: 0;
+	padding: 6px 0;
+}
+#tree-container li dl+dl
+{
+	border-top: 1px solid #eee;
+}
+#queries-list dt,
+#tree-container dt
+{
+	float: left;
+	width: 100px;
+	text-align: right;
+	margin-right: 1em;
+	color: #999;
+}
+#queries-list li dt
+{
+	width: 200px;
+}
+#queries-list li dd dt
+{
+	width: 100px;
+}
+#queries-list dt:after,
+#tree-container dt:after
+{
+	content: ":";
+}
+#queries-list dd,
+#tree-container dd
+{
+	color: #666;
+	white-space: nowrap;
+}
+
+span.query-term
+{
+	font-size: 24pt;
+}
+blockquote
+{
+	border-left: 4px solid #eee;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+.date
+{
+	float: right;
+	width: 100px;
+}
+.info-button
+{
+	margin-left: 6px;
+	padding-left: 13px;
+	background: transparent url("/assets/images/info_icon.jpg") no-repeat center left;
+}
+.unblock
+{
+	margin-left: 6px;
+	padding-left: 13px;
+	background: transparent url("/assets/images/tick_icon.gif") no-repeat center left;
+}

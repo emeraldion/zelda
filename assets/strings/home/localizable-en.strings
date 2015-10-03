@@ -1,0 +1,13 @@
+array (
+	'Meta' => 'Meta',
+	'Feeds' => 'Feeds',
+	'del.icio.us cloud' => 'del.icio.us cloud',
+	'We recommend...' => 'We recommend...',
+	'Welcome!' => 'Welcome!',
+	'Care to know a little more' => 'Care to know a little more',
+	'about me?' => 'about me?',
+	'welcome-para1' => 'Hello! This is the personal website of Claudio Procida, ' .
+		'computer science engineer, web and Mac software developer. ' .
+		'I hope you enjoy your stay.',
+
+);

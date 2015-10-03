@@ -1,0 +1,21 @@
+array (
+	/* queries */
+	'Queries' => 'Ricerche',
+	'Limit to:' => 'Limita a:',
+	'Filter:' => 'Filtro:',
+	'Group' => 'Raggruppa',
+	'Refresh' => 'Aggiorna',
+	
+	/* referrers */
+	'Referrers' => 'Referenti',
+	
+	/* outbounds */
+	'Outbounds' => 'In uscita',
+	
+	/* blocked_ips */
+	'Blocked IPs' => 'IP bloccati',
+	
+	/* visits */
+	'Visits' => 'Visite',
+	
+);

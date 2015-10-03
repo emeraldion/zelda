@@ -1,0 +1,38 @@
+/* Created: 12/09/05 16.29.09 by claudio */
+
+p#feature-ub
+{
+	background: transparent url('/assets/images/software/universal.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-growl
+{
+	background: transparent url('/assets/images/software/growl.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-sharing
+{
+	background: transparent url('/assets/images/software/sharing.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-arcoiris
+{
+	background: transparent url('/assets/images/software/color.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-xcode
+{
+	background: transparent url('/assets/images/software/build.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-tinysize
+{
+	background: transparent url('/assets/images/software/size.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}

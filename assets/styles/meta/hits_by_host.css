@@ -1,0 +1,116 @@
+.date
+{
+	float: right;
+	width: 100px;
+}
+
+p#legend,
+		li { color: #999; }
+
+#tree-container li
+{
+	color: #444;
+	font-size: 20pt;
+	font-style: italic;
+	list-style-position: outside;
+	cursor: pointer;
+	list-style-image: url("/assets/images/triangle_toggler_collapsed.png");
+}
+
+#tree-container li.expanded { list-style-image: url("/assets/images/triangle_toggler_expanded.png"); }
+#tree-container li li
+{
+	font-size: 12pt;
+	display: none;
+}
+#tree-container li li li { font-size: 8pt; }
+
+.lighter { color: #999; }
+ul { padding-left: 20px; }
+
+.info
+{
+	margin-left: 6px;
+	padding-left: 13px;
+	background: transparent url("/assets/images/info_icon.jpg") no-repeat center left;
+}
+
+.attrib
+{
+	margin-left: 6px;
+	padding-left: 13px;
+	background: transparent url("/assets/images/person_icon.gif") no-repeat center left;
+}
+
+.block
+{
+	margin-left: 6px;
+	padding-left: 13px;
+	background: transparent url("/assets/images/delete_icon.gif") no-repeat center left;
+}
+
+blockquote
+{
+	border-left: 4px solid #eee;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+blockquote td,
+blockquote th
+{
+	white-space: nowrap;
+	font-size: 9pt;
+}
+
+span.weight
+{
+	font-size: 12pt;
+	color: #000;
+	font-style: normal;
+}
+
+span.weight:before { content: " #"; }
+span.weight:after { content: " hits"; }
+span.my-host { color: #589; }
+span.my-host:after { content: " hits (This is you!)"; }
+
+span.ip-addr:before { content: " ["; }
+span.ip-addr:after { content: "]"; }
+
+img#throbber
+{
+	width: 16px;
+	height: 16px;
+}
+
+td.header
+{
+	font-weight: bold;
+	text-align: center;
+	font-style: normal;
+}
+
+td.label
+{
+	font-weight: bold;
+	text-align: right;
+}
+
+
+tr.row0
+{
+}
+tr.row1
+{
+	background-color: #f9f9f9;
+}
+
+table.hits
+{
+	border: 0;
+}
+table.hits td
+{
+	padding: 0 2px;
+}

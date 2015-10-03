@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+	<ShortName>Emeraldion Lodge - Diario</ShortName>
+	<Description>Search the blog of Emeraldion Lodge</Description>
+	<Image height="16" width="16" type="image/x-icon">http://www.emeraldion.it/favicon.ico</Image>
+	<Url type="text/html" method="get" template="http://www.emeraldion.it/diario/search.html?term={searchTerms}"/>
+	<moz:SearchForm>http://www.emeraldion.it/diario/search.html</moz:SearchForm>
+</OpenSearchDescription>

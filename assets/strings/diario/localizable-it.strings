@@ -1,0 +1,62 @@
+array (
+	/* index */
+	'Search' => 'Ricerca',
+	'Find:' => 'Trova:',
+	'Type some text' => 'Termine da cercare',
+	'Sorry, no results!' => 'Nessun risultato trovato!',
+	'Subscribe the' => 'Sottoscrivi il',
+	'Diario RSS Feed' => 'Feed RSS del Diario',
+	'Written by' => 'Scritto da',
+	'on' => 'il',
+	'tagged as:' => 'contrassegnato come:',
+	'%s readings' => '%s letture',
+	'%s Comments' => '%s Commenti',
+	'Read more' => 'Leggi tutto',
+	'Use this URI for your Trackback' => 'Usa questo URI per il Trackback',
+	'No such article' => 'Articolo inesistente',
+	
+	/* _blogroll */
+	'Blogroll' => 'Blogroll',
+	
+	/* _twitter_badge */
+	'Twitter Updates' => 'Aggiornamenti Twitter',
+	
+	/* _books */
+	'Books' => 'Libri',
+	'Essays' => 'Saggi',
+	'Novels' => 'Narrativa',
+	'Computer Books' => 'Libri di Informatica',
+	'diario-books-caption' => 'Cosa sto leggendo in questi giorni&hellip;',
+	'diario-book-suggest' => 'Desideri suggerirmi una lettura?',
+	'I suggest you a book' => 'Ti suggerisco una lettura',
+
+	/* read */
+	'Edit' => 'Modifica',
+	'Update' => 'Aggiorna',
+	
+	/* _comments */
+	'Comments RSS Feed' => 'Feed RSS dei commenti',
+	'Comments for' => 'Commenti su',
+	'%s says:' => '%s scrive:',
+	'Write a comment' => 'Scrivi un commento',
+	'Permalink for comment' => 'Permalink per il commento',
+	'Name' => 'Nome',
+	'Email' => 'Email',
+	'Website' => 'Sito web',
+	'Comment' => 'Commento',
+	'Remember me' => 'Ricorda i miei dati',
+	'Send' => 'Invia',
+	'Nobody has commented %s yet.' => 'Nessuno ha scritto un commento su %s sinora.',
+	'Be the first to write a comment!' => 'Scrivi tu il primo commento!',
+	
+	/* calendar */
+	'Su' => 'Do',
+	'Mo' => 'Lu',
+	'Tu' => 'Ma',
+	'We' => 'Me',
+	'Th' => 'Gi',
+	'Fr' => 'Ve',
+	'Sa' => 'Sa',
+	'Go to:' => 'Vai a:',
+	'Calendar' => 'Calendario',
+);

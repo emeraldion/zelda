@@ -1,0 +1,14 @@
+/* Created: 12/09/05 16.29.09 by claudio */
+
+.subnavitem {
+ /* width: 60px;
+  margin-left: -2px;*/
+  text-align: center
+}
+.this-subnavitem {
+/*  background-color: lime;
+  border-bottom-color: lime !important;*/
+}
+.navbox {
+  /* background-color: lime*/
+}

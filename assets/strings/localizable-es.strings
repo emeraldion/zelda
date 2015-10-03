@@ -1,0 +1,35 @@
+array (
+	/* _topbar */
+	'Contact' => 'Contactar',
+	'Login' => 'Acceso',
+	'Logout' => 'Salir',
+	
+	/* _navbar */
+	'Home' => 'Inicio',
+	'Blog' => 'Diario',
+	'Donate' => 'Donación',
+	'About' => 'Acerca de',
+	'Backend' => 'Trastienda',
+	'Services' => 'Servicios',
+
+	/* _footer */
+	'Disclaimer' => 'Aviso',
+	'powered by' => 'potenciado por',
+	
+	/* antispam */
+	'Antispam question:' => 'Pregunta anti spam:',
+	
+	/* forms */
+	'Name' => 'Nombre',
+	'Email' => 'Email',
+	'Website' => 'Sitio web',
+	'Message' => 'Mensaje',
+	'Comment' => 'Comentario',
+	'Send' => 'Enviar',
+	'Remember me' => 'Recuerda mis datos',
+	'An asterisk (*) denotes a required field.' => 'Campos requeridos son indicados por un asterisco (*).',
+	'%s syntax allowed.' => 'Sintaxis %s permitida.',
+	
+	/* remote */
+	'Loading...' => 'Cargando...',
+);

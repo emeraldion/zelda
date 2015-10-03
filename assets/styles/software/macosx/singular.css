@@ -1,0 +1,55 @@
+/* Created: 12/09/05 16.29.09 by claudio */
+
+/* candy icons in feature summary */
+
+p#feature-clean
+{
+	background: transparent url('/assets/images/software/macosx/singular/clean.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-advanced
+{
+	background: transparent url('/assets/images/software/macosx/singular/advanced.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-rescue
+{
+	background: transparent url('/assets/images/software/macosx/singular/rescue.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-quickscans
+{
+	background: transparent url('/assets/images/software/macosx/singular/quickscans.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-swupdate
+{
+	background: transparent url('/assets/images/software/macosx/singular/swupdate.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-widget
+{
+	background: transparent url('/assets/images/software/macosx/singular/widget.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+p#feature-registration
+{
+	background: transparent url('/assets/images/software/macosx/singular/registration.png') no-repeat center left;
+	padding-left:47px;
+	min-height: 32px;
+}
+
+dl#evaluation-license-key
+{
+	margin: 1em 2em;
+}
+dl#evaluation-license-key dt
+{
+	font-weight: bold;
+}

@@ -1,0 +1,46 @@
+array (
+	/* _topbar */
+	'Contact' => 'Contattami',
+	'Login' => 'Entra',
+	'Logout' => 'Esci',
+	
+	/* headers */
+	'Personal website of Claudio Procida, software engineer, web and mac developer, hosting my software, my projects and my weblog' => 'Sito web personale di Claudio Procida, ingegnere del software, sviluppatore per il web e per il mac, che ospita i miei software, i miei progetti e il mio weblog',
+	
+	/* _navbar */
+	'Home' => 'Inizio',
+	'Blog' => 'Diario',
+	'Donate' => 'Donazione',
+	'About' => 'Informazioni',
+	'Backend' => 'Retrobottega',
+	'Services' => 'Servizi',
+
+	/* _footer */
+	'Disclaimer' => 'Termini d&rsquo;uso',
+	'powered by' => 'in esecuzione su',
+	
+	/* antispam */
+	'Antispam question:' => 'Domanda anti spam:',
+	
+	/* forms */
+	'Name' => 'Nome',
+	'Email' => 'Email',
+	'Website' => 'Sito web',
+	'Message' => 'Messaggio',
+	'Comment' => 'Commento',
+	'Send' => 'Invia',
+	'Remember me' => 'Ricorda i miei dati',
+	'An asterisk (*) denotes a required field.' => 'I campi richiesti sono contrassegnati da un asterisco (*).',
+	'%s syntax allowed.' => 'Consentita sintassi %s.',
+	'Please enter a valid email address' => 'Per favore, inserisci un indirizzo email valido',
+	'Notify me of followup comments via e-mail' => 'Avvisami via email quando qualcuno aggiunge un commento',
+	
+	/* remote */
+	'Loading...' => 'Caricamento...',
+	
+	/* flash */
+	'Welcome, %s' => 'Benvenuto, %s',
+	'Login is required to access the page you requested!' => '&Egrave; necessario autenticarsi per avere accesso alla pagina richiesta!',
+	'Hide' => 'Nascondi',
+	'hide' => 'nascondi',
+);

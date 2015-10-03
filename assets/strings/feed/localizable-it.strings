@@ -1,0 +1,22 @@
+array (
+	/* software_comments */
+	'Comments issued on %s by users.' => 'Commenti su %s da parte degli utenti.',
+	'Comments on %s' => 'Commenti su %s',
+	'Comment by %s' => 'Commento di %s',
+	'Issued by %s on %s.' => 'Commento aggiunto da %s %s.',
+	
+	/* software */
+	'Latest software releases by Emeraldion Lodge.' => 'Ultime release software di Emeraldion Lodge.',
+	'Register' => 'Registrazione',
+	'Donate' => 'Donazione',
+	'Comments' => 'Commenti',
+	'What&rsquo;s new in version %s?' => 'Cosa c&rsquo;&egrave; di nuovo nella versione %s?',
+	
+	/* diario */
+	'Latest blog entries by Claudio Procida, Emeraldion Lodge.' => 'Ultimi articoli del blog di Claudio Procida, Emeraldion Lodge.',
+	'Blogging' => 'Blogging',
+	'Read more...' => 'Leggi tutto...',
+	
+	/* diario_comments */
+	'Comments issued on %s by readers.' => 'Commenti su %s da parte dei lettori.',
+);

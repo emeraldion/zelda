@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	# Custom rules for Software
+
+	# Software version check for widgets
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^widgets/versioncheck(.*)$ /router.php?controller=software&action=widgets_versioncheck [L,R,QSA]
+
+</IfModule>

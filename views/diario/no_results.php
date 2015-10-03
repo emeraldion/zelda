@@ -1,0 +1,1 @@
+<div class="centered"><?php echo l('Sorry, no results!'); ?></div>

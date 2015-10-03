@@ -1,0 +1,19 @@
+array (
+	/* login */
+	'Login' => 'Login',
+	'Username' => 'Username',
+	'Password' => 'Password',
+	'Leave me registered' => 'Leave me registered',
+	'Enter' => 'Enter',
+	'Forgot your password?' => 'Forgot your password?',
+	'Bad username / password' => 'Bad username / password',
+	'galatea-login' => 'Looking for the <a href="http://galatea.emeraldion.it" class="external">old Emeraldion Lodge</a>? ;)',
+	
+	/* lost_password */
+	'Send request' => 'Send request',
+	'Retrieve lost password' => 'Retrieve lost password',
+	'lost_password_para' => 'Did you forget your password? Enter your email address, you&rsquo;ll receive instructions to restore your password in a few minutes.',
+	
+	/* logout */
+	'Logout was performed successfully' => 'Logout was performed successfully',
+);

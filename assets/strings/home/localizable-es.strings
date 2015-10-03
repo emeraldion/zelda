@@ -1,0 +1,13 @@
+array (
+	'Meta' => 'Meta',
+	'Feeds' => 'Feeds',
+	'del.icio.us cloud' => 'nube del.icio.us',
+	'We recommend...' => 'Recomendamos...',
+	'Welcome!' => '¡Bienvenid@s!',
+	'Care to know a little more' => '¿Quisieran saber algo m&aacute;s',
+	'about me?' => 'acerca de mi?',
+	'welcome-para1' => '¡Hola! &Eacute;sto es el sitio web personal de Claudio Procida, ' .
+		'ingeniero inform&aacute;tico, desarrollador para el web y el Mac. ' .
+		'Que aprovechen su estancia.',
+
+);

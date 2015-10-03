@@ -1,0 +1,104 @@
+input,
+textarea,
+select
+{
+	font-family: "Lucida Grande", "Trebuchet MS", sans-serif;
+	font-size: 10pt;
+}
+label.left-aligned
+{
+	float: left;
+	display: block;
+	width: 80px;
+	text-align:right;
+	margin-right: 10px;
+}
+.labeled
+{
+	margin-left: 90px;
+}
+.padded-to-label
+{
+	padding-left: 90px;
+}
+label.required:after
+{
+	content: "*";
+}
+.item-0
+{
+	/*background: #eee url('/assets/images/minimal/grey-gradient.png') repeat-x 0% 100%;*/
+}
+.item-1
+{
+	background: #E8EFFC url('/assets/images/minimal/blue-gradient.png') repeat-x 0 0;
+}
+.clear
+{
+	clear: both;
+}
+.list-header
+{
+	padding: 15px 0;
+}
+.diario-post-list-item
+{
+	border: 1px solid #ccc;
+	padding: 4px 20px;
+	position: relative;
+}
+.diario-post-list-item + .diario-post-list-item
+{
+	border-top: none;
+}
+.diario-post-title
+{
+	font-size: 16px;
+	font-weight: bold;
+}
+.diario-post-list-content
+{
+}
+ul.diario-post-actions
+{
+	margin-top: 0;
+	position: absolute;
+	right: 20px;
+	top: 4px;
+	visibility: hidden;
+}
+.diario-post-list-item:hover ul.diario-post-actions
+{
+	visibility: visible;
+}
+ul.diario-post-actions li
+{
+	display: inline;
+}
+ul.diario-post-actions li + li
+{
+	margin-left: 4px;
+	padding-left: 14px;
+	background: transparent url("/assets/images/minimal/bullet.png") no-repeat left center;
+}
+.empty-list-warning
+{
+	padding: 3em 0;
+	font-size: 20px;
+	color: #999;
+}
+
+.download-bar
+{
+	border: 1px solid #B4D2FF;
+	margin: 10px 10px 20px 210px;
+	height: 26px;
+	background: #E4EFFF url("/assets/images/minimal/gloss.azure.png") repeat-x 0 0;
+}
+
+.download-bar:hover
+{
+	border-color: #E2B5FF;
+	background-color: #F4E4FF;
+	background-image: url("/assets/images/minimal/gloss.purple.png");
+}

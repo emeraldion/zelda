@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	
+	# Default rules
+
+	# Controller alone
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)\.html$ /router.php5?controller=$1 [L,QSA]
+
+	# Controller, with action
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/([^/]+)\.(html|json|png|jpe?g)$ /router.php5?controller=$1&action=$2 [L,QSA]
+
+	# Controller, action and id of target
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/([^/]+)/([^/]+)$ /router.php5?controller=$1&action=$2&id=$3 [L,QSA]
+
+	# Controller without extension
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([^/]+)/?$ /$1.html [R,L,QSA]
+
+	# Default controller
+	RewriteRule ^$ home.html [L,QSA]
+</IfModule>

@@ -1,0 +1,30 @@
+div#coolpreview_container
+{
+	width: 100%;
+	height: 100%;
+	background: transparent url("/assets/images/coolpreview/bg.png") repeat 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+	display: none;
+}
+
+img#coolpreview_container * { position: absolute; }
+img#coolpreview_loader { display: none; }
+
+img#coolpreview_picture
+{
+	position: absolute;
+	margin: auto;
+	border: 10px solid #fff;
+}
+
+img#coolpreview_throbber { }
+
+/* Now fallback stuff for that sh*t of IE */
+
+* html div#coolpreview_container
+{
+	background: transparent url("/assets/images/coolpreview/bg_ie.gif") repeat 0 0;
+}
