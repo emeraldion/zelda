@@ -20,7 +20,7 @@
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->before_filter(array('block_ip', 'log_visit'));
 			$this->after_filter(array('shrink_html', 'compress'));
 		}
@@ -32,7 +32,9 @@
 		public function index()
 		{
 			//$this->redirect_to(array('action' => 'index', 'after' => 3));
-			$this->set_title("Emeraldion Lodge .o. " . l('Contact'));
+			header("Location: https://github.com/emeraldion/zelda/issues/new");
+			exit();
+			//$this->set_title("Emeraldion Lodge .o. " . l('Contact'));
 		}
 
 		/**
@@ -50,13 +52,13 @@
 			{
 				$this->redirect_to(array('action' => 'index'));
 			}
-			
+
 			if (!Email::is_valid($_POST['email']))
 			{
 				$this->flash(l('Please enter a valid email address'), 'error');
 				$this->redirect_to(array('action' => 'index'));
 			}
-			
+
 			if (!Antispam::check_math())
 			{
 				$this->flash(Antispam::random_comment(), 'error');
@@ -65,7 +67,7 @@
 			// A static class method would be infinitely better...
 			$contact_email = new ContactEmail($_POST);
 			$contact_email->send();
-			
+
 			if (isset($_POST['remember_me']))
 			{
 				$this->set_credentials($_POST['name'],
@@ -74,7 +76,7 @@
 			}
 			$this->redirect_to(array('action' => 'thank_you'));
 		}
-		
+
 		/**
 		 *	@fn thank_you
 		 *	@short Shows thankfulness to the user for the contact email.
