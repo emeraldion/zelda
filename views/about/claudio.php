@@ -19,7 +19,7 @@
 				});
 		});
 /*]]>*/
-</script> 
+</script>
 <div class="navbox">
 	<div class="clear">
 	</div>

@@ -225,6 +225,9 @@
 			{
 				$this->redirect_to(array('action' => 'index'));
 			}
+
+			$conn = Db::get_connection();
+
 			/*
 			// THIS SUCKS!!!
 			$this->article = DiarioPost::find($_REQUEST['id'], 'DiarioPost');
@@ -245,6 +248,8 @@
 			$this->article->save();
 
 			$this->render(array('layout' => 'diario_read'));
+
+			Db::close_connection($conn);
 		}
 
 		/**

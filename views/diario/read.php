@@ -3,12 +3,12 @@
 		"OR (`author` = '{$this->credentials['realname']}' " .
 		"AND `email` = '{$this->credentials['email']}')"));
 	$this->article->belongs_to('diario_authors');
-	$this->article->has_and_belongs_to_many('tags');
+	// $this->article->has_and_belongs_to_many('tags');
 	$comments = $this->article->diario_comments;
 
 	$this->set_title('Emeraldion Lodge .o. ' . l('Diario') . " .o. {$this->article->title}");
 
-	$this->render(array('partial' => 'prev_next'));
+	// $this->render(array('partial' => 'prev_next'));
 ?>
 <div class="rss-feed">
 	<?php echo l('Subscribe to the'); ?>
@@ -41,19 +41,19 @@
 			echo $this->article->text;
 ?>
 </div>
-<div class="lighter">
+<!--div class="lighter">
 	<?php echo l('Tag:'); ?>
 
 <?php
-	$tags = $this->article->tags;
-	for ($i = 0; $i < count($tags); $i++)
-	{
-		print $this->link_to(ucwords($tags[$i]->tag), array('class' => 'token', 'action' => 'tag', 'id' => $tags[$i]->id));
-		if ($i < count($tags) - 1)
-			print ", ";
-	}
+	// $tags = $this->article->tags;
+	// for ($i = 0; $i < count($tags); $i++)
+	// {
+	// 	print $this->link_to(ucwords($tags[$i]->tag), array('class' => 'token', 'action' => 'tag', 'id' => $tags[$i]->id));
+	// 	if ($i < count($tags) - 1)
+	// 		print ", ";
+	// }
 ?>
-</div>
+</div-->
 <div class="diario-controls lighter">
 	<ul class="plain">
 <?php

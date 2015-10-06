@@ -9,7 +9,6 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge .o. Diario Atom Feed" />
 		<link href="/assets/opensearch/diario.xml" rel="search" type="application/opensearchdescription+xml" title="Emeraldion Lodge - Diario" />
 		<style type="text/css">
-		/*<![CDATA[*/
 			label.left-aligned
 			{
 				float: left;
@@ -39,7 +38,6 @@
 				margin-left: 50px;
 				min-height: 48px;
 			}
-		/*]]>*/
 		</style>
 	</head>
 	<body>
@@ -79,7 +77,6 @@
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
 		<script type="text/javascript">
-		/*<![CDATA[*/
 			$(function(){
 					var s_f = document.getElementById('f_term');
 					s_f.setAttribute('type', 'search');
@@ -88,7 +85,6 @@
 					s_f.setAttribute('autocompletion', 'false');
 					s_f.setAttribute('placeholder', '<?php echo s(l('Type some text')); ?>');
 			});
-		/*]]>*/
 		</script>
 	</body>
 </html>
