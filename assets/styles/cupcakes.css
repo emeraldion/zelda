@@ -71,17 +71,23 @@ clear: both;
 .section {
 margin-bottom: 4em;
 }
-a.top {
-padding-left: 14px;
-background: transparent url("/assets/images/minimal/top12.gif") no-repeat center left;
+a.top,
+a.fwd,
+a.back,
+a.top::before,
+a.fwd::after,
+a.back::before {
+  font-family: Satisfy, cursive;
+  font-size: 14pt;
 }
-a.fwd {
-padding-left: 14px;
-background: transparent url("/assets/images/minimal/fwd12.gif") no-repeat center left;
+a.top::before {
+  content: "\2191 ";
 }
-a.back {
-padding-left: 14px;
-background: transparent url("/assets/images/minimal/back12.gif") no-repeat center left;
+a.fwd::after {
+  content: " \2192";
+}
+a.back::before {
+  content: "\2190 ";
 }
 a.top:hover,
 a.top:active,
