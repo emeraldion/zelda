@@ -1,5 +1,6 @@
 <?php
 	require_once("eme_controller.php");
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/../helpers/host.php");
 	require_once(dirname(__FILE__) . "/../helpers/query.php");
 	require_once(dirname(__FILE__) . "/../helpers/time.php");
@@ -26,11 +27,11 @@
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->before_filter('check_auth');
 			$this->after_filter('compress');
 		}
-		
+
 		/**
 		 *	@fn index
 		 *	@short Default action method.
@@ -46,7 +47,7 @@
 		 *	@short Action method that shows the referrer URLs of the visits.
 		 *	@details By analyzing referrers, you can easily understand what websites
 		 *	contain links to your website.
-		 */	
+		 */
 		public function referrers()
 		{
 		}
@@ -56,7 +57,7 @@
 		 *	@short Action method that builds the list of referrers.
 		 *	@details This method is invoked with AJAX calls to update the list
 		 *	of referrers in a dynamic fashion.
-		 */			
+		 */
 		public function referrers_list()
 		{
 			$conn = Db::get_connection();
@@ -89,7 +90,7 @@
 						isset($_REQUEST['l']) && is_numeric($_REQUEST['l']) ? $_REQUEST['l'] : 50);
 			}
 			$conn->exec();
-			
+
 			$this->referrers = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -102,7 +103,7 @@
 			Db::close_connection($conn);
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn visits
 		 *	@short Action method that shows the last visits.
@@ -110,7 +111,7 @@
 		public function visits()
 		{
 		}
-		
+
 		/**
 		 *	@fn visits_list
 		 *	@short Action method that builds the list of visits.
@@ -120,7 +121,7 @@
 		public function visits_list()
 		{
 			$conn = Db::get_connection();
-			
+
 			$conn->prepare("SELECT * " .
 					"FROM `visits` " .
 					"WHERE (`ip_addr` LIKE '%{1}%' " .
@@ -133,7 +134,7 @@
 					isset($_REQUEST['s']) && is_numeric($_REQUEST['s']) ? $_REQUEST['s'] : 0,
 					isset($_REQUEST['l']) && is_numeric($_REQUEST['l']) ? $_REQUEST['l'] : 50);
 			$conn->exec();
-			
+
 			$this->visits = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -146,7 +147,7 @@
 			Db::close_connection($conn);
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn queries
 		 *	@short Action method that shows the queries that brought visitors on the website.
@@ -166,7 +167,7 @@
 		public function queries_list()
 		{
 			$conn = Db::get_connection();
-			
+
 			if (isset($_REQUEST['g']) && $_REQUEST['g'] == 'true')
 			{
 				$conn->prepare("SELECT `referrer`, COUNT(`referrer`) AS `count` " .
@@ -197,7 +198,7 @@
 						isset($_REQUEST['l']) && is_numeric($_REQUEST['l']) ? $_REQUEST['l'] : 50);
 			}
 			$conn->exec();
-			
+
 			$this->queries = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -216,7 +217,7 @@
 			Db::close_connection($conn);
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn outbounds
 		 *	@short Action method that shows the outbound links that have been followed on the website.
@@ -234,7 +235,7 @@
 		public function outbounds_list()
 		{
 			$conn = Db::get_connection();
-			
+
 			if (isset($_REQUEST['g']))
 			{
 				$conn->prepare("SELECT `url`, COUNT(`url`) AS `count` " .
@@ -259,7 +260,7 @@
 						isset($_REQUEST['l']) && is_numeric($_REQUEST['l']) ? $_REQUEST['l'] : 50);
 			}
 			$conn->exec();
-			
+
 			$this->outbounds = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -277,7 +278,7 @@
 			Db::close_connection($conn);
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn hits_by_host
 		 *	@short Action method that shows the list of visitors' hosts.
@@ -286,7 +287,7 @@
 		public function hits_by_host()
 		{
 		}
-		
+
 		/**
 		 *	@fn hits_by_host_list
 		 *	@short Action method that builds the list of hits by host.
@@ -318,7 +319,7 @@
 					@$_REQUEST['h'],
 					9999);
 			$conn->exec();
-			
+
 			$this->hosts = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -347,7 +348,7 @@
 				'ORDER BY `date` DESC');
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn unblock_ip
 		 *	@short Action method to remove an IP address from the black list.
@@ -363,7 +364,7 @@
 			}
 			die(l('You must provide an id in order to unblock an IP address.'));
 		}
-		
+
 		/**
 		 *	@fn block_ip
 		 *	@short Action method to add an IP address to the black list.
@@ -375,13 +376,13 @@
 			$blocked_ip->save();
 			die(sprintf(l('IP address %s correctly blocked.'), $_REQUEST['ip']));
 		}
-		
+
 		/**
 		 *	@fn blocked_ips
 		 *	@short Action method to list the blacklisted IP addresses.
 		 */
 		public function blocked_ips()
-		{	
+		{
 		}
 
 		/**
@@ -393,14 +394,14 @@
 		public function blocked_ips_list()
 		{
 			$conn = Db::get_connection();
-			
+
 			$bip_factory = new BlockedIp();
 			$this->blocked_ips = $bip_factory->find_all(array(
 				'where_clause' => "`ip_addr` LIKE '%{$conn->escape(@$_REQUEST['q'])}%'",
 				'order_by' => '`blocked_at` DESC'));
-			
+
 			Db::close_connection($conn);
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -414,7 +415,7 @@
 			$this->visit->find_by_id($_REQUEST['id']);
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn attribute_chooser
 		 *	@short Action method to get an attribute chooser.
@@ -437,7 +438,7 @@
 		public function attribute_visits()
 		{
 			$conn = Db::get_connection();
-			
+
 			$visit_factory = new Visit();
 			$visits = $visit_factory->find_all(array('where_clause' => "`date` >= '{$conn->escape(date("Y-m-d H:i:s", Time::ago(@$_REQUEST['t'])))}' " .
 					"AND (`ip_addr` = '{$conn->escape(@$_REQUEST['ip'])}' " .
@@ -450,9 +451,9 @@
 					$visit->save();
 				}
 			}
-			
+
 			Db::close_connection($conn);
-			
+
 			$this->render(NULL);
 		}
 	}

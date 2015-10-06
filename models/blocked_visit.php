@@ -1,6 +1,7 @@
 <?php
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/visit.php");
-	
+
 	/**
 	 *	@class BlockedVisit
 	 *	@short Model class that represents individual visits from blocked IP addresses.
@@ -17,13 +18,15 @@
 		 */
 		public static function count_by_ip($the_ip)
 		{
-			global $db;
-			
-			$db->prepare("SELECT COUNT(*) FROM `{1}` WHERE `ip_addr` = '{2}'",
+			$conn = Db::get_connection();
+
+			$conn->prepare("SELECT COUNT(*) FROM `{1}` WHERE `ip_addr` = '{2}'",
 				$this->get_table_name(),
 				$the_ip);
-			$db->exec();
-			return $db->result(0);
+			$conn->exec();
+			$ret = $conn->result(0);
+			Db::close_connection($conn);
+			return $ret;
 		}
 	}
 ?>

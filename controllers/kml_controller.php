@@ -1,5 +1,6 @@
 <?php
 	require_once("eme_controller.php");
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/../helpers/host.php");
 	require_once(dirname(__FILE__) . "/../helpers/geoip.php");
 	require_once(dirname(__FILE__) . "/../helpers/time.php");
@@ -11,7 +12,7 @@
 	class KmlController extends EmeController
 	{
 		protected $mimetype = 'application/vnd.google-earth.kml+xml';
-		
+
 		/**
 		 *	@fn init
 		 *	@short Initialization method for the Controller.
@@ -21,10 +22,10 @@
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->after_filter('compress');
 		}
-		
+
 		/**
 		 *	@fn index
 		 *	@short Default action method.
@@ -33,9 +34,9 @@
 		public function index()
 		{
 			$this->geoips = array(Geoip::by_ip_addr('147.163.1.5'),
-				Geoip::by_ip_addr('194.242.202.173'));			
+				Geoip::by_ip_addr('194.242.202.173'));
 		}
-		
+
 		/**
 		 *	@fn hits_by_host
 		 *	@short Action method that shows the list of hosts that have visited the website.
@@ -43,7 +44,7 @@
 		public function hits_by_host()
 		{
 			$conn = Db::get_connection();
-			
+
 			$conn->prepare("SELECT `ip_addr`, `params`, COUNT(*) AS `weight` " .
 					"FROM `visits` " .
 					"WHERE `gate` LIKE '%{1}%' " .
@@ -65,7 +66,7 @@
 					@$_REQUEST['h'],
 					9999);
 			$conn->exec();
-			
+
 			$this->hosts = array();
 			if ($conn->num_rows() > 0)
 			{
@@ -76,7 +77,7 @@
 					$this->hosts[] = $host;
 				}
 			}
-			
+
 			Db::close_connection($conn);
 		}
 
@@ -88,7 +89,7 @@
 		{
 			$this->last_n_visits(5);
 		}
-		
+
 		/**
 		 *	@fn last_10_visits
 		 *	@short Action method that shows the last 10 hosts that have visited the website.
@@ -97,7 +98,7 @@
 		{
 			$this->last_n_visits(10);
 		}
-		
+
 		/**
 		 *	@fn last_50_visits
 		 *	@short Action method that shows the last 50 hosts that have visited the website.
@@ -114,7 +115,7 @@
 		public function last_n_visits($n)
 		{
 			$conn = Db::get_connection();
-			
+
 			$conn->prepare("SELECT `ip_addr`, `params`, COUNT(*) AS `weight` " .
 					"FROM `visits` " .
 					"GROUP BY CONCAT(`ip_addr`, `user_agent`) " .
@@ -122,7 +123,7 @@
 					"LIMIT {1}",
 					$n * 3);
 			$conn->exec();
-			
+
 			$this->hosts = array();
 			if ($conn->num_rows() > 0)
 			{

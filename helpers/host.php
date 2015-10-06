@@ -13,14 +13,14 @@
 		 *	@short The IP address of the host.
 		 */
 		public $ip_addr;
-		
+
 		/**
 		 *	@attr real_ip_addr
 		 *	@short The real IP address of the host.
 		 *	@details This variable contains the real IP address as inferred by the server parameters.
 		 */
 		public $real_ip_addr;
-		
+
 		/**
 		 *	@attr hostname
 		 *	@short The name of the host.
@@ -40,10 +40,10 @@
 			$host->real_ip_addr = self::real_ip_addr_from_params($ip_addr, $params);
 			$host->hostname = self::lookup_host_and_cache($host->real_ip_addr);
 			//$host->blocked = BlockedIp::is_blocked($host->real_ip_addr);
-			
+
 			return $host;
 		}
-		
+
 		/**
 		 *	@fn real_ip_addr_from_params($ip_addr, $params)
 		 *	@short Obtains the real IP address using server parameters as a backup.
@@ -75,7 +75,7 @@
 			}
 			return $ip_addr;
 		}
-		
+
 		/**
 		 *	@fn lookup_host_and_cache($ip_addr)
 		 *	@short Obtains the hostname for the given IP address.
@@ -83,34 +83,36 @@
 		 */
 		private static function lookup_host_and_cache($ip_addr)
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$hostname = $ip_addr;
 
 			// Attempt to retrieve the hostname from the lookup table...
-			$db->prepare("SELECT `hostname` " .
+			$conn->prepare("SELECT `hostname` " .
 				"FROM `hosts` " .
 				"WHERE `ip_addr` = '{1}' " .
 				"LIMIT 1",
 				$ip_addr);
-			$lookup_result = $db->exec();
-			if ($db->num_rows() > 0)
+			$lookup_result = $conn->exec();
+			if ($conn->num_rows() > 0)
 			{
 				// Got it
-				$hostname = $db->result(0);
+				$hostname = $conn->result(0);
 			}
 			else
 			{
 				// Resolve the host name with a call to gethostbyaddr
 				$hostname = gethostbyaddr($ip_addr);
 				// Store it in the lookup table for later
-				$db->prepare("INSERT INTO `hosts` (`ip_addr`,`hostname`,`last_update`) " .
+				$conn->prepare("INSERT INTO `hosts` (`ip_addr`,`hostname`,`last_update`) " .
 					"VALUES ('{1}', '{2}', NOW())",
 					$ip_addr,
 					$hostname);
-				$db->exec();
+				$conn->exec();
 			}
 
+			Db::close_connection($conn);
+			
 			return $hostname;
 		}
 	}

@@ -12,13 +12,13 @@
 		 *	@short The first operand for the math test.
 		 */
 		static $first_operand = 0;
-		
+
 		/**
 		 *	@attr second_operand
 		 *	@short The second operand for the math test.
 		 */
 		static $second_operand = 0;
-		
+
 		/**
 		 *	@fn random_comment
 		 *	@short Returns a variable message to alert the user that she's failed the math test.
@@ -30,7 +30,7 @@
 			);
 			return $comments[rand(0, count($comments) - 1)];
 		}
-		
+
 		/**
 		 *	@fn init_math_test
 		 *	@short Initializes the mathematical test to tell humans and machines apart.
@@ -80,12 +80,14 @@
 		 */
 		public static function check_spam_signature($text)
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$signature = self::get_spam_signature($text);
-			
+
 			$sig_factory = new SpamSignature();
-			$matches = $sig_factory->find_all(array('where_clause' => "`signature` = '{$db->escape($signature)}'"));
+			$matches = $sig_factory->find_all(array('where_clause' => "`signature` = '{$conn->escape($signature)}'"));
+
+			Db::close_connection($conn);
 			
 			return (count($matches) > 0);
 		}

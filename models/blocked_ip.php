@@ -1,7 +1,7 @@
 <?php
 	require_once(dirname(__FILE__) . "/base.php");
 	require_once(dirname(__FILE__) . "/dateable.php");
-	
+
 	/**
 	 *	@class BlockedIp
 	 *	@short Model object for blacklisted IP addresses.
@@ -18,7 +18,7 @@
 				$this->blocked_at = date("Y-m-d H:i:s");
 			}
 		}
-		
+
 		/**
 		 *	@fn rfc2822_date
 		 *	@short Returns a RFC2822 formatted date for the date of the receiver, useful for feeds.
@@ -45,7 +45,7 @@
 		{
 			return strftime("%A %e %B %Y %H:%M:%S", strtotime($this->blocked_at));
 		}
-		
+
 		/**
 		 *	@fn is_blocked($ip_addr)
 		 *	@short Returns <tt>TRUE</tt> if <tt>ip_addr</tt> is in the blacklist,
@@ -54,10 +54,13 @@
 		 */
 		public static function is_blocked($ip_addr)
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$bip_factory = new self();
-			$ret = $bip_factory->find_all(array('where_clause' => "`ip_addr` = '{$db->escape($ip_addr)}'"));
+			$ret = $bip_factory->find_all(array('where_clause' => "`ip_addr` = '{$conn->escape($ip_addr)}'"));
+
+			Db::close_connection($conn);
+
 			return count($ret) > 0;
 		}
 	}

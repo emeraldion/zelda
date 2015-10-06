@@ -1,5 +1,6 @@
 <?php
 	require_once('eme_controller.php');
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . '/../models/software.php');
 	require_once(dirname(__FILE__) . '/../models/software_release.php');
 	require_once(dirname(__FILE__) . '/../models/software_download.php');
@@ -30,25 +31,25 @@
 		 *	@short Flag that determines if downloads should be logged.
 		 */
 		const SOFTWARE_SAVE_DOWNLOADS = FALSE;
-		
+
 		/**
 		 *	@attr mimetype
 		 *	@short The MIME type of the response.
 		 */
 		protected $mimetype = 'text/html; charset=iso-8859-1';
-		
+
 		protected function init()
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->caches_page(array('download_stats', 'widgets_versioncheck', 'releasenotes', 'changelog'));
 			$this->before_filter('block_ip');
 			$this->before_filter('log_visit', array('except' => array('widgets_versioncheck', 'download', 'download_stats', 'user_quotes')));
 			$this->after_filter('shrink_html', array('except' => array('widgets_versioncheck', 'download', 'download_stats', 'user_quotes')));
 			$this->after_filter('compress');
 		}
-		
+
 		public function index()
 		{
 			$release_factory = new SoftwareRelease();
@@ -58,7 +59,7 @@
 				'GROUP BY `softwares`.`id` ' .
 				'ORDER BY `date` DESC ');
 		}
-		
+
 		/**
 		 *	@fn ratings
 		 *	@short Action method that shows a list of ratings for software products.
@@ -68,7 +69,7 @@
 		{
 			$this->index();
 		}
-		
+
 		/**
 		 *	@fn macosx
 		 *	@short Convenience action method.
@@ -78,15 +79,15 @@
 		{
 			$this->redirect_to(array('action' => 'index'));
 		}
-		
+
 		/**
 		 *	@fn widgets_versioncheck
 		 *	@short Action method that shows the latest version available for a widget.
 		 */
 		public function widgets_versioncheck()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			if (!isset($_REQUEST['id']))
 			{
 				if (!isset($_GET['software_name']) &&
@@ -94,11 +95,11 @@
 				{
 					$_GET['software_name'] = $_GET['name'];
 				}
-				
+
 				$software_factory = new Software();
 				$softwares = $software_factory->find_by_query('SELECT `id` ' .
 					'FROM `softwares` ' .
-					'WHERE `name` = \'' . $db->escape($_GET['software_name']) . '\' ' .
+					'WHERE `name` = \'' . $conn->escape($_GET['software_name']) . '\' ' .
 					'AND `type` = \'widgets\' ' .
 					'LIMIT 1');
 
@@ -106,19 +107,19 @@
 				{
 					$_REQUEST['id'] = $softwares[0]->id;
 				}
-				else 
+				else
 				{
 					$softwares = $software_factory->find_by_query('SELECT `softwares`.`id` ' .
 						'FROM `softwares` ' .
 						'LEFT JOIN `software_typos` ON `softwares`.`id` = `software_typos`.`software_id` ' .
-						'WHERE `software_typos`.`typo` = \'' . $db->escape($_GET['software_name']) . '\' ' .
+						'WHERE `software_typos`.`typo` = \'' . $conn->escape($_GET['software_name']) . '\' ' .
 						'AND `softwares`.`type` = \'widgets\' ' .
 						'LIMIT 1');
 					if (count($softwares) > 0)
 					{
 						$_REQUEST['id'] = $softwares[0]->id;
 					}
-					else 
+					else
 					{
 						HTTP::error(404);
 					}
@@ -128,7 +129,7 @@
 			$releases = $release_factory->find_by_query('SELECT  MAX(`software_releases`.`id`) AS `id`, MAX(`software_releases`.`version`) AS `version` ' .
 				'FROM `software_releases` ' .
 				'LEFT JOIN `softwares` ON `software_releases`.`software_id` = `softwares`.`id` ' .
-				'WHERE `softwares`.`id` = \'' . $db->escape($_REQUEST['id']) . '\' ' .
+				'WHERE `softwares`.`id` = \'' . $conn->escape($_REQUEST['id']) . '\' ' .
 				'AND `softwares`.`type` = \'widgets\' ' .
 				'AND `software_releases`.`released` = 1 ' .
 				'GROUP BY `software_releases`.`software_id` ' .
@@ -142,8 +143,10 @@
 				$this->output = l('No such widget');
 			}
 			$this->render(array('layout' => FALSE, 'final' => TRUE));
+
+			Db::close_connection($conn);
 		}
-		
+
 		/**
 		 *	@fn last_releases
 		 *	@short Action method that shows a list of the last software product releases.
@@ -167,10 +170,10 @@
 		public function main()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn instructions
 		 *	@short Action method that shows the instructions page for a software product.
@@ -178,7 +181,7 @@
 		public function instructions()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -190,7 +193,7 @@
 		public function development()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -212,12 +215,12 @@
 		public function register()
 		{
 			$this->_init_software();
-			
+
 			if (isset($_POST))
 			{
 				// Handle registration requests...
 			}
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -228,7 +231,7 @@
 		public function license()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -239,10 +242,10 @@
 		public function changelog()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
-		
+
 		/**
 		 *	@fn comments
 		 *	@short Action method that shows the comments page for a software product.
@@ -250,7 +253,7 @@
 		public function comments()
 		{
 			$this->_init_software();
-			
+
 			$this->render(array('layout' => FALSE));
 		}
 
@@ -260,8 +263,8 @@
 		 */
 		public function post_comment()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			if (!$this->request->is_post())
 			{
 				$this->redirect_to(array('action' => 'index'));
@@ -272,7 +275,7 @@
 				$this->flash(l('No such software'), 'error');
 				$this->redirect_to(array('action' => 'index'));
 			}
-			
+
 			if (!Email::is_valid($_POST['email']))
 			{
 				$this->flash(l('Please enter a valid email address'), 'error');
@@ -283,7 +286,7 @@
 				$this->flash(Antispam::random_comment(), 'error');
 				$this->redirect_to($software->comments_permalink());
 			}
-			
+
 			// A static class method would be infinitely better...
 			$comment = new SoftwareComment($_POST);
 			$comment->created_at = date('Y-m-d H:i:s');
@@ -302,13 +305,15 @@
 					$_POST['email'],
 					$_POST['URL']);
 			}
-			
+
 			// Expires the cache of Comments feed
 			$this->expire_cached_page(array('controller' => 'feed', 'action' => 'software_comments', 'id' => $_POST['software_id']));
-			
+
 			$this->redirect_to_software_page(array('id' => $_POST['software_id'], 'subview' => 'comments', 'hash' => ('comment-' . $comment->id)));
+
+			Db::close_connection($conn);
 		}
-		
+
 		/**
 		 *	@fn show
 		 *	@short Action method that shows the individual page for a software product.
@@ -317,17 +322,17 @@
 		{
 			$this->_init_software();
 			$this->software->has_many('software_quotes');
-			
+
 			$this->description = $this->software->description;
-			
+
 			if (!isset($_REQUEST['subview']))
 			{
 				$_REQUEST['subview'] = 'main';
 			}
-			
+
 			$this->render(array('layout' => 'software_show'));
 		}
-		
+
 		/**
 		 *	@fn releasenotes
 		 *	@short Action method that shows the changes in the last release of the requested software.
@@ -356,7 +361,7 @@
 				$this->redirect_to(array('action' => 'index'));
 			}
 		}
-		
+
 		/**
 		 *	@fn user_quotes
 		 *	@short Action method that shows a collection of user testimonials for software products.
@@ -389,7 +394,7 @@
 				$this->redirect_to(array('action' => 'index'));
 			}
 		}
-		
+
 		/**
 		 *	@fn download
 		 *	@short Action method that performs the download of a software artifact.
@@ -407,7 +412,7 @@
 				}
 				$artifact->downloads++;
 				$artifact->save();
-				
+
 				if (self::SOFTWARE_SAVE_DOWNLOADS)
 				{
 					// Logs the download
@@ -415,11 +420,11 @@
 					$download->artifact_id = $_REQUEST['id'];
 					$download->save();
 				}
-				
+
 				// Expires the cache of Download Stats
 				// Remember: Download Stats are cached by release_id
 				$this->expire_cached_page(array('action' => 'download_stats', 'id' => $artifact->release_id));
-				
+
 				if ($artifact->URL)
 				{
 					$this->redirect_to($artifact->URL);
@@ -436,7 +441,7 @@
 			}
 			$this->redirect_to(array('action' => 'index'));
 		}
-	
+
 		/**
 		 *	@fn download_stats
 		 *	@short Action method that shows the download statistics for a software release.
@@ -444,8 +449,8 @@
 		 */
 		public function download_stats()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$release = new SoftwareRelease();
 			if ($release->find_by_id($_GET['id']) === FALSE)
 			{
@@ -453,20 +458,22 @@
 				$this->redirect_to(array('action' => 'index'));
 			}
 			$release->belongs_to('softwares');
-			
-			$db->prepare('SELECT SUM(`downloads`) FROM `software_artifacts` WHERE `release_id` = \'{1}\'',
+
+			$conn->prepare('SELECT SUM(`downloads`) FROM `software_artifacts` WHERE `release_id` = \'{1}\'',
 				$release->id);
-			$db->exec();
-			$this->partial = $db->result(0);
-			
-			$db->prepare('SELECT SUM(`downloads`) FROM `software_artifacts` WHERE `software_id` = \'{1}\'',
+			$conn->exec();
+			$this->partial = $conn->result(0);
+
+			$conn->prepare('SELECT SUM(`downloads`) FROM `software_artifacts` WHERE `software_id` = \'{1}\'',
 				$release->software->id);
-			$db->exec();
-			$this->total = $db->result(0);
-			
+			$conn->exec();
+			$this->total = $conn->result(0);
+
 			$this->render(array('layout' => FALSE));
+
+			Db::close_connection($conn);
 		}
-		
+
 		/**
 		 *	@fn redirect_to_software_page($params)
 		 *	@short Redirects the request to a detailed page for a software product.
@@ -488,30 +495,30 @@
 			}
 			$this->redirect_to($URL);
 		}
-		
+
 		/**
 		 *	@fn _init_software
 		 *	@short Private method that initializes repetitive members of software product page actions.
 		 */
 		private function _init_software()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			if (isset($_REQUEST['software_name']))
 			{
 				$software_factory = new Software();
-				$softwares = $software_factory->find_all(array('where_clause' => ('`name` = \'' . $db->escape($_REQUEST['software_name']) . '\' AND `type` = \'' . $db->escape($_REQUEST['software_type']) . '\''),
+				$softwares = $software_factory->find_all(array('where_clause' => ('`name` = \'' . $conn->escape($_REQUEST['software_name']) . '\' AND `type` = \'' . $conn->escape($_REQUEST['software_type']) . '\''),
 					'limit' => 1));
 				if (count($softwares) > 0)
 				{
 					$this->software = $softwares[0];
 				}
-				else 
+				else
 				{
 					$softwares = $software_factory->find_by_query('SELECT `softwares`.`id` ' .
 						'FROM `softwares` ' .
 						'LEFT JOIN `software_typos` ON `softwares`.`id` = `software_typos`.`software_id` ' .
-						'WHERE `software_typos`.`typo` = \'' . $db->escape($_REQUEST['software_name']) . '\' ' .
+						'WHERE `software_typos`.`typo` = \'' . $conn->escape($_REQUEST['software_name']) . '\' ' .
 						'LIMIT 1');
 					if (count($softwares) > 0)
 					{
@@ -521,7 +528,7 @@
 							$this->software->url_to_detail($_REQUEST['subview'])));
 						exit();
 					}
-					else 
+					else
 					{
 						HTTP::error(404);
 					}
@@ -546,6 +553,8 @@
 			usort($releases, array($releases[0], 'sort_releases'));
 			$this->release = $releases[0];
 			$this->software->software_releases = $releases;
+
+			Db::close_connection($conn);
 		}
 	}
 ?>

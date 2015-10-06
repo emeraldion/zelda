@@ -4,6 +4,7 @@
 	require_once(dirname(__FILE__) . "/dateable.php");
 	require_once(dirname(__FILE__) . "/sortable.php");
 	require_once(dirname(__FILE__) . "/approvable.php");
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/../include/common.inc.php");
 	require_once(dirname(__FILE__) . "/../include/tag_support.inc.php");
 
@@ -114,7 +115,7 @@
 		 */
 		public function human_readable_date()
 		{
-			return strftime("%A %e %B %Y %H:%M:%S", strtotime($this->created_at));
+			return strftime("%A %e %B %Y %H:%M", strtotime($this->created_at));
 		}
 
 		/**
@@ -170,17 +171,15 @@
 		 */
 		public function previous()
 		{
-			global $db;
+			$conn = Db::get_connection();
 			$factory = new self();
-			$results = $factory->find_all(array('where_clause' => "`created_at` < '{$db->escape($this->created_at)}' " .
+			$results = $factory->find_all(array('where_clause' => "`created_at` < '{$conn->escape($this->created_at)}' " .
 				"AND `status` = 'pubblicato'",
 				'order_by' => '`created_at` DESC',
 				'limit' => 1));
-			if (count($results) > 0)
-			{
-				return $results[0];
-			}
-			return NULL;
+			$ret = count($results) > 0 ? $results[0] : NULL;
+			Db::close_connection($conn);
+			return $ret;
 		}
 
 		/**
@@ -189,17 +188,15 @@
 		 */
 		public function next()
 		{
-			global $db;
+			$conn = Db::get_connection();
 			$factory = new self();
-			$results = $factory->find_all(array('where_clause' => "`created_at` > '{$db->escape($this->created_at)}' " .
+			$results = $factory->find_all(array('where_clause' => "`created_at` > '{$conn->escape($this->created_at)}' " .
 				"AND `status` = 'pubblicato'",
 				'order_by' => '`created_at` ASC',
 				'limit' => 1));
-			if (count($results) > 0)
-			{
-				return $results[0];
-			}
-			return NULL;
+			$ret = count($results) > 0 ? $results[0] : NULL;
+			Db::close_connection($conn);
+			return $ret;
 		}
 	}
 ?>

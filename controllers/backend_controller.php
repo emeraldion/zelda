@@ -1,5 +1,6 @@
 <?php
 	require_once("eme_controller.php");
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/../models/diario_post.php");
 	require_once(dirname(__FILE__) . "/../models/diario_comment.php");
 	require_once(dirname(__FILE__) . "/../models/software_comment.php");
@@ -29,17 +30,17 @@
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->before_filter('check_auth');
 			//$this->before_filter('log_visit');
 			$this->after_filter(array('shrink_html', 'compress'));
 		}
-		
+
 		public function index()
 		{
 			$this->redirect_to(array('action' => 'software_moderation_queue'));
 		}
-		
+
 		/**
 		 *	Diario administration actions
 		 */
@@ -57,17 +58,17 @@
 			$comment = new DiarioComment();
 			$this->comments = $comment->find_unapproved();
 		}
-		
+
 		/**
 		 *	@fn diario_comment_moderate
 		 *	@short Action method that moderates a comment.
 		 */
 		public function diario_comment_moderate()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$this->_batch_moderate('diario_comments');
-			
+
 			if (isset($_POST['moderate-selected']))
 			{
 				$comment_ids = is_array($_POST['id']) ? $_POST['id'] : array($_POST['id']);
@@ -76,11 +77,11 @@
 					$comment = new DiarioComment();
 					$comment->find_by_id($comment_id);
 					$comment->belongs_to('diario_posts');
-					
+
 					// Notify previous commenters of the followup comment
 					$comment_factory = new DiarioComment();
 					// Obtain previous comments with followup notify set to true
-					$previous_comments = $comment_factory->find_all(array('where_clause' => "`post_id` = '{$db->escape($comment->post_id)}' AND `followup_email_notify` = '1'"));
+					$previous_comments = $comment_factory->find_all(array('where_clause' => "`post_id` = '{$conn->escape($comment->post_id)}' AND `followup_email_notify` = '1'"));
 					// Include comment author in previous recipients to avoid auto-notifications
 					$previous_comments_recipients = array($comment->email);
 					foreach ($previous_comments as $previous_comment)
@@ -99,10 +100,12 @@
 					}
 				}
 			}
-			
+
 			$this->redirect_to(array('action' => 'diario_moderation_queue'));
+
+			Db::close_connection($conn);
 		}
-		
+
 		/**
 		 *	@fn diario_comment_discard
 		 *	@short Action method that discards a comment or a group of comments.
@@ -140,7 +143,7 @@
 				$this->redirect_to(array('action' => 'diario_moderation_queue'));
 			}
 		}
-		
+
 		/**
 		 *	Diario articles actions
 		 */
@@ -158,23 +161,24 @@
 		/**
 		 *	@fn diario_post_add
 		 *	@short Action method to save a newly composed article.
-		 */		
+		 */
 		public function diario_post_add()
 		{
-			global $db;
-			
+
 			if (isset($_POST))
 			{
+				$conn = Db::get_connection();
+
 				$post = new DiarioPost($_POST);
 				$post->author = $_COOKIE['_u'];
 				$post->save();
-				
+
 				// Delete old tags (if any)
-				$db->prepare('DELETE FROM `diario_posts_tags` ' .
+				$conn->prepare('DELETE FROM `diario_posts_tags` ' .
 						"WHERE `post_id` = '{1}'",
 						$post->id);
-				$db->exec();
-				
+				$conn->exec();
+
 				// Save tags
 				$tag_tokens = explode(',', $_POST['tag']);
 				$tag_tokens = array_map('trim', $tag_tokens);
@@ -196,14 +200,16 @@
 						$tag->tag = $tag_token;
 						$tag->save();
 					}
-					$db->prepare('INSERT IGNORE INTO `diario_posts_tags` ' .
+					$conn->prepare('INSERT IGNORE INTO `diario_posts_tags` ' .
 						'(`post_id`, `tag_id`) ' .
 						"VALUES ('{1}', '{2}')",
 						$post->id,
 						$tag->id);
-					$db->exec();
+					$conn->exec();
+
+					Db::close_connection($conn);
 				}
-				
+
 				// Expires the cache of Diario
 				$this->expire_cached_page(array('controller' => 'diario', 'action' => 'index'));
 				$this->expire_cached_page(array('controller' => 'diario', 'action' => 'last_posts'));
@@ -226,10 +232,10 @@
 			}
 			$this->post = new DiarioPost();
 			$this->post->find_by_id($_REQUEST['id']);
-			
+
 			$this->post->has_and_belongs_to_many('tags');
 		}
-		
+
 		/**
 		 *	@fn diario_post_list
 		 *	@short Action method to show the list of articles.
@@ -251,7 +257,7 @@
 			$pb_factory = new DiarioPingback();
 			$this->pingbacks = $pb_factory->find_all(array('order_by' => '`created_at` DESC'));
 		}
-		
+
 		/**
 		 *	@fn diario_pingback_moderate
 		 *	@short Action method that moderates Pingbacks issued for Blog posts.
@@ -265,7 +271,7 @@
 		/**
 		 *	Software administration actions
 		 */
-		
+
 		/**
 		 *	@fn software_moderation_queue
 		 *	@short Action method to manage the queue of software comments.
@@ -282,23 +288,23 @@
 		 */
 		public function software_comment_moderate()
 		{
-			global $db;
-			
 			$this->_batch_moderate('software_comments');
-			
+
 			if (isset($_POST['moderate-selected']))
 			{
+				$conn = Db::get_connection();
+
 				$comment_ids = is_array($_POST['id']) ? $_POST['id'] : array($_POST['id']);
 				foreach ($comment_ids as $comment_id)
 				{
 					$comment = new SoftwareComment();
 					$comment->find_by_id($comment_id);
 					$comment->belongs_to('softwares');
-					
+
 					// Notify previous commenters of the followup comment
 					$comment_factory = new SoftwareComment();
 					// Obtain previous comments with followup notify set to true
-					$previous_comments = $comment_factory->find_all(array('where_clause' => "`software_id` = '{$db->escape($comment->software_id)}' AND `followup_email_notify` = '1'"));
+					$previous_comments = $comment_factory->find_all(array('where_clause' => "`software_id` = '{$conn->escape($comment->software_id)}' AND `followup_email_notify` = '1'"));
 					// Include comment author in previous recipients to avoid auto-notifications
 					$previous_comments_recipients = array($comment->email);
 					foreach ($previous_comments as $previous_comment)
@@ -315,8 +321,10 @@
 						}
 					}
 				}
+
+				Db::close_connection($conn);
 			}
-				
+
 			$this->redirect_to(array('action' => 'software_moderation_queue'));
 		}
 
@@ -326,20 +334,22 @@
 		 */
 		public function software_comment_list()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			if (empty($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'software_list'));
-			}			
+			}
 			$comment = new SoftwareComment();
-			$this->comments = $comment->find_all(array('where_clause' => "`software_id` = '{$db->escape($_REQUEST['id'])}'"));
+			$this->comments = $comment->find_all(array('where_clause' => "`software_id` = '{$conn->escape($_REQUEST['id'])}'"));
+
+			Db::close_connection($conn);
 		}
 
 		/**
 		 *	@fn software_comment_discard
 		 *	@short Action method to delete a software comments.
-		 */	
+		 */
 		public function software_comment_discard()
 		{
 			if ($this->request->is_get())
@@ -412,7 +422,7 @@
 		/**
 		 *	@fn software_create
 		 *	@short Action method to create a new software product.
-		 */		
+		 */
 		public function software_create()
 		{
 			$this->software = new Software();
@@ -442,11 +452,11 @@
 					$software = new Software();
 					$software->find_by_id($_POST['id']);
 					$software->delete();
-					
+
 					// Expires the cache of Software & Sparkle feeds
 					$this->expire_cached_software_pages();
 				}
-				$this->redirect_to(array('action' => 'software_list'));				
+				$this->redirect_to(array('action' => 'software_list'));
 			}
 		}
 
@@ -456,14 +466,16 @@
 		 */
 		public function software_release_list()
 		{
-			global $db;
+			$conn = Db::get_connection();
 
 			if (!isset($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'software_list'));
 			}
 			$release_factory = new SoftwareRelease();
-			$this->releases = $release_factory->find_all(array('where_clause' => "`software_id` = '{$db->escape($_REQUEST['id'])}'", 'order_by' => '`date` DESC'));
+			$this->releases = $release_factory->find_all(array('where_clause' => "`software_id` = '{$conn->escape($_REQUEST['id'])}'", 'order_by' => '`date` DESC'));
+
+			Db::close_connection($conn);
 		}
 
 		/**
@@ -496,7 +508,7 @@
 			$this->release->belongs_to('softwares');
 			$this->render(array('action' => 'software_release_edit'));
 		}
-		
+
 		/**
 		 *	@fn software_release_add
 		 *	@short Action method to save a software release.
@@ -513,10 +525,10 @@
 				$release->released = '0';
 			}
 			$release->save();
-			
+
 			// Expires the cache of Software & Sparkle feeds
 			$this->expire_cached_software_pages();
-			
+
 			$this->redirect_to(array('action' => 'software_release_list', 'id' => $_POST['software_id']));
 		}
 
@@ -526,7 +538,7 @@
 		 */
 		public function software_artifact_list()
 		{
-			global $db;
+			$conn = Db::get_connection();
 
 			$artifact_factory = new SoftwareArtifact();
 			if (!isset($_REQUEST['id']))
@@ -541,8 +553,10 @@
 				{
 					$this->redirect_to(array('action' => 'software_list'));
 				}
-				$this->artifacts = $artifact_factory->find_all(array('where_clause' => "`release_id` = '{$db->escape($_REQUEST['id'])}'", 'order_by' => '`priority` DESC'));
+				$this->artifacts = $artifact_factory->find_all(array('where_clause' => "`release_id` = '{$conn->escape($_REQUEST['id'])}'", 'order_by' => '`priority` DESC'));
 			}
+
+			Db::close_connection($conn);
 		}
 
 		/**
@@ -601,33 +615,35 @@
 				$artifact->visible = '0';
 			}
 			$artifact->save();
-			
+
 			// Expires the cache of Software & Sparkle feeds
 			$this->expire_cached_software_pages();
-			
+
 			$this->redirect_to(array('action' => 'software_artifact_list', 'id' => $_POST['release_id']));
 		}
-	
+
 		/**
 		 *	@fn software_quote_list
 		 *	@short Action method that shows the list of quotes for a software product.
-		 */				
+		 */
 		public function software_quote_list()
 		{
-			global $db;
+			$conn = Db::get_connection();
 
 			if (!isset($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'software_list'));
 			}
 			$quote_factory = new SoftwareQuote();
-			$this->quotes = $quote_factory->find_all(array('where_clause' => "`software_id` = '{$db->escape($_REQUEST['id'])}'", 'order_by' => '`author` ASC, `quote` ASC'));
+			$this->quotes = $quote_factory->find_all(array('where_clause' => "`software_id` = '{$conn->escape($_REQUEST['id'])}'", 'order_by' => '`author` ASC, `quote` ASC'));
+
+			Db::close_connection($conn);
 		}
 
 		/**
 		 *	@fn software_quote_create
 		 *	@short Action method that creates a software quote entry.
-		 */				
+		 */
 		public function software_quote_create()
 		{
 			if (!isset($_REQUEST['id']))
@@ -642,11 +658,9 @@
 		/**
 		 *	@fn software_quote_edit
 		 *	@short Action method that modifies a software quote entry.
-		 */				
+		 */
 		public function software_quote_edit()
 		{
-			global $db;
-
 			if (!isset($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'software_list'));
@@ -658,7 +672,7 @@
 		/**
 		 *	@fn software_quote_add
 		 *	@short Action method that saves a software quote entry.
-		 */				
+		 */
 		public function software_quote_add()
 		{
 			if (!$this->request->is_post())
@@ -667,14 +681,14 @@
 			}
 			$quote = new SoftwareQuote($_POST);
 			$quote->save();
-			
+
 			$this->redirect_to(array('action' => 'software_quote_list', 'id' => $_POST['software_id']));
 		}
 
 		/**
 		 *	@fn software_quote_delete
 		 *	@short Action method that deletes a software quote entry.
-		 */				
+		 */
 		public function software_quote_delete()
 		{
 			if (!isset($_REQUEST['id']))
@@ -689,18 +703,18 @@
 		 *	@fn software_downloads
 		 *	@short Action method that shows statistics on software downloads grouped by
 		 *	software product.
-		 */				
+		 */
 		public function software_downloads()
 		{
 			$software_factory = new Software();
 			$this->softwares = $software_factory->find_all(array('order_by' => '`title` DESC'));
 		}
-		
+
 		/**
 		 *	@fn software_downloads_by_release
 		 *	@short Action method that shows statistics on software downloads grouped by release
 		 *	for a particular software product.
-		 */		
+		 */
 		public function software_downloads_by_release()
 		{
 			if (!isset($_REQUEST['id']))
@@ -721,7 +735,7 @@
 		 *	@fn software_downloads_by_artifact
 		 *	@short Action method that shows statistics on software artifact downloads
 		 *	for a particular release.
-		 */		
+		 */
 		public function software_downloads_by_artifact()
 		{
 			if (!isset($_REQUEST['id']))
@@ -737,7 +751,7 @@
 			$this->release->has_many('software_artifacts', array('order_by' => '`title` DESC'));
 			$this->artifacts = $this->release->software_artifacts;
 		}
-		
+
 		/**
 		 *	@fn software_pingback_list
 		 *	@short Action method that shows the list of Pingbacks issued for Software items.
@@ -757,7 +771,7 @@
 				$this->pingbacks = $pb_factory->find_all(array('order_by' => '`created_at` ASC'));
 			}
 		}
-		
+
 		/**
 		 *	@fn software_pingback_moderate
 		 *	@short Action method that moderates Pingbacks issued for software products.
@@ -767,7 +781,7 @@
 			$this->_batch_moderate('software_pingbacks');
 			$this->redirect_to(array('action' => 'software_pingback_list'));
 		}
-		
+
 		/**
 		 *	@fn server_error_list
 		 *	@short Action method that shows the list of server errors.
@@ -777,9 +791,9 @@
 			$error_factory = new ServerError();
 			$this->errors = $error_factory->find_all(array('order_by' => '`occurred_at` DESC'));
 		}
-		
+
 		/**
-		 *	@fn server_error_read	
+		 *	@fn server_error_read
 		 *	@short Action method that shows individual server error items.
 		 */
 		public function server_error_read()
@@ -795,15 +809,13 @@
 				$this->redirect_to(array('action' => 'server_error_list'));
 			}
 		}
-		
+
 		/**
 		 *	@fn server_error_next
 		 *	@short Action method that shows the next server error.
 		 */
 		public function server_error_next()
 		{
-			global $db;
-			
 			if (!isset($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'server_error_list'));
@@ -818,15 +830,13 @@
 			$this->error = $errors[0];
 			$this->render(array('action' => 'server_error_read'));
 		}
-		
+
 		/**
 		 *	@fn server_error_previous
 		 *	@short Action method that shows the previous server error.
 		 */
 		public function server_error_previous()
 		{
-			global $db;
-			
 			if (!isset($_REQUEST['id']))
 			{
 				$this->redirect_to(array('action' => 'server_error_list'));
@@ -848,8 +858,6 @@
 		 */
 		public function server_error_delete()
 		{
-			global $db;
-			
 			if (!empty($_GET['id']))
 			{
 				$this->redirect_to(array('action' => 'server_error_read', 'id' => $_GET['id']));
@@ -860,13 +868,17 @@
 				{
 					if (is_array($_POST['id']))
 					{
-						$db->prepare('DELETE FROM `server_errors` ' .
+						$conn = Db::get_connection();
+
+						$conn->prepare('DELETE FROM `server_errors` ' .
 							"WHERE FIND_IN_SET(`id`, '{1}') " .
 							'LIMIT {2}',
 							implode(',', $_POST['id']),
 							count($_POST['id'])
 							);
-						$db->exec();
+						$conn->exec();
+
+						Db::close_connection($conn);
 					}
 					else
 					{
@@ -878,7 +890,7 @@
 				$this->redirect_to(array('action' => 'server_error_list'));
 			}
 		}
-		
+
 		/**
 		 *	@fn expire_cached_software_pages
 		 *	@short Deletes all cached software pages.
@@ -892,7 +904,7 @@
 			$this->expire_cached_page(array('controller' => 'software', 'action' => 'changelog', 'id' => $_POST['software_id']));
 			$this->expire_cached_page(array('controller' => 'software', 'action' => 'releasenotes', 'id' => $_POST['software_id']));
 		}
-		
+
 		/**
 		 *	@fn _batch_moderate($table_name)
 		 *	@short Performs batch moderation operations on one or more items.
@@ -900,9 +912,10 @@
 		 */
 		private function _batch_moderate($table_name)
 		{
-			global $db;
+			$conn = Db::get_connection();
+
 			$has_deleted = FALSE;
-			
+
 			if ($this->request->is_post())
 			{
 				$query_preamble = 'SELECT 1 ';
@@ -915,31 +928,33 @@
 				{
 					$query_preamble = "UPDATE `{$table_name}` SET `approved` = 1 ";
 				}
-				
+
 				if (is_array($_POST['id']))
 				{
-					$db->prepare($query_preamble .
+					$conn->prepare($query_preamble .
 						"WHERE FIND_IN_SET(`id`, '{1}') " .
 						'LIMIT {2}',
 						implode(',', $_POST['id']),
 						count($_POST['id'])
 						);
-					$db->exec();
+					$conn->exec();
 				}
 				else if (isset($_POST['id']))
 				{
-					$db->prepare($query_preamble .
+					$conn->prepare($query_preamble .
 						"WHERE `id` = '{1}' " .
 						'LIMIT 1'
 						);
-					$db->exec();
+					$conn->exec();
 				}
 				if ($has_deleted)
 				{
-					$db->prepare("OPTIMIZE TABLE `{$table_name}`");
-					$db->exec();
+					$conn->prepare("OPTIMIZE TABLE `{$table_name}`");
+					$conn->exec();
 				}
 			}
+
+			Db::close_connection($conn);
 		}
 	}
 ?>

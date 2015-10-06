@@ -1,5 +1,6 @@
 <?php
 	require_once('eme_controller.php');
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . '/../models/software.php');
 	require_once(dirname(__FILE__) . '/../models/software_release.php');
 	require_once(dirname(__FILE__) . '/../models/software_artifact.php');
@@ -15,32 +16,32 @@
 	{
 		protected $mimetype = 'text/xml; charset=utf-8';
 		protected $type = 'rss';
-		
+
 		protected function init()
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$cached_pages = array('software', 'software_comments', 'diario');
 			//$this->before_filter(array('log_visit', 'block_ip'));
 			$this->before_filter('block_ip');
 			$this->caches_page($cached_pages);
 			$this->after_filter('compress', array('only' => $cached_pages));
 		}
-		
+
 		/**
 		 *	@fn software
 		 *	@short Action method that generates the feed of software releases.
 		 */
 		public function software()
 		{
-			global $db;
-			
+			$conn = Db::get_connection();
+
 			$release_factory = new SoftwareRelease();
 			if (isset($_GET['id']) && is_numeric($_GET['id']))
 			{
 				$this->releases = $release_factory->find_all(array('where_clause' => '`released` = 1 ' .
-					'AND `software_id` = \'' . $db->escape($_GET['id']) . '\' ',
+					'AND `software_id` = \'' . $conn->escape($_GET['id']) . '\' ',
 					'order_by' => '`date` DESC '));
 			}
 			else
@@ -52,6 +53,8 @@
 					'GROUP BY `softwares`.`id` ' .
 					'ORDER BY `date` DESC ');
 			}
+
+			Db::close_connection($conn);
 		}
 
 		/**
@@ -69,7 +72,7 @@
 		/**
 		 *	@fn diario
 		 *	@short Action method that generates the feed of Diario articles.
-		 */		
+		 */
 		public function diario()
 		{
 			$post_factory = new DiarioPost();
@@ -95,7 +98,7 @@
 		/**
 		 *	@fn feeds_list
 		 *	@short Action method that generates a list of available feeds.
-		 */	
+		 */
 		public function feeds_list()
 		{
 			$this->render(array('layout' => FALSE));
@@ -104,7 +107,7 @@
 		/**
 		 *	@fn feed_permalink
 		 *	@short Returns the permalink URL for the current feed.
-		 */		
+		 */
 		public function feed_permalink()
 		{
 			return sprintf('http://%s%s',

@@ -18,24 +18,25 @@
 		 *	@short The MIME type for the response.
 		 */
 		protected $mimetype = 'text/xml; charset=utf-8';
-		
+
 		function init()
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->caches_page(array('index'));
 			//$this->before_filter(array('log_visit', 'block_ip'));
 			$this->after_filter('compress');
 		}
-		
+
 		function index()
 		{
-			global $db;
+			$conn = Db::get_connection();
+
 			if (isset($_GET['software_name']))
 			{
 				$software_factory = new Software();
-				$softwares = $software_factory->find_all(array('where_clause' => "`name` = '{$db->escape($_GET['software_name'])}' AND (`name` != 'guidatv' OR `type` = 'macosx')",
+				$softwares = $software_factory->find_all(array('where_clause' => "`name` = '{$conn->escape($_GET['software_name'])}' AND (`name` != 'guidatv' OR `type` = 'macosx')",
 					'limit' => 1));
 				if (count($softwares) > 0)
 				{
@@ -46,7 +47,7 @@
 					usort($releases, array($releases[0], 'sort_releases'));
 					$this->software->release = $releases[0];
 					$this->software->release->has_many('software_artifacts');
-					
+
 					// Horrible hack to enable per-software caching.
 					$_REQUEST['id'] = $this->software->id;
 				}
@@ -67,6 +68,8 @@
 			{
 				$this->render_error();
 			}
+			
+			Db::close_connection($conn);
 		}
 	}
 ?>

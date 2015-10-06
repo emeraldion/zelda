@@ -1,5 +1,6 @@
 <?php
 	require_once("eme_controller.php");
+	require_once(dirname(__FILE__) . "/../include/db.inc.php");
 	require_once(dirname(__FILE__) . "/../models/diario_post.php");
 	require_once(dirname(__FILE__) . "/../models/diario_comment.php");
 	require_once(dirname(__FILE__) . "/../models/diario_pingback.php");
