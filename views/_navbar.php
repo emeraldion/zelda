@@ -22,6 +22,7 @@
 				"url" => $this->url_to(array('controller' => 'backend')));
 	}
 ?>
+	<h1>emeraldion lodge</h1>
 	<nav>
 		<ul id="navbar">
 <?php

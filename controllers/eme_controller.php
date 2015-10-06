@@ -9,7 +9,7 @@
 	require_once(dirname(__FILE__) . '/../helpers/morse.php');
 	require_once(dirname(__FILE__) . '/../helpers/base64.php');
 	require_once(dirname(__FILE__) . '/../helpers/sanskrit.php');
-	
+
 	/**
 	 *	@class EmeController
 	 *	@short Main controller class for the Emeraldion Lodge.
@@ -28,31 +28,31 @@
 		 *	@short User credentials.
 		 */
 		protected $credentials;
-		
+
 		/**
 		 *	@short Keywords for the "Keywords" meta header.
 		 */
 		protected $keywords = array();
-		
+
 		/**
 		 *	@short Description for the "Description" meta header.
 		 */
 		protected $description;
-		
+
 		protected function init()
 		{
 			parent::init();
-			
+
 			$this->description = l('Personal website of Claudio Procida, software engineer, web and mac developer, hosting my software, my projects and my weblog');
 			$this->credentials = $this->get_credentials();
-			
+
 			//$this->before_filter('spot_people');
 		}
-		
+
 		public function index()
 		{
 		}
-		
+
 		/**
 		 *	@fn set_credentials($realname, $email, $website)
 		 *	@short Stores a set of credentials into a cookie using Base64 encoding.
@@ -66,7 +66,7 @@
 			$encoded = Base64::encode($credentials);
 			Cookie::set('_vc', $encoded, Time::next_year());
 		}
-		
+
 		/**
 		 *	@fn get_credentials
 		 *	@short Returns a set of credentials previously stored into a cookie with Base64 encoding.
@@ -81,7 +81,7 @@
 			}
 			return array_combine(array('realname', 'email', 'url'), $parts);
 		}
-		
+
 		/**
 		 *	@fn check_auth
 		 *	@short Filter method that checks authorization before accessing actions.
@@ -95,7 +95,7 @@
 				$this->redirect_to(array('controller' => 'login'));
 			}
 		}
-		
+
 		/**
 		 *	@fn log_visit
 		 *	@short Filter method that saves a Visit object for current request.
@@ -115,6 +115,9 @@
 		 */
 		protected function block_ip()
 		{
+			// Return if BLOCK_IPS is not set
+			if (!BLOCK_IPS)
+				return;
 			if (BlockedIp::is_blocked($_SERVER['REMOTE_ADDR']))
 			{
 				$bv = new BlockedVisit();
@@ -122,7 +125,7 @@
 				die(l('Sorry, your IP address is currently blacklisted'));
 			}
 		}
-		
+
 		/**
 		 *	@fn add_acronyms
 		 *	@short Filter method that adds common acronyms.
@@ -150,7 +153,7 @@
 				$replacements,
 				$this->response->body);
 		}
-		
+
 		/**
 		 *	@fn morse_encode
 		 *	@short Filter method that converts response contents to Morse code.
@@ -164,12 +167,12 @@
 					'/\*\//',
 					'/>([^<]*)</e',
 					'/(alt|title|content)="([^"]*)"/e',
-					'/§§§/',
+					'/ï¿½ï¿½ï¿½/',
 					'/###/',
 					'/%%%/',
 				),
 				array(
-					'§§§',
+					'ï¿½ï¿½ï¿½',
 					'###',
 					'%%%',
 					"'>'.Morse::encode('\\1').'<'",
@@ -177,7 +180,7 @@
 					'-->',
 					'/*',
 					'*/',
-				), 
+				),
 				$this->response->body);
 		}
 
@@ -200,15 +203,15 @@
 					'> <',
 					'><\1\2',
 					'<\1\2><',
-				), 
+				),
 				$this->response->body);
 		}
-		
+
 		/**
 		 *	@fn sanskrit_ambra
 		 *	@short Filter method that converts response contents to Ambra Angiolini's "sanskrit".
 		 *	@details This filter replaces all vowels with 'a', thus doing like Ambra Angiolini when
-		 *	singing during the Italian TV show "Non è la Rai".
+		 *	singing during the Italian TV show "Non ï¿½ la Rai".
 		 */
 		protected function sanskrit_ambra()
 		{
@@ -222,10 +225,10 @@
 					"<&\\1;>",
 					"'>'.Sanskrit::encode('\\1').'<'",
 					"&\\1;",
-				), 
+				),
 				$this->response->body);
 		}
-		
+
 		/**
 		 *	@fn spot_people
 		 *	@short Filter method to identify visits from known people.
@@ -238,7 +241,7 @@
 				{
 					$email = new Email(array('name' => 'Emeraldion Lodge',
 						'email' => 'webmaster@emeraldion.it',
-						'text' => 'Ti informo che è stata effettuata una visita da aknet.it'));
+						'text' => 'Ti informo che ï¿½ stata effettuata una visita da aknet.it'));
 					$email->send();
 					Cookie::set('_aknet', TRUE, Time::tomorrow());
 				}
@@ -249,13 +252,13 @@
 				{
 					$email = new Email(array('name' => 'Emeraldion Lodge',
 						'email' => 'webmaster@emeraldion.it',
-						'text' => 'Ti informo che è stata effettuata una visita da unipa.it'));
+						'text' => 'Ti informo che ï¿½ stata effettuata una visita da unipa.it'));
 					$email->send();
 					Cookie::set('_unipa', TRUE, Time::tomorrow());
 				}
 			}
 		}
-		
+
 		/**
 		 *	@fn load_part_contents($filename)
 		 *	@short Loads localized part contents from file.
@@ -283,7 +286,7 @@
 			}
 			return $this->strip_external_php_tags($contents);
 		}
-		
+
 		/**
 		 *	@fn include_localized($filename)
 		 *	@short Includes a localized version of the requested filename if possible.

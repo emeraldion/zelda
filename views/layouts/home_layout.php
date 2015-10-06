@@ -8,16 +8,7 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?>" />
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Diario')); ?>" />
 		<style type="text/css">
-		/*<![CDATA[*/
-		/*]]>*/
 		</style>
-<?php
-	require(dirname(__FILE__) . "/../views/_scripts.php");
-?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
-		</script>
 	</head>
 	<body>
 <?php
@@ -29,8 +20,7 @@
 ?>
     </header>
     <main>
-      <div id="central">
-        <div class="clear"></div>
+      <div id="central" class="central">
         <div id="right-column">
 <?php
 	// $this->render_component(array('controller' => 'feed', 'action' => 'feeds_list'));
@@ -43,7 +33,6 @@
 	print $this->content_for_layout;
 ?>
         </div><!-- center-column -->
-        <div class="clear"></div>
       </div>
     </main>
     <footer>
@@ -51,5 +40,10 @@
 	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
 		</footer>
+<?php
+	require(dirname(__FILE__) . "/../views/_scripts.php");
+?>
+		<script type="text/javascript">
+		</script>
 	</body>
 </html>

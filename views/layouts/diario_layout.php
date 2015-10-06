@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title><?php print $this->title; ?></title>
 <?php
@@ -42,71 +41,54 @@
 			}
 		/*]]>*/
 		</style>
+	</head>
+	<body>
+<?php
+//	require(dirname(__FILE__) . "/../views/_topbar.php");
+?>
+    <header>
+<?php
+	require(dirname(__FILE__) . "/../views/_navbar.php");
+?>
+    </header>
+    <main>
+      <div id="central" class="central">
+				<div id="right-column">
+<?php
+//	$this->render(array('partial' => 'search'));
+//	$this->render(array('partial' => 'calendar'));
+//	$this->render(array('partial' => 'tagcloud'));
+//	//$this->render(array('partial' => 'twitter_badge'));
+//	$this->render(array('partial' => 'blogroll'));
+//	$this->render(array('partial' => 'books'));
+?>
+				</div><!-- right-column -->
+				<div id="center-column">
+<?php
+	print $this->content_for_layout;
+?>
+				</div><!-- center-column -->
+			</div>
+		</main>
+    <footer>
+<?php
+	require(dirname(__FILE__) . "/../views/_footer.php");
+?>
+		</footer>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
 		<script type="text/javascript">
 		/*<![CDATA[*/
 			$(function(){
-				if ($.browser.safari)
-				{
 					var s_f = document.getElementById('f_term');
 					s_f.setAttribute('type', 'search');
 					s_f.setAttribute('autosave', 'it_emeraldion_diario');
 					s_f.setAttribute('results', '5');
 					s_f.setAttribute('autocompletion', 'false');
 					s_f.setAttribute('placeholder', '<?php echo s(l('Type some text')); ?>');
-				}
 			});
 		/*]]>*/
 		</script>
-	</head>
-	<body>
-		<div id="external">
-<?php
-	require(dirname(__FILE__) . "/../views/_topbar.php");
-?>
-			<div id="top"></div>
-			<div id="page-bg">
-				<div id="brd_s">
-					<div id="brd_w">
-						<div id="brd_e">
-							<div id="crn_sw">
-								<div id="crn_se">
-									<div id="header"></div>
-<?php
-	require(dirname(__FILE__) . "/../views/_navbar.php");
-?>
-									<div id="page">
-										<div id="central">
-											<div class="clear"></div>
-											<div id="right-column">
-<?php
-	$this->render(array('partial' => 'search'));
-	$this->render(array('partial' => 'calendar'));
-	$this->render(array('partial' => 'tagcloud'));
-	//$this->render(array('partial' => 'twitter_badge'));
-	$this->render(array('partial' => 'blogroll'));
-	$this->render(array('partial' => 'books'));
-?>
-											</div><!-- right-column -->
-											<div id="center-column">
-<?php
-	print $this->content_for_layout;
-?>
-											</div><!-- center-column -->
-											<div class="clear"></div>
-										</div>
-<?php
-	require(dirname(__FILE__) . "/../views/_footer.php");
-?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
 </html>
