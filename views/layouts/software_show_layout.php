@@ -43,81 +43,69 @@
 		</script>
 	</head>
 	<body>
-		<div id="external">
-
 <?php
-	require(dirname(__FILE__) . "/../views/_topbar.php");
+//	require(dirname(__FILE__) . "/../views/_topbar.php");
 ?>
-
-			<div id="top"></div>
-			<div id="page-bg">
-				<div id="brd_s">
-					<div id="brd_w">
-						<div id="brd_e">
-							<div id="crn_sw">
-								<div id="crn_se">
-									<div id="header"></div>
+    <header>
 <?php
 	require(dirname(__FILE__) . "/../views/_navbar.php");
 ?>
-									<div id="page">
-										<div id="central">
-											<div class="clear"></div>
-											<div id="right-column">
+    </header>
+    <main>
+      <div id="central" class="central">
+        <div id="right-column">
+
 <?php
 	$this->render(array('partial' => 'downloads'));
 	$this->render(array('partial' => 'download_stats'));
 ?>
-<h3><?php echo l('Share'); ?></h3>
-<div style="margin: 1em 0">
-	<a href="http://www.facebook.com/share.php?u=<?php echo urlencode($this->url_to_myself(FALSE)); ?>"
-		onclick="return fbs_click()" class="fb_share_link"><?php echo l('Share on Facebook'); ?></a>
-	<script type="text/javascript">
-	/*<![CDATA[*/
-		var digg_url = '<?php echo $this->software->permalink(FALSE); ?>';
-		var digg_skin = 'compact';
-		var digg_window = 'new';
-	/*]]>*/
-	</script>
-	<script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script>
-</div>
+					<h3><?php echo l('Share'); ?></h3>
+					<div style="margin: 1em 0">
+						<a href="http://www.facebook.com/share.php?u=<?php echo urlencode($this->url_to_myself(FALSE)); ?>"
+							onclick="return fbs_click()" class="fb_share_link"><?php echo l('Share on Facebook'); ?></a>
+						<script type="text/javascript">
+							var digg_url = '<?php echo $this->software->permalink(FALSE); ?>';
+							var digg_skin = 'compact';
+							var digg_window = 'new';
+						</script>
+						<script src="//digg.com/tools/diggthis.js" type="text/javascript"></script>
+					</div>
 <?php
 	$this->render(array('partial' => 'google_groups'));
 ?>
-<h3><?php echo l('Awards'); ?></h3>
+					<h3><?php echo l('Awards'); ?></h3>
 <?php
 	$this->render(array('partial' => 'iusethis'));
 	$this->render(array('partial' => 'macupdate'));
 	$this->render(array('partial' => 'versiontracker'));
 	$this->render(array('partial' => 'softpedia_clean_award'));
 ?>
-<div class="expander">
+					<div class="expander">
 <?php
 	$this->link_to(l('More ratings...'), array('class' => 'fwd', 'action' => 'ratings'));
 ?>
 
-</div>
+					</div>
 <?php
 	$this->render(array('partial' => 'user_quotes'));
 ?>
-											</div><!-- right-column -->
-											<div id="center-column">
+				</div><!-- right-column -->
+				<div id="center-column">
 <?php
 	print $this->content_for_layout;
 ?>
-											</div><!-- center-column -->
-											<div class="clear"></div>
-										</div>
+				</div><!-- center-column -->
+			</div>
+		</main>
+		<footer>
 <?php
 	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		</footer>
+<?php
+	require(dirname(__FILE__) . "/../views/_scripts.php");
+?>
+		<script type="text/javascript">
+		</script>
 	</body>
 </html>

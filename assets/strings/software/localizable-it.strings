@@ -1,12 +1,12 @@
 array (
 	/* index */
 	'Software Releases' => 'Software recenti',
-	'Subscribe the' => 'Sottoscrivi il',
+	'Subscribe to the' => 'Sottoscrivi il',
 	'Software RSS Feed' => 'Feed RSS sul Software',
 	'Version' => 'Versione',
 	'Released' => 'Rilasciato il ',
 	'License type' => 'Licenza',
-	
+
 	/* show */
 	'Sparkle appcast for %s' => 'Appcast Sparkle per %s',
 	'Comments on %s' => 'Commenti su %s',
@@ -27,11 +27,11 @@ array (
 	'Visit this group' => 'Visita questo gruppo',
 	'Awards' => 'Riconoscimenti',
 	'Quotes' => 'Citazioni',
-	'More' => 'Di più',
+	'More' => 'Di piï¿½',
 	'More ratings...' => 'Mostra tutti...',
 	'Share' => 'Condividi',
 	'Share on Facebook' => 'Condividi su Facebook',
-	
+
 	/* _comments */
 	'Comments for' => 'Commenti su',
 	'Comments RSS Feed' => 'Feed RSS dei commenti',
@@ -51,8 +51,8 @@ array (
 	'All comments' => 'Mostra tutti i commenti',
 	'Trackback URI' => 'URI per il Trackback',
 	'Use this URI for your Trackback' => 'Utilizza questo URI per i tuoi Trackback',
-	'No such software' => 'Software inesistente',	
-	
+	'No such software' => 'Software inesistente',
+
 	/* last_releases */
 	'Latest Software Releases' => 'Software rilasciato da recente',
 	'See all releases...' => 'Vedi tutti i rilasci...',

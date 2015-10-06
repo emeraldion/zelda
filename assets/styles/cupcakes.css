@@ -20,13 +20,6 @@ background-color: #ccc;
 }
 */
 
-header h1 {
-  color: #f0f0f0;
-  font-size: 32pt;
-  margin: 10px 20px 2px 20px;
-  padding: 0;
-}
-
 body {
 margin: 0;
 position: relative;
@@ -120,7 +113,7 @@ a:hover,
 a:focus,
 a:active {
 /*background-color: #eee;*/
-color: #c44;
+color: #d6699b;
 text-decoration: underline;
 }
 .rss-feed {
@@ -348,6 +341,10 @@ box-shadow: inset 10px 10px 10px -10px #666, inset -10px -10px 10px -10px #666;
 #navbar a.navitem:link,
 #navbar a.navitem:visited {
 color: #f0f0f0;
+}
+#navbar a.navitem:hover,
+#navbar a.navitem:active {
+  color: #baedff;
 }
 a.here:link,
 a.here:visited {
@@ -1076,6 +1073,18 @@ main {
 }
 .central, .single-central {
   background-color: #fff;
+}
+
+header nav {
+  float: right;
+  margin: -40px 10px 0 0;
+}
+
+header h1 {
+  color: #f0f0f0;
+  font-size: 32pt;
+  margin: 10px 20px;
+  padding: 0;
 }
 
 header.headroom--pinned {
