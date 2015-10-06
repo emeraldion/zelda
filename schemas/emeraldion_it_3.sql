@@ -132,7 +132,7 @@ CREATE TABLE `diario_posts` (
   `author` varchar(24) collate latin1_general_ci NOT NULL default '',
   `status` enum('pubblicato','bozza','rimosso') collate latin1_general_ci NOT NULL default 'bozza',
   `readings` int(11) NOT NULL default '0',
-  `external_url` varchar(128) collate latin1_general_ci NULL default NULL
+  `external_url` varchar(128) collate latin1_general_ci NULL default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=331 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='Contiene i post del Diario (weblog)';
 # --------------------------------------------------------
