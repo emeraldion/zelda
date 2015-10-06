@@ -6,7 +6,6 @@
 	require(dirname(__FILE__) . "/../views/_styles.php");
 ?>
 		<style type="text/css">
-		/*<![CDATA[*/
 			#primula_toggler
 			{
 				position: absolute;
@@ -15,15 +14,10 @@
 				cursor: pointer;
 				\cursor: hand;
 			}
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
-		</script>
 	</head>
 	<body>
     <body>
@@ -55,5 +49,7 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
+	<script type="text/javascript">
+	</script>
 	</body>
 </html>

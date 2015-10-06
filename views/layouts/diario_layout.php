@@ -79,11 +79,13 @@
 		<script type="text/javascript">
 			$(function(){
 					var s_f = document.getElementById('f_term');
-					s_f.setAttribute('type', 'search');
-					s_f.setAttribute('autosave', 'it_emeraldion_diario');
-					s_f.setAttribute('results', '5');
-					s_f.setAttribute('autocompletion', 'false');
-					s_f.setAttribute('placeholder', '<?php echo s(l('Type some text')); ?>');
+					if (s_f) {
+						s_f.setAttribute('type', 'search');
+						s_f.setAttribute('autosave', 'it_emeraldion_diario');
+						s_f.setAttribute('results', '5');
+						s_f.setAttribute('autocompletion', 'false');
+						s_f.setAttribute('placeholder', '<?php echo s(l('Type some text')); ?>');
+					}
 			});
 		</script>
 	</body>
