@@ -8,7 +8,7 @@
 
 	$this->set_title('Emeraldion Lodge .o. ' . l('Diario') . " .o. {$this->article->title}");
 
-	// $this->render(array('partial' => 'prev_next'));
+	$this->render(array('partial' => 'prev_next'));
 ?>
 <div class="rss-feed">
 	<?php echo l('Subscribe to the'); ?>
