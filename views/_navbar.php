@@ -13,7 +13,7 @@
 		array('title' => localized('About'),
 			"url" => $this->url_to(array('controller' => 'about'))),
 		);
-		
+
 	if (Login::is_logged_in())
 	{
 		$navbar_sections[] = array('title' => localized('Meta'),
@@ -22,7 +22,8 @@
 				"url" => $this->url_to(array('controller' => 'backend')));
 	}
 ?>
-	<ul id="navbar">
+	<nav>
+		<ul id="navbar">
 <?php
 	$i = 0;
 	$navbar_length = count($navbar_sections);
@@ -44,19 +45,20 @@
 			$classname .= " navlast";
 		}
 ?>
-		<li>
-			<a class="<?php echo $classname; ?>" href="<?php echo $navbar_section["url"]; ?>">
-				<?php echo $navbar_section['title']; ?>
-			</a>
-		</li>
+			<li>
+				<a class="<?php echo $classname; ?>" href="<?php echo $navbar_section["url"]; ?>">
+					<?php echo $navbar_section['title']; ?>
+				</a>
+			</li>
 <?php
 		$i++;
 	}
 ?>
-	</ul>
-<?php	
+		</ul>
+	</nav>
+<?php
 	// Ladies and gentlemen, the FLASH!
-	
+
 	// The flash is just a storage area to flush messages, alerts and such.
 	// It gets flushed every time the user browses a page.
 
