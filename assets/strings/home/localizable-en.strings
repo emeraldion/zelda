@@ -9,5 +9,8 @@ array (
 	'welcome-para1' => 'Hello! This is the personal website of Claudio Procida, ' .
 		'computer science engineer, web and Mac software developer. ' .
 		'I hope you enjoy your stay.',
+	'its-been-a-while' => 'It\'s been a while since I last took care of my personal website. ' .
+		'I feel the urge to do so now. ' .
+		'Bear with me while I make adjustments until I become satisfied with the result.',
 
 );

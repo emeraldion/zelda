@@ -117,29 +117,6 @@
 	padding: 0.25em 0;
 }
 
-#language-chooser
-{
-	float: right;
-	margin-right: 150px;
-}
-#language-chooser ul,
-#language-chooser li
-{
-	display: inline;
-	margin: 0;
-	padding: 0;
-}
-#language-chooser li + li
-{
-	list-style-image: none;
-	padding-left: 2px;
-	background: none;
-}
-#the-language
-{
-	margin-right: 5px;
-}
-
 .db-debug
 {
 	font-family: "Lucida Console", "Monaco", fixed;
@@ -147,7 +124,7 @@
 	background-color: lightyellow;
 	padding: 1em;
 	margin: 0.5em;
-	white-space: wrap !important;
+	white-space: auto !important;
 }
 
  #consacration
@@ -156,7 +133,7 @@
 	text-transform: uppercase;
 	font-size: 9px;
 	margin-top: 3em;
-	color: #ccc;
+	color: #eee;
 }
 .localization-debug
 {

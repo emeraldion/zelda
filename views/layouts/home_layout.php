@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title><?php print h($this->title); ?></title>
 <?php
@@ -9,60 +8,42 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?>" />
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Diario')); ?>" />
 		<style type="text/css">
-		/*<![CDATA[*/
-		/*]]>*/
 		</style>
+	</head>
+	<body>
+<?php
+//	require(dirname(__FILE__) . "/../views/_topbar.php");
+?>
+    <header>
+<?php
+	require(dirname(__FILE__) . "/../views/_navbar.php");
+?>
+    </header>
+    <main>
+      <div id="central" class="central">
+        <div id="right-column">
+<?php
+	// $this->render_component(array('controller' => 'feed', 'action' => 'feeds_list'));
+	// $this->render(array('partial' => 'recommended'));
+	// $this->render(array('partial' => 'del_icio_us'));
+?>
+        </div><!-- right-column -->
+        <div id="center-column">
+<?php
+	print $this->content_for_layout;
+?>
+        </div><!-- center-column -->
+      </div>
+    </main>
+    <footer>
+<?php
+	require(dirname(__FILE__) . "/../views/_footer.php");
+?>
+		</footer>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
 		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
 		</script>
-	</head>
-	<body>
-		<div id="external">
-<?php
-	require(dirname(__FILE__) . "/../views/_topbar.php");
-?>
-			<div id="top"></div>
-			<div id="page-bg">
-				<div id="brd_s">
-					<div id="brd_w">
-						<div id="brd_e">
-							<div id="crn_sw">
-								<div id="crn_se">
-									<div id="header"></div>
-<?php
-	require(dirname(__FILE__) . "/../views/_navbar.php");
-?>
-									<div id="page">
-										<div id="central">
-											<div class="clear"></div>
-											<div id="right-column">
-<?php
-	$this->render_component(array('controller' => 'feed', 'action' => 'feeds_list'));
-	$this->render(array('partial' => 'recommended'));
-	$this->render(array('partial' => 'del_icio_us'));
-?>
-											</div><!-- right-column -->
-											<div id="center-column">
-<?php
-	print $this->content_for_layout;
-?>
-											</div><!-- center-column -->
-											<div class="clear"></div>
-										</div>
-<?php
-	require(dirname(__FILE__) . "/../views/_footer.php");
-?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
 </html>

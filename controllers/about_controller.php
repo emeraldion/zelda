@@ -18,7 +18,7 @@
 		{
 			// Call parent's init method
 			parent::init();
-			
+
 			$this->before_filter(array('log_visit', 'block_ip'));
 			if (
 				@$_GET['hl'] == 'morse' ||
@@ -35,7 +35,7 @@
 			$this->after_filter('shrink_html');
 			$this->after_filter('compress');
 		}
-		
+
 		/**
 		 *	@fn index
 		 *	@short Default action method.
@@ -51,14 +51,6 @@
 		 *	@short Action method that shows info on Claudio.
 		 */
 		public function claudio()
-		{
-		}
-		
-		/**
-		 *	@fn dorotea
-		 *	@short Hidden action method that shows info on Dorotea.
-		 */
-		public function dorotea()
 		{
 		}
 
@@ -77,7 +69,7 @@
 		public function emerails()
 		{
 		}
-		
+
 		/**
 		 *	@fn primula_toggle
 		 *	@short Just records the click on the primula toggler.
@@ -86,7 +78,7 @@
 		{
 			$this->render(NULL);
 		}
-		
+
 		/**
 		 *	@fn joke
 		 *	@short Filter method that replaces "Emeraldion Lodge" with "Emilio Fede"

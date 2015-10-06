@@ -8,8 +8,4 @@
 	&copy; 2001-<?php echo date("Y"); ?> Claudio Procida
 	&mdash;
 	<?php echo $this->link_to(l('Disclaimer'), array('action' => 'disclaimer', 'controller' => 'legal')); ?>
-
-	<div id="consacration">
-		Dicatus Regin&aelig; Pacis
-	</div>
 </div>

@@ -23,7 +23,7 @@
 		usort($comments, array($comments[0], 'sort_comments'));
 ?>
 	<div class="rss-feed">
-		<?php echo l('Subscribe the'); ?>
+		<?php echo l('Subscribe to the'); ?>
 		<?php $this->link_to(l('Comments RSS Feed'), array('controller' => 'feed', 'action' => 'diario_comments', 'id' => $this->article->id, 'type' => 'rss')); ?>
 	</div>
 	<h2><?php printf(l('Comments for %s'), $this->article->title); ?></h2>
@@ -32,7 +32,7 @@
 		foreach ($comments as $comment)
 		{
 			if ($comment instanceof DiarioComment)
-			{				
+			{
 				$this->render(array('partial' => 'comment', 'object' => $comment));
 			}
 			else

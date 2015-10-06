@@ -1,5 +1,5 @@
 <div class="rss-feed">
-	<?php echo l('Subscribe the'); ?>
+	<?php echo l('Subscribe to the'); ?>
 	<?php $this->link_to(l('Diario RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
 </div>
 <?php
@@ -14,7 +14,7 @@
 			{
 				continue;
 			}
-		
+
 			$article->has_many('diario_comments', array('where_clause' => "`approved` = '1' " .
 				"OR (`author` = '{$this->credentials['realname']}' " .
 				"AND `email` = '{$this->credentials['email']}')"));
@@ -40,7 +40,7 @@
 </p>
 <div class="lighter">
 	<?php echo l('Tag:'); ?>
-	
+
 <?php
 			$tags = $article->tags;
 			for ($i = 0; $i < count($tags); $i++)

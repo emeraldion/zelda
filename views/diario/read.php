@@ -5,13 +5,13 @@
 	$this->article->belongs_to('diario_authors');
 	$this->article->has_and_belongs_to_many('tags');
 	$comments = $this->article->diario_comments;
-	
+
 	$this->set_title('Emeraldion Lodge .o. ' . l('Diario') . " .o. {$this->article->title}");
-	
+
 	$this->render(array('partial' => 'prev_next'));
 ?>
 <div class="rss-feed">
-	<?php echo l('Subscribe the'); ?>
+	<?php echo l('Subscribe to the'); ?>
 	<?php $this->link_to(l('Diario RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
 </div>
 <!--

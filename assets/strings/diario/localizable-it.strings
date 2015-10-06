@@ -4,7 +4,7 @@ array (
 	'Find:' => 'Trova:',
 	'Type some text' => 'Termine da cercare',
 	'Sorry, no results!' => 'Nessun risultato trovato!',
-	'Subscribe the' => 'Sottoscrivi il',
+	'Subscribe to the' => 'Sottoscrivi il',
 	'Diario RSS Feed' => 'Feed RSS del Diario',
 	'Written by' => 'Scritto da',
 	'on' => 'il',
@@ -14,13 +14,13 @@ array (
 	'Read more' => 'Leggi tutto',
 	'Use this URI for your Trackback' => 'Usa questo URI per il Trackback',
 	'No such article' => 'Articolo inesistente',
-	
+
 	/* _blogroll */
 	'Blogroll' => 'Blogroll',
-	
+
 	/* _twitter_badge */
 	'Twitter Updates' => 'Aggiornamenti Twitter',
-	
+
 	/* _books */
 	'Books' => 'Libri',
 	'Essays' => 'Saggi',
@@ -33,7 +33,7 @@ array (
 	/* read */
 	'Edit' => 'Modifica',
 	'Update' => 'Aggiorna',
-	
+
 	/* _comments */
 	'Comments RSS Feed' => 'Feed RSS dei commenti',
 	'Comments for' => 'Commenti su',
@@ -48,7 +48,7 @@ array (
 	'Send' => 'Invia',
 	'Nobody has commented %s yet.' => 'Nessuno ha scritto un commento su %s sinora.',
 	'Be the first to write a comment!' => 'Scrivi tu il primo commento!',
-	
+
 	/* calendar */
 	'Su' => 'Do',
 	'Mo' => 'Lu',

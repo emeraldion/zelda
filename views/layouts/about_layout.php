@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title><?php print h($this->title); ?></title>
 <?php
@@ -27,39 +26,34 @@
 		</script>
 	</head>
 	<body>
-		<div id="external">
+    <body>
+  <?php
+  //	require(dirname(__FILE__) . "/../views/_topbar.php");
+  ?>
+      <header>
+  <?php
+  	require(dirname(__FILE__) . "/../views/_navbar.php");
+  ?>
+      </header>
+      <main>
+        <div id="single-central" class="single-central">
+          <div class="center-column">
 <?php
-	require(dirname(__FILE__) . "/../views/_topbar.php");
-?>
-			<div id="top"></div>
-			<div id="page-bg">
-				<div id="brd_s">
-					<div id="brd_w">
-						<div id="brd_e">
-							<div id="crn_sw">
-								<div id="crn_se">
-									<div id="header"></div>
-<?php
-	require(dirname(__FILE__) . "/../views/_navbar.php");
-?>
-									<div id="page">
-										<div id="single-central">
-<?php
-	$this->render(array('partial' => 'navbar'));
-	
+	// $this->render(array('partial' => 'navbar'));
+
 	print $this->content_for_layout;
 ?>
-										</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
 <?php
 	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		</footer>
+<?php
+	require(dirname(__FILE__) . "/../views/_scripts.php");
+?>
 	</body>
 </html>

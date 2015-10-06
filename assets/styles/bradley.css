@@ -1,5 +1,5 @@
 /* Created: 16/11/2013 18.29 by claudio */
-/*@import url(http://fonts.googleapis.com/css?family=Radley&subset=latin,latin-ext);*/
+@import url(http://fonts.googleapis.com/css?family=Radley&subset=latin,latin-ext);
 html {
 margin: 0;
 font-family: ABeeZee, Georgia, serif;
@@ -735,7 +735,7 @@ pre {
 font-size: 9pt;
 }
 
-/* Argh! Why the heck doesn't this work?! 
+/* Argh! Why the heck doesn't this work?!
 p+p:first-letter {
 margin-left: 3em;
 }
@@ -807,7 +807,7 @@ ul.version li {
 display: inline;
 }
 ul.version li+li:before {
-content: " — ";
+content: " ï¿½ ";
 }
 
 .throbber,
