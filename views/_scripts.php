@@ -9,7 +9,13 @@
 		<script src="//cdn.jsdelivr.net/highlight.js/8.8.0/highlight.min.js"></script>
 		<script>
 			$(function() {
+				// Initialize floating header
 				$("header").headroom();
+
+				// Syntax highlighting
+				hljs.initHighlighting();
+
+				// Add Italian flag emoji ;-)
 				if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
 					location.hash = '\uD83C\uDDEE\uD83C\uDDF9';
 				}
