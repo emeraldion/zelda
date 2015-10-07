@@ -41,11 +41,6 @@ background-color: #ccc;
 }
 */
 
-code, pre {
-  font-size: 12pt;
-  line-height: 1.5;
-}
-
 body {
 margin: 0;
 position: relative;
@@ -765,9 +760,9 @@ color: #99AAEB;
 text-align: center;
 }
 
-code,
-pre {
-font-size: 9pt;
+code, pre {
+  font-size: 12pt;
+  line-height: 1.5;
 }
 
 /* Argh! Why the heck doesn't this work?!
