@@ -3,7 +3,7 @@
 	<head>
 		<title><?php print h($this->title); ?></title>
 <?php
-	require(dirname(__FILE__) . "/../views/_styles.php");
+	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<link href="/assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
 		<style type="text/css">

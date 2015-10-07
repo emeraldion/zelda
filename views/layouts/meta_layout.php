@@ -3,7 +3,7 @@
 	<head>
 		<title><?php echo h($this->title); ?></title>
 <?php
-	require(dirname(__FILE__) . "/../views/_styles.php");
+	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<link href="/assets/styles/meta/meta.css" rel="stylesheet" type="text/css" />
 		<link href="/assets/styles/meta/hits_by_host.css" rel="stylesheet" type="text/css" />

@@ -3,7 +3,7 @@
 	<head>
 		<title><?php print $this->title; ?></title>
 <?php
-	require(dirname(__FILE__) . "/../views/_styles.php");
+	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. Diario RSS Feed" />
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge .o. Diario Atom Feed" />
