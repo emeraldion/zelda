@@ -8,7 +8,6 @@
 	and the server has been instructed to not let you have it.
 </p>
 <p>
-	If you feel this shouldn't have happened and want to report the error,
-	feel free to
-	<?php print $this->link_to('give me a shout', array('controller' => 'contact')); ?>.
+	If you feel this shouldn't have happened, feel free to
+	<?php print $this->link_to('report the error', array('controller' => 'contact', 'action' => 'report')); ?>.
 </p>

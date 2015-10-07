@@ -31,10 +31,18 @@
 		 */
 		public function index()
 		{
-			//$this->redirect_to(array('action' => 'index', 'after' => 3));
+			$this->redirect_to(array('action' => 'index', 'after' => 3));
+			//$this->set_title("Emeraldion Lodge .o. " . l('Contact'));
+		}
+
+		/**
+		 *	@fn report
+		 *	@short Reports an issue with the site
+		 */
+		public function report()
+		{
 			header("Location: https://github.com/emeraldion/zelda/issues/new");
 			exit();
-			//$this->set_title("Emeraldion Lodge .o. " . l('Contact'));
 		}
 
 		/**
