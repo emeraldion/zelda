@@ -1,0 +1,28 @@
+{
+  "name": "zelda",
+  "version": "1.0.0",
+  "description": "This is an [EmeRails](https://github.com/emeraldion/emerails) instance that backs the [Emeraldion Lodge](http://www.emeraldion.it) website.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emeraldion/zelda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emeraldion/zelda/issues"
+  },
+  "homepage": "https://github.com/emeraldion/zelda#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4"
+  }
+}
