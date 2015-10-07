@@ -6,6 +6,7 @@
 		<script src="//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
 		<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
 		<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
+		<script src="//cdn.jsdelivr.net/highlight.js/8.8.0/highlight.min.js"></script>
 		<script>
 			$(document).ready(function() {
 				$("header").headroom();
