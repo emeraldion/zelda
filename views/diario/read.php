@@ -90,11 +90,9 @@
 </div>
 <?php $this->render_component(array('action' => 'comments')); ?>
 <script type="text/javascript">
-/*<![CDATA[*/
-	$(function() {
-		$('#f_remember_me').click(function(){ if ($(this).attr('checked')) $('#remember_me_warning').css('display', 'block'); });
-	});
-/*]]>*/
+	// $(function() {
+	// 	$('#f_remember_me').click(function(){ if ($(this).attr('checked')) $('#remember_me_warning').css('display', 'block'); });
+	// });
 </script>
 <div id="comment-form">
 	<h2><?php echo l('Write a comment'); ?></h2>

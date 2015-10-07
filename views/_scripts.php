@@ -8,7 +8,7 @@
 		<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
 		<script src="//cdn.jsdelivr.net/highlight.js/8.8.0/highlight.min.js"></script>
 		<script>
-			$(document).ready(function() {
+			$(function() {
 				$("header").headroom();
 				if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
 					location.hash = '\uD83C\uDDEE\uD83C\uDDF9';
