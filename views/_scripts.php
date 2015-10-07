@@ -9,5 +9,8 @@
 		<script>
 			$(document).ready(function() {
 				$("header").headroom();
+				if (navigator.userAgent.indexOf('Mac OS X') !== -1) {
+					location.hash = '\uD83C\uDDEE\uD83C\uDDF9';
+				}
 			});
 		</script>
