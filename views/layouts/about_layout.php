@@ -3,6 +3,7 @@
 	<head>
 		<title><?php print h($this->title); ?></title>
 <?php
+	require(dirname(__FILE__) . "/../views/_opengraph.php");
 	require(dirname(__FILE__) . "/../views/_styles.php");
 ?>
 		<style type="text/css">

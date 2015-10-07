@@ -5,6 +5,7 @@
 	require_once(dirname(__FILE__) . '/../models/blocked_visit.php');
 	require_once(dirname(__FILE__) . '/../helpers/email.php');
 	require_once(dirname(__FILE__) . '/../helpers/cookie.php');
+	require_once(dirname(__FILE__) . '/../helpers/opengraph.php');
 	require_once(dirname(__FILE__) . '/../helpers/time.php');
 	require_once(dirname(__FILE__) . '/../helpers/morse.php');
 	require_once(dirname(__FILE__) . '/../helpers/base64.php');
@@ -43,8 +44,14 @@
 		{
 			parent::init();
 
-			$this->description = l('Personal website of Claudio Procida, software engineer, web and mac developer, hosting my software, my projects and my weblog');
+			$this->description = l('Personal website of Claudio Procida, hosting my projects and my blog');
 			$this->credentials = $this->get_credentials();
+			$this->opengraph = new OpenGraph(array(
+				'description' => $this->description,
+				'image' => sprintf('http://%s/assets/images/claudio.jpg', $_SERVER['HTTP_HOST']),
+				'title' => $this->title,
+				'url' => $this->url_to_myself(FALSE),
+			));
 
 			//$this->before_filter('spot_people');
 		}
