@@ -51,6 +51,7 @@
 				'image' => sprintf('http://%s/assets/images/claudio.jpg', $_SERVER['HTTP_HOST']),
 				'title' => $this->title,
 				'url' => $this->url_to_myself(FALSE),
+				'type' => 'website',
 			));
 
 			//$this->before_filter('spot_people');
