@@ -50,5 +50,6 @@
 
 <h2>Reach out</h2>
 <p>
-	If you like what I do and want to drop me a line, feel free to contact me. I love to know what people think about what I do.
+	If you like what I do and want to drop me a line, feel free to <?php $this->link_to('contact me', array('controller' => 'contact')); ?>.
+	I love to know what people think about what I do.
 </p>
