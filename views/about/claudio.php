@@ -16,6 +16,12 @@
 	I like unselfish friendship. Knowing different cultures and traditions. Expressing thoughts and ideas. Traveling, and enjoying the journey.
 </p>
 <p>
+	I truly believe in the value of the community, as a network of individuals to learn and be inspired from, and to work together to make
+	even the craziest ideas become real. I eagerly participate in local meetups, and often speak or mentor new speakers.
+	Over the years I came across and made friends with the most talented and brilliant individuals at meetups, conferences and events,
+	and am one of those who save for tickets for events just to be able to chat with fellow developers from all over the world.
+	Possibly in front of a beer :-D.
+<p>
 	I made this site as a container for everything I make: my blog containing a mix of technical articles, rants, and
 	a few short stories, my art, my photos and my travel diaries. And also the projects I started or I&rsquo;m contributing to,
 	and the code I write.
@@ -27,10 +33,11 @@
 	Catching up with the web development community, giving back the love.
 </p>
 <p>
-	From July 2008 to August 2015 I worked for IBM in Ireland across a few reorgs &mdashl; first in the Lotus brand,
-	then in the IBM Collaboration Solutions division, finally in the Enterprise Social Solutions division. During that time,
-	I developed enterprise social web applications with JavaScript, HTML and CSS and often dived in the guts of the platform coding with J2EE.
-	I went out giving talks to partners and customers, and participated into conferences.
+	From July 2008 to August 2015 I worked for IBM in Ireland in the Lotus brand, which was later rebranded IBM Collaboration Solutions and
+	subsequently Enterprise Social Solutions division. During that time, I led a team that developed web applications for IBM&rsquo;s flagship
+	enterprise social solution, IBM Connections. I worked with JavaScript, HTML and CSS and often dived in the guts of the platform coding
+	with J2EE. During my last year I was given the opportunity to set the direction of the front-end for the entire product,
+	I also went out giving talks to partners and customers, and participated into conferences, user groups, and STEM events.
 	I made great friends and created personal and professional bonds that last to day.
 </p>
 <p>
