@@ -7,33 +7,26 @@
 ?>
 		<style type="text/css">
 		</style>
-<?php
-	require(dirname(__FILE__) . "/../views/_scripts.php");
-?>
-		<script type="text/javascript">
-		</script>
 	</head>
 	<body>
-    <body>
   <?php
   //	require(dirname(__FILE__) . "/../views/_topbar.php");
   ?>
-      <header>
+		<header>
   <?php
   	require(dirname(__FILE__) . "/../views/_navbar.php");
   ?>
-      </header>
-      <main>
-        <div id="single-central" class="single-central page-tight">
-          <div class="center-column">
+		</header>
+		<main>
+			<div id="single-central" class="single-central page-tight">
+				<div class="center-column">
 <?php
 	// $this->render(array('partial' => 'navbar'));
 
 	print $this->content_for_layout;
 ?>
-          </div>
-        </div>
-      </div>
+				</div>
+			</div>
     </main>
     <footer>
 <?php

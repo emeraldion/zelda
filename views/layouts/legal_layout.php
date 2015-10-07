@@ -6,7 +6,6 @@
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<style type="text/css">
-		/*<![CDATA[*/
 			label.left-aligned
 			{
 				float: left;
@@ -27,29 +26,23 @@
 			{
 				content: "*";
 			}
-		/*]]>*/
 		</style>
-<?php
-	require(dirname(__FILE__) . "/../views/_scripts.php");
-?>
 	</head>
 	<body>
-    <body>
   <?php
   //	require(dirname(__FILE__) . "/../views/_topbar.php");
   ?>
-      <header>
+    <header>
   <?php
   	require(dirname(__FILE__) . "/../views/_navbar.php");
   ?>
-      </header>
-      <main>
-        <div id="single-central" class="single-central page-tight">
-          <div class="center-column">
+    </header>
+    <main>
+      <div id="single-central" class="single-central page-tight">
+        <div class="center-column">
 <?php
 	print $this->content_for_layout;
 ?>
-					</div>
 				</div>
 			</div>
 		</main>
