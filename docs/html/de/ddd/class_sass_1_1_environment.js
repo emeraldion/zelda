@@ -1,0 +1,25 @@
+var class_sass_1_1_environment =
+[
+    [ "Environment", "de/ddd/class_sass_1_1_environment.html#a0218891863cc545c2dcfda23f64248bc", null ],
+    [ "ADD_PROPERTY", "de/ddd/class_sass_1_1_environment.html#a9aeec28bc2d0a61b3f1e39da54847ddc", null ],
+    [ "del_global", "de/ddd/class_sass_1_1_environment.html#a9af89e549be2cef7abaabb8affe016f2", null ],
+    [ "del_local", "de/ddd/class_sass_1_1_environment.html#a12986cecb534fd70a6ef036cfc2e2711", null ],
+    [ "get_global", "de/ddd/class_sass_1_1_environment.html#ac8f1c568ea91688e9019ec5ddfdbf899", null ],
+    [ "get_local", "de/ddd/class_sass_1_1_environment.html#adb86aa563339cc52fa984d34cbc56cde", null ],
+    [ "global_env", "de/ddd/class_sass_1_1_environment.html#a7819cfe6c042cc312d9481953c0c3a08", null ],
+    [ "has", "de/ddd/class_sass_1_1_environment.html#a7fa4ea66303ad75877207a8ecc15e345", null ],
+    [ "has_global", "de/ddd/class_sass_1_1_environment.html#a0d221b95957e25028aafb7e1c94bb1f8", null ],
+    [ "has_lexical", "de/ddd/class_sass_1_1_environment.html#a20da12fe25713ed026dcdcda20c221c1", null ],
+    [ "has_local", "de/ddd/class_sass_1_1_environment.html#a091be2458efc17573640f82adf2ff692", null ],
+    [ "is_lexical", "de/ddd/class_sass_1_1_environment.html#ac6a771340b7f8bfdab67a16c3155dc9d", null ],
+    [ "is_root_scope", "de/ddd/class_sass_1_1_environment.html#a83d40f04851ef3e66b3285394e6b4c35", null ],
+    [ "link", "de/ddd/class_sass_1_1_environment.html#abf6a1e37bebce8016fab11b11ec5ef9b", null ],
+    [ "link", "de/ddd/class_sass_1_1_environment.html#a0e8bd65f24e11c7d71a2b69702cf0c35", null ],
+    [ "local_frame", "de/ddd/class_sass_1_1_environment.html#ae5024a369a7b13589fce3417da392b4d", null ],
+    [ "operator[]", "de/ddd/class_sass_1_1_environment.html#a394153105e351ef271ff579bd2cdbd77", null ],
+    [ "set_global", "de/ddd/class_sass_1_1_environment.html#ad6dd752bbe021f5c14fee7689db3b7f6", null ],
+    [ "set_lexical", "de/ddd/class_sass_1_1_environment.html#a5463a1dc0219897bcf6457560358005e", null ],
+    [ "set_local", "de/ddd/class_sass_1_1_environment.html#a70f7aa09dda72a42d8d671dbdeb54d50", null ],
+    [ "local_frame_", "de/ddd/class_sass_1_1_environment.html#a429ced311546358488479e8735e0d036", null ],
+    [ "mem", "de/ddd/class_sass_1_1_environment.html#ab88e9eae393176cae86ae6c43f66a495", null ]
+];

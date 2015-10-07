@@ -8,9 +8,6 @@ assets/images/**/*.*
 assets/images/**/**/*.*
 assets/images/**/**/**/*.*
 assets/images/**/**/**/**/*.*
-docs/html/*.*
-docs/html/**/*.*
-docs/html/**/**/*.*
 docs/html.zip
 openssl/*.pem
 config/db.passwords.txt

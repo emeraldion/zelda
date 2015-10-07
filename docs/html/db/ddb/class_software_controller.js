@@ -1,0 +1,27 @@
+var class_software_controller =
+[
+    [ "_init_software", "db/ddb/class_software_controller.html#a9f2f63b81c3616ca6f1f30aa987c88e2", null ],
+    [ "changelog", "db/ddb/class_software_controller.html#ac1ad5e6260353e97b5b8e29fcd50d1b7", null ],
+    [ "comments", "db/ddb/class_software_controller.html#a143959d62b6b6a71ffa74dd9be2fbccb", null ],
+    [ "development", "db/ddb/class_software_controller.html#abeff162fa1b3f5a5a2551c21fcdb8bc8", null ],
+    [ "donate", "db/ddb/class_software_controller.html#aeb263b7b49eec658c7f029544c2ea866", null ],
+    [ "download", "db/ddb/class_software_controller.html#a9422368b3447d2e775fd11b33b44c7a2", null ],
+    [ "download_stats", "db/ddb/class_software_controller.html#a774bb946cbad4668339e29b917e5de3e", null ],
+    [ "index", "db/ddb/class_software_controller.html#a149eb92716c1084a935e04a8d95f7347", null ],
+    [ "init", "db/ddb/class_software_controller.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
+    [ "instructions", "db/ddb/class_software_controller.html#a793ab1afa93e691bc1294092e52900df", null ],
+    [ "last_releases", "db/ddb/class_software_controller.html#adb33fe898563d4818f36ecbc07a9833d", null ],
+    [ "license", "db/ddb/class_software_controller.html#a918ebf81ed5c431a5c7349588d42b56f", null ],
+    [ "macosx", "db/ddb/class_software_controller.html#a537da3de560d572890f98c5393b7f8b8", null ],
+    [ "main", "db/ddb/class_software_controller.html#a51af30a60f9f02777c6396b8247e356f", null ],
+    [ "post_comment", "db/ddb/class_software_controller.html#a7b3fb798977773fbbb0bb7a14b07f0ec", null ],
+    [ "ratings", "db/ddb/class_software_controller.html#ad3d63245d0e2abfcb5667759ed771b5f", null ],
+    [ "redirect_to_software_page", "db/ddb/class_software_controller.html#af7ee2bd5d9f267feb43bfa716a91120c", null ],
+    [ "register", "db/ddb/class_software_controller.html#acc294a6cc8e69743746820e3d15e3f78", null ],
+    [ "releasenotes", "db/ddb/class_software_controller.html#a2c2b7e92bfd796ed224e13fc96debdcb", null ],
+    [ "show", "db/ddb/class_software_controller.html#a2b8e3779f5bd8c38f70307574859bd36", null ],
+    [ "user_quotes", "db/ddb/class_software_controller.html#aa16d7a294d50df08e4fae60fa495f79d", null ],
+    [ "widgets_versioncheck", "db/ddb/class_software_controller.html#afd549adc600dbde67911319ccc902599", null ],
+    [ "$mimetype", "db/ddb/class_software_controller.html#a8c2d63c81d985d381ab4e8dd106a5f24", null ],
+    [ "SOFTWARE_SAVE_DOWNLOADS", "db/ddb/class_software_controller.html#a6e7fd8dc8d8a7af0fd96f305032283b5", null ]
+];

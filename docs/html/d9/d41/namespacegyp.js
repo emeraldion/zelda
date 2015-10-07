@@ -1,0 +1,25 @@
+var namespacegyp =
+[
+    [ "common", "d7/df9/namespacegyp_1_1common.html", "d7/df9/namespacegyp_1_1common" ],
+    [ "common_test", "d5/d98/namespacegyp_1_1common__test.html", "d5/d98/namespacegyp_1_1common__test" ],
+    [ "easy_xml_test", "dc/d4c/namespacegyp_1_1easy__xml__test.html", "dc/d4c/namespacegyp_1_1easy__xml__test" ],
+    [ "flock_tool", "de/dd3/namespacegyp_1_1flock__tool.html", "de/dd3/namespacegyp_1_1flock__tool" ],
+    [ "generator", "d7/dc9/namespacegyp_1_1generator.html", "d7/dc9/namespacegyp_1_1generator" ],
+    [ "input", "d7/d88/namespacegyp_1_1input.html", "d7/d88/namespacegyp_1_1input" ],
+    [ "input_test", "da/d1c/namespacegyp_1_1input__test.html", "da/d1c/namespacegyp_1_1input__test" ],
+    [ "mac_tool", "d4/db6/namespacegyp_1_1mac__tool.html", "d4/db6/namespacegyp_1_1mac__tool" ],
+    [ "MSVSNew", "d4/dee/namespacegyp_1_1_m_s_v_s_new.html", "d4/dee/namespacegyp_1_1_m_s_v_s_new" ],
+    [ "MSVSProject", "d3/d2b/namespacegyp_1_1_m_s_v_s_project.html", "d3/d2b/namespacegyp_1_1_m_s_v_s_project" ],
+    [ "MSVSSettings", "d4/de2/namespacegyp_1_1_m_s_v_s_settings.html", "d4/de2/namespacegyp_1_1_m_s_v_s_settings" ],
+    [ "MSVSSettings_test", "d9/d2d/namespacegyp_1_1_m_s_v_s_settings__test.html", "d9/d2d/namespacegyp_1_1_m_s_v_s_settings__test" ],
+    [ "MSVSToolFile", "d9/d14/namespacegyp_1_1_m_s_v_s_tool_file.html", "d9/d14/namespacegyp_1_1_m_s_v_s_tool_file" ],
+    [ "MSVSUserFile", "dd/d27/namespacegyp_1_1_m_s_v_s_user_file.html", "dd/d27/namespacegyp_1_1_m_s_v_s_user_file" ],
+    [ "MSVSVersion", "d6/d1f/namespacegyp_1_1_m_s_v_s_version.html", "d6/d1f/namespacegyp_1_1_m_s_v_s_version" ],
+    [ "ninja_syntax", "d7/da3/namespacegyp_1_1ninja__syntax.html", "d7/da3/namespacegyp_1_1ninja__syntax" ],
+    [ "ordered_dict", "d3/d34/namespacegyp_1_1ordered__dict.html", "d3/d34/namespacegyp_1_1ordered__dict" ],
+    [ "simple_copy", "d4/df4/namespacegyp_1_1simple__copy.html", "d4/df4/namespacegyp_1_1simple__copy" ],
+    [ "win_tool", "de/d19/namespacegyp_1_1win__tool.html", "de/d19/namespacegyp_1_1win__tool" ],
+    [ "xcode_emulation", "d7/d84/namespacegyp_1_1xcode__emulation.html", "d7/d84/namespacegyp_1_1xcode__emulation" ],
+    [ "xml_fix", "d5/d44/namespacegyp_1_1xml__fix.html", "d5/d44/namespacegyp_1_1xml__fix" ],
+    [ "RegeneratableOptionParser", "d0/dd0/classgyp_1_1_regeneratable_option_parser.html", "d0/dd0/classgyp_1_1_regeneratable_option_parser" ]
+];
