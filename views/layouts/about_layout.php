@@ -12,7 +12,6 @@
 				top: 127px;
 				left: 240px;
 				cursor: pointer;
-				\cursor: hand;
 			}
 		</style>
 <?php

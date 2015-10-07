@@ -73,7 +73,7 @@
 		// flush to screen
 ?>
 	<div class="error-outer">
-	<div id="flash" class="<?php echo $_SESSION["flash"]["type"]; ?>">
+	<div id="flash" role="alert" class="<?php echo $_SESSION["flash"]["type"]; ?>">
 		<?php echo $_SESSION["flash"]["message"]; ?>
 		[<?php print a(l('hide'), array('href' => '#', 'onclick' => "$('#flash').css('display','none')")); ?>]
 	</div>

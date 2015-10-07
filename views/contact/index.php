@@ -14,11 +14,11 @@
 			<form id="emailform" action="<?php echo $this->make_relative_url(array('action' => 'send')); ?>" method="post">
 				<p class="form-left">
 					<label class="left-aligned required" for="autore"><?php echo l("Name"); ?></label>
-					<input class="labeled" type="text" name="name" id="autore" size="24" value="<?php echo $this->credentials['realname']; ?>" />
+					<input class="labeled" type="text" aria-required="true" name="name" id="autore" size="24" value="<?php echo $this->credentials['realname']; ?>" />
 				</p>
 				<p class="form-left">
 					<label class="left-aligned required" for="email"><?php echo l("Email"); ?></label>
-					<input class="labeled email required" type="text" name="email" id="email" size="24" value="<?php echo $this->credentials['email']; ?>" />
+					<input class="labeled email required" aria-required="true" type="text" name="email" id="email" size="24" value="<?php echo $this->credentials['email']; ?>" />
 				</p>
 				<p class="form-left">
 					<label class="left-aligned" for="URL"><?php echo l("Website"); ?></label>
@@ -56,7 +56,7 @@
 							echo Antispam::$first_operand; ?> +
 						<?php echo Antispam::$second_operand; ?> = ?
 					</label>
-					<input type="text" name="antispam_math_result" id="f_antispam_math_result" size="3" />
+					<input type="text" aria-required="true" name="antispam_math_result" id="f_antispam_math_result" size="3" />
 				</p>
 				<p class="lighter padded-to-label">
 					<?php echo l("An asterisk (*) denotes a required field."); ?>
@@ -64,6 +64,7 @@
 				<p class="form-left padded-to-label">
 					<input type="hidden" name="subject" value="<?php echo @$_REQUEST["subject"]; ?>" />
 					<input type="submit" name="submit" id="submit" value="<?php echo l("Send"); ?>" />
+					<!--input type="reset" name="reset" id="reset" value="<?php echo l("Reset"); ?>" /-->
 				</p>
 			</form>
 		</div>

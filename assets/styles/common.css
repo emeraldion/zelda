@@ -214,3 +214,24 @@ textarea.error
 {
 	background: #aaa none !important;
 }
+
+label.left-aligned
+{
+	float: left;
+	display: block;
+	width: 50px;
+	text-align:right;
+	margin-right: 10px;
+}
+.labeled
+{
+	margin-left: 60px;
+}
+.padded-to-label
+{
+	padding-left: 60px;
+}
+label.required:after
+{
+	content: "*";
+}

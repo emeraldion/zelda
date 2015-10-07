@@ -243,21 +243,33 @@ input[type=button],
 input[type=submit],
 input[type=reset],
 textarea {
-  margin: 0 0.5em 0 0; }
+  margin: 0 0.5em 0 0;
+  font-size: 12pt; }
 
 input[type=text],
 input[type=password],
 textarea {
   background-color: #fff;
-  padding: 2px;
+  padding: 6px;
   border: 1px solid #578; }
+  input[type=text] .labeled,
+  input[type=password] .labeled,
+  textarea .labeled {
+    width: 18em; }
 
 input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus {
-  background-color: #f0f3fa;
-  padding: 2px;
-  border: 1px solid #578; }
+  background-color: #f0f3fa; }
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  background-color: #0084b4;
+  border-radius: 4px;
+  border: 1px solid #0084b4;
+  color: white;
+  padding: 10px 30px; }
 
 image.picture {
   padding: 5px !important;
@@ -981,6 +993,25 @@ header {
     top: -75px;
     opacity: .3; }
 
+label.left-aligned {
+  float: none; }
+
+.padded-to-label {
+  padding-left: 0; }
+
+.labeled {
+  margin-left: 0; }
+
+.error-outer {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  height: 100px; }
+
+#flash, #flash.message {
+  margin: 0; }
+
 @media screen and (min-width: 768px) {
   header nav {
     float: right;
@@ -995,7 +1026,9 @@ header {
     main .central,
     main .single-central {
       padding: 60px 0 60px 30px;
-      margin-top: 0; } }
+      margin-top: 0; }
+  .error-outer {
+    top: 250px; } }
 
 @media screen and (min-width: 1400px) {
   #center-column, .center-column {

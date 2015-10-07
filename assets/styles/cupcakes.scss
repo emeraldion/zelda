@@ -266,28 +266,41 @@ color: #ccc;
 #right-column fieldset p {
 text-align: center;
 }
+
 input[type=text],
-  input[type=password],
-  input[type=button],
-  input[type=submit],
-  input[type=reset],
+input[type=password],
+input[type=button],
+input[type=submit],
+input[type=reset],
   textarea {
-margin: 0 0.5em 0 0;
+    margin: 0 0.5em 0 0;
+    font-size: 12pt;
 }
 input[type=text],
 input[type=password],
   textarea {
 background-color: #fff;
-padding: 2px;
+padding: 6px;
 border: 1px solid #578;
+  .labeled {
+    width: 18em;
+  }
 }
 input[type=text]:focus,
 input[type=password]:focus,
   textarea:focus {
 background-color: #f0f3fa;
-padding: 2px;
-border: 1px solid #578;
 }
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  background-color: $dark-blue;
+  border-radius: 4px;
+  border: 1px solid $dark-blue;
+  color: white;
+  padding: 10px 30px;
+}
+
 image.picture {
 padding: 5px !important;
 background-color: #c5efd4;
@@ -1121,6 +1134,28 @@ header {
   }
 }
 
+label.left-aligned {
+  float: none;
+}
+.padded-to-label {
+  padding-left: 0;
+}
+.labeled {
+  margin-left: 0;
+}
+
+.error-outer {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+#flash, #flash.message {
+  margin: 0;
+}
+
 @media screen and (min-width: 768px) {
   header {
     nav {
@@ -1144,6 +1179,10 @@ header {
       padding: 60px 0 60px 30px;
       margin-top: 0;
     }
+  }
+
+  .error-outer {
+    top: 250px;
   }
 }
 
