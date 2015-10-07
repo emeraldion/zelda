@@ -946,6 +946,14 @@ th.nav a.orderup {
 a, header {
   transition-duration: .5s; }
 
+main {
+  padding-top: 350px;
+  background: transparent url(/assets/images/cupcakes/header_bg.jpg) repeat-x 0 -250px;
+  background-attachment: fixed; }
+
+.central, .single-central {
+  background-color: #fff; }
+
 header {
   position: absolute;
   width: 100%;
@@ -961,32 +969,20 @@ header {
   background: linear-gradient(to bottom, #d62475 0%, #d6116b 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bright-pink', endColorstr='#d6116b',GradientType=0 );
   box-shadow: 0 0 5px #000; }
-
-main {
-  padding-top: 350px;
-  background: transparent url(/assets/images/cupcakes/header_bg.jpg) repeat-x 0 -250px;
-  background-attachment: fixed; }
-
-.central, .single-central {
-  background-color: #fff; }
-
-header nav {
-  float: none; }
-
-header h1 {
-  color: #f0f0f0;
-  font-size: 32pt;
-  margin: 10px 20px;
-  padding: 0;
-  text-align: center; }
-
-header.headroom--pinned {
-  position: fixed;
-  top: 0; }
-
-header.headroom--unpinned {
-  top: -75px;
-  opacity: .3; }
+  header nav {
+    float: none; }
+  header h1 {
+    color: #f0f0f0;
+    font-size: 32pt;
+    margin: 10px 20px;
+    padding: 0;
+    text-align: center; }
+  header.headroom--pinned {
+    position: fixed;
+    top: 0; }
+  header.headroom--unpinned {
+    top: -75px;
+    opacity: .3; }
 
 @media screen and (min-width: 768px) {
   header nav {

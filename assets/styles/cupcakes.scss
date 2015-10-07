@@ -1072,23 +1072,6 @@ a, header {
   transition-duration: .5s;
 }
 
-header {
-  position: absolute;
-width: 100%;
-z-index: 10;
-top: 0;
-opacity: 1;
-background: $bright-pink;
-background: -moz-linear-gradient(top, $bright-pink 0%, #d6116b 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$bright-pink), color-stop(100%,#d6116b));
-background: -webkit-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
-background: -o-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
-background: -ms-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
-background: linear-gradient(to bottom, $bright-pink 0%,#d6116b 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bright-pink', endColorstr='#d6116b',GradientType=0 );
-box-shadow: 0 0 5px #000;
-}
-
 main {
   padding-top: 350px;
   background: transparent url(/assets/images/cupcakes/header_bg.jpg) repeat-x 0 -250px;
@@ -1098,35 +1081,54 @@ main {
   background-color: #fff;
 }
 
-header nav {
-  float: none;
-}
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  opacity: 1;
+  background: $bright-pink;
+  background: -moz-linear-gradient(top, $bright-pink 0%, #d6116b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$bright-pink), color-stop(100%,#d6116b));
+  background: -webkit-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
+  background: -o-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
+  background: -ms-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
+  background: linear-gradient(to bottom, $bright-pink 0%,#d6116b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bright-pink', endColorstr='#d6116b',GradientType=0 );
+  box-shadow: 0 0 5px #000;
 
-header h1 {
-  color: #f0f0f0;
-  font-size: 32pt;
-  margin: 10px 20px;
-  padding: 0;
-  text-align: center;
-}
+  nav {
+    float: none;
+  }
 
-header.headroom--pinned {
+  h1 {
+    color: #f0f0f0;
+    font-size: 32pt;
+    margin: 10px 20px;
+    padding: 0;
+    text-align: center;
+  }
+
+  &.headroom--pinned {
     position: fixed;
     top: 0;
-}
-header.headroom--unpinned {
+  }
+  &.headroom--unpinned {
     top: -75px;
     opacity: .3;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  header nav {
-    float: right;
-    margin: -40px 10px 0 0;
-  }
+  header {
+    nav {
+      float: right;
+      margin: -40px 10px 0 0;
+    }
 
-  header h1 {
-    text-align: inherit;
+    h1 {
+      text-align: inherit;
+    }
   }
 }
 
