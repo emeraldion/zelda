@@ -8,6 +8,10 @@
 		<link href="/assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
 		<style type="text/css">
 		</style>
+		<?php
+			require(dirname(__FILE__) . "/../views/_scripts.php");
+		?>
+		<script type="text/javascript" src="/assets/javascript/backend/backend.js"></script>
 	</head>
 	<body>
 <?php
@@ -35,9 +39,5 @@
 	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
 		</footer>
-<?php
-	require(dirname(__FILE__) . "/../views/_scripts.php");
-?>
-	<script type="text/javascript" src="/assets/javascript/backend/backend.js"></script>
 	</body>
 </html>

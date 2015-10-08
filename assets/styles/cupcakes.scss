@@ -101,6 +101,9 @@ margin-bottom: 4em;
 .prev_next {
     margin-bottom: 2em;
     height: 1em;
+    .fwd {
+      float: right;
+    }
 }
 
 a.top,

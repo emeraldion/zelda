@@ -56,6 +56,8 @@ body {
 .prev_next {
   margin-bottom: 2em;
   height: 1em; }
+  .prev_next .fwd {
+    float: right; }
 
 a.top,
 a.fwd,

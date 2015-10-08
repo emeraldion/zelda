@@ -3,7 +3,7 @@
 	if (($next = $this->article->next()) !== NULL)
 	{
 ?>
-	<a class="fwd" style="float:right"
+	<a class="fwd"
 		href="<?php print $next->permalink(); ?>?trk=next"><?php print $next->title; ?></a>
 <?php
 	}
