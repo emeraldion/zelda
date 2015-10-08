@@ -1,4 +1,4 @@
-<div class="prev_next" style="margin-bottom:2em;height:1em">
+<div class="prev_next">
 <?php
 	if (($next = $this->article->next()) !== NULL)
 	{

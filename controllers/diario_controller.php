@@ -12,6 +12,8 @@
 	require_once(dirname(__FILE__) . "/../helpers/wikipedia.php");
 	require_once(dirname(__FILE__) . "/../helpers/diario_comment_email.php");
 
+	define(PAGE_SIZE, '10');
+
 	/**
 	 *	@class DiarioController
 	 *	@short Controller for the Diario blog.
@@ -46,7 +48,10 @@
 			}
 			// A static class method would be infinitely better...
 			$article = new DiarioPost();
-			$this->articles = $article->find_all(array('where_clause' => "`status` = 'pubblicato'", 'order_by' => '`created_at` DESC', 'limit' => '10', 'start' => @$_REQUEST['start']));
+			$this->articles = $article->find_all(array('where_clause' => "`status` = 'pubblicato'", 'order_by' => '`created_at` DESC', 'limit' => PAGE_SIZE, 'start' => @$_REQUEST['start']));
+
+			if (count($this->articles) <= PAGE_SIZE)
+				$this->next_start = @$_REQUEST['start'] + PAGE_SIZE;
 
 			if (isset($_REQUEST['layout']) &&
 				$_REQUEST['layout'] == 'false')

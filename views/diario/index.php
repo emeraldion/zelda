@@ -83,6 +83,7 @@
 </div>
 <?php
 		}
+		$this->render(array('partial' => 'prev_next_page'));
 	}
 	else
 	{
