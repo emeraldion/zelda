@@ -11,6 +11,10 @@ $dark-blue: #0084b4;
 $white: #fff;
 $black: #000;
 
+$light-gray: #eee;
+$mid-gray: #999;
+$dark-gray: #666;
+
 // Mixins
 @mixin fira($font-size) {
   font-family: 'Fira Sans', Arial, sans-serif;
@@ -44,6 +48,7 @@ background-color: #ccc;
 body {
 margin: 0;
 position: relative;
+height: 100%;
 /*background: #fff url("/assets/images/minimal/body.png") repeat-y center center;*/
 }
 #external,
@@ -538,7 +543,7 @@ border: 1px solid #bed4ff;
 background-color: transparent;
 }
 .comment-odd {
-background-color: #ffebee;
+background-color: #edf7fd;
 }
 
 .comment-awaiting-moderation {
@@ -1156,6 +1161,99 @@ label.left-aligned {
   margin: 0;
 }
 
+@font-face {
+    font-family: icomoon;
+    src: url(/assets/fonts/IcoMoon-Free.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+footer {
+  background-color: $light-gray;
+
+  .footer {
+    .social-icons {
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-family: icomoon;
+        display: inline-block;
+        font-size: 18pt;
+        padding: 10px;
+
+        a {
+          color: $mid-gray;
+          text-decoration: none;
+
+          &.github {
+            &::before {
+              content: '\eab2';
+            }
+            &:hover {
+              color: green;
+            }
+          }
+
+          &.twitter {
+            &::before {
+              content: '\ea91';
+            }
+            &:hover {
+              color: $medium-blue;
+            }
+          }
+
+          &.instagram {
+            &::before {
+              content: '\ea90';
+            }
+            &:hover {
+              color: brown;
+            }
+          }
+
+          &.codepen {
+            &::before {
+              content: '\eae4';
+            }
+            &:hover {
+              color: $black;
+            }
+          }
+
+          &.linkedin {
+            &::before {
+              content: '\eac9';
+            }
+            &:hover {
+              color: $dark-blue;
+            }
+          }
+
+          &.flickr {
+            &::before {
+              content: '\eaa1';
+            }
+            &:hover {
+              color: $medium-pink;
+            }
+          }
+
+          &.youtube {
+            &::before {
+              content: '\ea97';
+            }
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   header {
     nav {
@@ -1178,6 +1276,19 @@ label.left-aligned {
     .single-central {
       padding: 60px 0 60px 30px;
       margin-top: 0;
+    }
+  }
+
+  footer {
+    background-color: $light-gray;
+
+    .footer {
+      .social-icons {
+
+        li {
+          font-size: 24pt;
+        }
+      }
     }
   }
 

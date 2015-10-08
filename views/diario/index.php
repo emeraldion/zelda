@@ -30,8 +30,8 @@
 	<?php echo l('Written by'); ?>
 	<a href="<?php echo $article->diario_author->permalink(); ?>"><?php echo ucwords($article->author); ?></a>
 	<?php echo l('on'); ?>
-	<?php echo $article->human_readable_date(); ?>
-	(<?php printf(l('%s readings'), $article->readings); ?>)
+	<?php echo $article->human_readable_date(); ?>,
+	<?php printf(l('read %s times'), $article->readings); ?>.
 </div>
 <p>
 <?php
@@ -39,7 +39,7 @@
 ?>
 </p>
 <div class="lighter">
-	<?php echo l('Tag:'); ?>
+	<?php echo l('Tagged with:'); ?>
 
 <?php
 			$tags = $article->tags;

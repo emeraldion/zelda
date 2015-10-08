@@ -1,17 +1,23 @@
 <?php
 	$navbar_sections = array(
+/*
 		array('title' => localized('Home'),
 			"url" => $this->url_to(array('controller' => 'home'))),
+*/
+		array('title' => localized('Blog'),
+			"url" => $this->url_to(array('controller' => 'diario'))),
+		array('title' => localized('Projects'),
+			"url" => $this->url_to(array('controller' => 'projects'))),
 		/*
 		array('title' => localized('Software'),
 			"url" => $this->url_to(array('controller' => 'software'))),
 		array('title' => localized("Services"),
 			"url" => $this->url_to(array('controller' => 'services'))),
-		*/
 		array('title' => localized('Blog'),
 			"url" => $this->url_to(array('controller' => 'diario'))),
-		array('title' => localized('Projects'),
-			"url" => $this->url_to(array('controller' => 'projects'))),
+			*/
+		array('title' => localized('Photos'),
+			"url" => $this->url_to(array('controller' => 'photos'))),
 		array('title' => localized('About'),
 			"url" => $this->url_to(array('controller' => 'about'))),
 		);

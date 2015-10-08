@@ -42,7 +42,7 @@
 ?>
 </div>
 <!--div class="lighter">
-	<?php echo l('Tag:'); ?>
+	<?php echo l('Tagged with:'); ?>
 
 <?php
 	// $tags = $this->article->tags;

@@ -21,6 +21,7 @@ background-color: #ccc;
 body {
   margin: 0;
   position: relative;
+  height: 100%;
   /*background: #fff url("/assets/images/minimal/body.png") repeat-y center center;*/ }
 
 #external,
@@ -485,7 +486,7 @@ form {
   background-color: transparent; }
 
 .comment-odd {
-  background-color: #ffebee; }
+  background-color: #edf7fd; }
 
 .comment-awaiting-moderation {
   background-color: #EBEEFB;
@@ -1012,6 +1013,54 @@ label.left-aligned {
 #flash, #flash.message {
   margin: 0; }
 
+@font-face {
+  font-family: icomoon;
+  src: url(/assets/fonts/IcoMoon-Free.ttf);
+  font-weight: 400;
+  font-style: normal; }
+
+footer {
+  background-color: #eee; }
+  footer .footer .social-icons {
+    margin: 0;
+    padding: 0; }
+    footer .footer .social-icons li {
+      font-family: icomoon;
+      display: inline-block;
+      font-size: 18pt;
+      padding: 10px; }
+      footer .footer .social-icons li a {
+        color: #999;
+        text-decoration: none; }
+        footer .footer .social-icons li a.github::before {
+          content: '\eab2'; }
+        footer .footer .social-icons li a.github:hover {
+          color: green; }
+        footer .footer .social-icons li a.twitter::before {
+          content: '\ea91'; }
+        footer .footer .social-icons li a.twitter:hover {
+          color: #54d1ff; }
+        footer .footer .social-icons li a.instagram::before {
+          content: '\ea90'; }
+        footer .footer .social-icons li a.instagram:hover {
+          color: brown; }
+        footer .footer .social-icons li a.codepen::before {
+          content: '\eae4'; }
+        footer .footer .social-icons li a.codepen:hover {
+          color: #000; }
+        footer .footer .social-icons li a.linkedin::before {
+          content: '\eac9'; }
+        footer .footer .social-icons li a.linkedin:hover {
+          color: #0084b4; }
+        footer .footer .social-icons li a.flickr::before {
+          content: '\eaa1'; }
+        footer .footer .social-icons li a.flickr:hover {
+          color: #cb1065; }
+        footer .footer .social-icons li a.youtube::before {
+          content: '\ea97'; }
+        footer .footer .social-icons li a.youtube:hover {
+          color: red; }
+
 @media screen and (min-width: 768px) {
   header nav {
     float: right;
@@ -1027,6 +1076,10 @@ label.left-aligned {
     main .single-central {
       padding: 60px 0 60px 30px;
       margin-top: 0; }
+  footer {
+    background-color: #eee; }
+    footer .footer .social-icons li {
+      font-size: 24pt; }
   .error-outer {
     top: 250px; } }
 

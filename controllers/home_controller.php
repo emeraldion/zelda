@@ -1,24 +1,23 @@
 <?php
-	require_once("eme_controller.php");
+	require_once("diario_controller.php");
 
 	/**
 	 *	@class HomeController
 	 *	@short Controller for the Homepage of the website.
 	 */
-	class HomeController extends EmeController
+	class HomeController extends DiarioController
 	{
+		/**
+		 *	@fn init
+		 *	@short Initialization method for the Controller.
+		 *	@details This method simply redirects to the Diario controller.
+		 */
 		protected function init()
 		{
 			// Call parent's init method
 			parent::init();
-			
-			$this->before_filter(array('log_visit', 'block_ip'));
-			$this->after_filter('shrink_html');
-			$this->after_filter('compress');
-		}
-		
-		public function index()
-		{
+
+			$this->redirect_to(array('controller' => 'diario', 'action' => @$_REQUEST['action'], 'id' => @$_REQUEST['id']));
 		}
 	}
 ?>
