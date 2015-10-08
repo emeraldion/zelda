@@ -706,8 +706,8 @@ float: left;
 }
 */
 
-#footnotes:before {
-content: &#8212;
+#footnotes::before {
+content: '\8212';
 color: #aaa;
 }
 
@@ -1114,7 +1114,7 @@ header {
   background: -o-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
   background: -ms-linear-gradient(top, $bright-pink 0%,#d6116b 100%);
   background: linear-gradient(to bottom, $bright-pink 0%,#d6116b 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bright-pink', endColorstr='#d6116b',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62475', endColorstr='#d6116b',GradientType=0 );
   box-shadow: 0 0 5px #000;
 
   nav {
