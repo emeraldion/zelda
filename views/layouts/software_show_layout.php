@@ -5,12 +5,12 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
-		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?>" />
-		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?> .o. <?php print h($this->software->title); ?>" />
-		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software_comments', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(sprintf(l('Comments on %s'), $this->software->title)); ?>" />
-		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?>" />
-		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'id' => $this->software->id, 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge .o. <?php print h(l('Software')); ?> .o. <?php print h($this->software->title); ?>" />
-		<link href="<?php echo $this->url_to(array('controller' => 'sparkle', 'action' => 'index', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. <?php print h(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?> - <?php print h($this->software->title); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software_comments', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(sprintf(l('Comments on %s'), $this->software->title)); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'id' => $this->software->id, 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?> - <?php print h($this->software->title); ?>" />
+		<link href="<?php echo $this->url_to(array('controller' => 'sparkle', 'action' => 'index', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?>" />
 		<link href="/assets/styles/software/<?php echo $this->software->type; ?>/<?php echo $this->software->name; ?>.css" type="text/css" rel="stylesheet" />
 		<style type="text/css">
 		/*<![CDATA[*/

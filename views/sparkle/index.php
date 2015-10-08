@@ -1,5 +1,5 @@
 	<channel>
-		<title>Emeraldion Lodge .o. <?php echo utf8_encode(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?></title>
+		<title>Emeraldion Lodge - <?php echo utf8_encode(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?></title>
 		<link><?php echo $this->software->appcast_permalink(); ?></link>
 		<description><?php echo utf8_encode(l('Appcast for Sparkle automatic updates.')); ?></description>
 		<language>en</language>      

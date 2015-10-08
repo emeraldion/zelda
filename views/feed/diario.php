@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php echo utf8_encode(l('Diario')); ?></title>
+		<title>Emeraldion Lodge - <?php echo utf8_encode(l('Diario')); ?></title>
 		<link><?php print $this->feed_permalink(); ?></link>
 		<description><?php echo utf8_encode(l('Latest blog entries by Claudio Procida, Emeraldion Lodge.')); ?></description>
 		<language>en</language>

@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php echo utf8_encode(l('Diario')); ?></title>
+		<title>Emeraldion Lodge - <?php echo utf8_encode(l('Diario')); ?></title>
 		<link href="<?php print htmlentities($this->feed_permalink()); ?>" rel="self" type="application/atom+xml" />
 		<id><?php print $this->feed_permalink(); ?></id>
 		<generator>In house</generator>

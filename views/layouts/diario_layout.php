@@ -5,8 +5,8 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
-		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge .o. Diario RSS Feed" />
-		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge .o. Diario Atom Feed" />
+		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - Diario RSS Feed" />
+		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - Diario Atom Feed" />
 		<link href="/assets/opensearch/diario.xml" rel="search" type="application/opensearchdescription+xml" title="Emeraldion Lodge - Diario" />
 		<style type="text/css">
 			label.left-aligned

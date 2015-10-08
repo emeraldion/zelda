@@ -3,7 +3,7 @@
 	<?php $this->link_to(l('Diario RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
 </div>
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Blog'));
+	$this->set_title('Emeraldion Lodge - ' . l('Blog'));
 
 	$articles = $this->articles;
 	if (count($articles) > 0)

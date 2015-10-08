@@ -1,13 +1,13 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. Servizi');
+	$this->set_title('Emeraldion Lodge - Servizi');
 ?>
 <h2>Servizi</h2>
 <p>
-	Posseggo più di otto anni di esperienza nello sviluppo web.
+	Posseggo piï¿½ di otto anni di esperienza nello sviluppo web.
 	Quando iniziai, esisteva soltanto l&rsquo;HTML e delle strane immagini di sfondo ripetute.
 	Da allora ho assistito alla nascita di linguaggi, standard, strumenti e mode.
 	Queste cose passano.
-	Ciò che davvero importa è una progettazione orientata ai requisiti,
+	Ciï¿½ che davvero importa ï¿½ una progettazione orientata ai requisiti,
 	pratiche di programmazione ottime e l&rsquo;uso di standard solidi e aggiornati.
 </p>
 
@@ -15,14 +15,14 @@
 <p>
 	I miei servizi spaziano dalla progettazione e lo sviluppo da zero di applicazioni web
 	per le PMI, siti internet/intranet aziendali o personali, allo sviluppo di soluzioni software personalizzate.
-	Sono molto ferrato nello sviluppo LAMP, padroneggio Javascript con eccellente abilità in AJAX.
-	Il mio linguaggio principale per il web è il PHP, ma non disdegno altre tecnologie come Java, Ruby etc.
+	Sono molto ferrato nello sviluppo LAMP, padroneggio Javascript con eccellente abilitï¿½ in AJAX.
+	Il mio linguaggio principale per il web ï¿½ il PHP, ma non disdegno altre tecnologie come Java, Ruby etc.
 </p>
 
 <h2>Sviluppo software Cocoa</h2>
 <p>
-	Sono particolarmente bravo nello sviluppo Cocoa per il Mac. Dal 2005 ad oggi, ho scritto più di 10.000
-	linee di codice che gira ogni giorno su più di <?php
+	Sono particolarmente bravo nello sviluppo Cocoa per il Mac. Dal 2005 ad oggi, ho scritto piï¿½ di 10.000
+	linee di codice che gira ogni giorno su piï¿½ di <?php
 	
 		$count = SoftwareArtifact::total_downloads();
 		$count_rounded = 1000 * floor($count / 1000);
@@ -34,9 +34,9 @@
 
 <h2>Localizzazione italiana</h2>
 <p>
-	Ho già coordinato ed effettuato la localizzazione di svariate applicazioni da me sviluppate, ed
+	Ho giï¿½ coordinato ed effettuato la localizzazione di svariate applicazioni da me sviluppate, ed
 	inoltre ho contribuito a localizzare applicazioni di terzi in Italiano. Se avete bisogno di aiuto per localizzare la vostra
-	applicazione in Italiano, sarò lieto di aiutarvi.
+	applicazione in Italiano, sarï¿½ lieto di aiutarvi.
 </p>
 
 

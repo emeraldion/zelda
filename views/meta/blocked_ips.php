@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Meta') . ' .o. ' . l('Blocked IPs'));
+	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Blocked IPs'));
 ?>
 <script type="text/javascript">
 /*<![CDATA[*/

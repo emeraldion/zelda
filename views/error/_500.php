@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. 500 Internal Server Error');
+	$this->set_title('Emeraldion Lodge - 500 Internal Server Error');
 ?>
 <h1>500 Internal Server Error</h1>
 <p>

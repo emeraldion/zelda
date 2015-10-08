@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php printf(l('Comments on %s'), utf8_encode($this->article->title)) ?></title>
+		<title>Emeraldion Lodge - <?php printf(l('Comments on %s'), utf8_encode($this->article->title)) ?></title>
 		<link href="<?php print htmlentities($this->feed_permalink()); ?>" type="application/atom+xml" rel="self" />
 		<id><?php print $this->feed_permalink(); ?></id>
 		<generator>In house</generator>

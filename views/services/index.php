@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. Services');
+	$this->set_title('Emeraldion Lodge - Services');
 ?>
 <h2>Services</h2>
 <p>

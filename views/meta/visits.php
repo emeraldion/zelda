@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Meta') . ' .o. ' . l('Visits'));
+	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Visits'));
 ?>
 <script type="text/javascript">
 /*<![CDATA[*/

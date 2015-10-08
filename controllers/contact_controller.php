@@ -32,7 +32,7 @@
 		public function index()
 		{
 			//$this->redirect_to(array('action' => 'index', 'after' => 3));
-			$this->set_title("Emeraldion Lodge .o. " . l('Contact'));
+			$this->set_title("Emeraldion Lodge - " . l('Contact'));
 		}
 
 		/**

@@ -35,7 +35,7 @@
 				$this->redirect_to(array('controller' => 'diario', 'action' => 'read', 'id' => $_REQUEST['id']));
 			}
 			
-			$trackback = new TrackBack('Emeraldion Lodge .o. Diario', 'claudio');
+			$trackback = new TrackBack('Emeraldion Lodge - Diario', 'claudio');
 			
 			$pingback = new DiarioPingback();
 
@@ -68,7 +68,7 @@
 				$this->redirect_to(array('controller' => 'software', 'action' => 'show', 'id' => $_REQUEST['id']));
 			}
 			
-			$trackback = new TrackBack('Emeraldion Lodge .o. Software', 'claudio');
+			$trackback = new TrackBack('Emeraldion Lodge - Software', 'claudio');
 			
 			$pingback = new SoftwarePingback();
 

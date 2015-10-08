@@ -18,7 +18,7 @@
 		
 		function index()
 		{
-			$this->set_title("Emeraldion Lodge .o. Donate");
+			$this->set_title("Emeraldion Lodge - Donate");
 		}
 	}
 ?>

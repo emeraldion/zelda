@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Home'));
+	$this->set_title('Emeraldion Lodge - ' . l('Home'));
 ?>
 <div class="section">
 	<h2><?php echo l('Construction time again'); ?></h2>

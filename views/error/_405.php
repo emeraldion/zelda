@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. 405 Method Not Allowed');
+	$this->set_title('Emeraldion Lodge - 405 Method Not Allowed');
 ?>
 <h1>405 Method Not Allowed</h1>
 <p>

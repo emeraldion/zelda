@@ -1,5 +1,5 @@
 <?php
-	$this->set_title("Emeraldion Lodge .o. " . l('About the Emeraldion Lodge'));
+	$this->set_title("Emeraldion Lodge - " . l('About the Emeraldion Lodge'));
 ?>
 <div class="navbox">
 	<div class="clear">

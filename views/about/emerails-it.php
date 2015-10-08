@@ -1,5 +1,5 @@
 <?php
-	$this->set_title("Emeraldion Lodge .o. Informazioni su EmeRails");
+	$this->set_title("Emeraldion Lodge - Informazioni su EmeRails");
 ?>
 <div class="navbox">
 	<div class="clear"></div>

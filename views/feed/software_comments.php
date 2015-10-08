@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php printf(l('Comments on %s'), utf8_encode($this->software->title)) ?></title>
+		<title>Emeraldion Lodge - <?php printf(l('Comments on %s'), utf8_encode($this->software->title)) ?></title>
 		<link><?php print $this->feed_permalink(); ?></link>
 		<description><?php printf(l('Comments issued on %s by users.'), utf8_encode($this->software->title)); ?></description>
 		<language>en</language>

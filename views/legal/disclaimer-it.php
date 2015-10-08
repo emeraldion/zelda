@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. Termini d&rsquo;uso');
+	$this->set_title('Emeraldion Lodge - Termini d&rsquo;uso');
 ?>
 <h2>
 	Termini d&rsquo;uso

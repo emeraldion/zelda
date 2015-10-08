@@ -1,3 +1,6 @@
+<?php
+  $this->set_title('Emeraldion Lodge - ' . l('Projects'));
+?>
 <h2><a target="_blank" href="https://npmjs.org/package/learn-sass">learn-sass</a></h2>
 <h4>Learn SASS and SCSS through a workshopper adventure</h4>
 <p>

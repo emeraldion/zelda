@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Meta') . ' .o. ' . l('Queries'));
+	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Queries'));
 ?>
 <script type="text/javascript" src="/assets/javascript/meta/queries.js"></script>
 <script type="text/javascript">

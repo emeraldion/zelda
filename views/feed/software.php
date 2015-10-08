@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php echo l('Software'); ?></title>
+		<title>Emeraldion Lodge - <?php echo l('Software'); ?></title>
 		<link><?php print $this->feed_permalink(); ?></link>
 		<description><?php echo utf8_encode(l('Latest software releases by Emeraldion Lodge.')); ?></description>
 		<language>en</language>

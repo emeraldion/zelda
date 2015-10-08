@@ -96,7 +96,7 @@
 		 */
 		function lost_password()
 		{
-			$this->set_title("Emeraldion Lodge .o. " . l('Retrieve lost password'));
+			$this->set_title("Emeraldion Lodge - " . l('Retrieve lost password'));
 
 			Antispam::init_math_test();
 		}

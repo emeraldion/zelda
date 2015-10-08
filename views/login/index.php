@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Login'));
+	$this->set_title('Emeraldion Lodge - ' . l('Login'));
 ?>
 
 	<script type="text/javascript">

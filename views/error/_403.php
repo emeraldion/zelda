@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. 403 Forbidden');
+	$this->set_title('Emeraldion Lodge - 403 Forbidden');
 ?>
 <h1>403 Forbidden</h1>
 <p>

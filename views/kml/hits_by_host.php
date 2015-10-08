@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. ' . l('Meta') . ' .o. ' . l('Hits by host'));
+	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Hits by host'));
 	
 	$hosts = $this->hosts;
 	if (count($hosts) > 0)

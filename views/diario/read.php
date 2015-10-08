@@ -6,7 +6,7 @@
 	// $this->article->has_and_belongs_to_many('tags');
 	$comments = $this->article->diario_comments;
 
-	$this->set_title('Emeraldion Lodge .o. ' . l('Diario') . " .o. {$this->article->title}");
+	$this->set_title('Emeraldion Lodge - ' . l('Diario') . " - {$this->article->title}");
 
 	$this->render(array('partial' => 'prev_next'));
 ?>

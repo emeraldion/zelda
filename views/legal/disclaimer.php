@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. Disclaimer');
+	$this->set_title('Emeraldion Lodge - Disclaimer');
 ?>
 <h2>
 	Disclaimer

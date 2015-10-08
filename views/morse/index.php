@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. Morse Code');
+	$this->set_title('Emeraldion Lodge - Morse Code');
 ?>
 <script type="text/javascript">
 /*<![CDATA[*/

@@ -1,4 +1,4 @@
-		<title>Emeraldion Lodge .o. <?php echo l('Software'); ?></title>
+		<title>Emeraldion Lodge - <?php echo l('Software'); ?></title>
 		<link href="<?php print htmlentities($this->feed_permalink()); ?>" type="application/atom+xml" rel="self" />
 		<id><?php print $this->feed_permalink(); ?></id>
 		<updated><?php print date('c'); ?></updated>

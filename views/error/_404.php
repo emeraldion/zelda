@@ -1,5 +1,5 @@
 <?php
-	$this->set_title('Emeraldion Lodge .o. 404 Not Found');
+	$this->set_title('Emeraldion Lodge - 404 Not Found');
 ?>
 <h1>404 Not Found</h1>
 <p>
