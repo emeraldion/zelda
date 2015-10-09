@@ -30,26 +30,15 @@ html {
 margin: 0;
 color: #444;
 @include fira(12pt);
-/*background: #C3CED1 url("/assets/images/bradley/17032386.jpg") no-repeat center center;
-background-attachment: fixed*/;
 background-color: #fff;
 height: 100%;
-/*background: #fff url("/assets/images/minimal/bottom.png") no-repeat bottom center;*/
-}
-/*
-@media (min-width: 800px) {
-	html {
-background-color: #ccc;
-}
 
 }
-*/
 
 body {
 margin: 0;
 position: relative;
 height: 100%;
-/*background: #fff url("/assets/images/minimal/body.png") repeat-y center center;*/
 }
 #external,
 #external-small {
@@ -900,37 +889,38 @@ margin-right: 5px;
 
 table.list {
 border-collapse: collapse;
+  td {
+    border-top: none;
+    border-bottom: none;
+  }
 }
-table.list td {
-border-top: none;
-border-bottom: none;
-}
+
 th.nav {
-padding: 2px 4px;
-white-space: nowrap;
-border: 1px solid #ddd;
-background: #c5efd4 url("/assets/images/minimal/th-nav.png") repeat-x center center;
+  padding: 2px 4px;
+  white-space: nowrap;
+  border: 1px solid #ddd;
+  background: #c5efd4 url("/assets/images/minimal/th-nav.png") repeat-x center center;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #69f !important;
+    font-weight: normal;
+
+    &.orderdown,
+    &.orderup {
+      padding-left: 14px;
+    }
+  }
 }
+
 th.myorder {
 border-color: #c6c6c6;
 background: #ddd url("/assets/images/minimal/th-nav-myorder.png") repeat-x center center;
 color: #333 !important;
 text-shadow: 0 1px 1px #c5efd4;
 }
-th.nav a {
-display: block;
-text-decoration: none;
-color: #69f !important;
-font-weight: normal;
-}
-th.nav a.orderdown {
-padding-left: 14px;
-/*background: transparent url("/assets/images/orderdown.png") no-repeat center left;*/
-}
-th.nav a.orderup {
-padding-left: 14px;
-/*background: transparent url("/assets/images/orderup.png") no-repeat center left;*/
-}
+
 .row0 {
 }
 .row1 {
@@ -983,7 +973,6 @@ float: left;
 padding: 4px 10px;
 height: 15px;
 background: #c5efd4;
-/*background: #c5efd4 url("/assets/images/minimal/btn.png") repeat-x center center;*/
 }
 .btn:hover,
 .btn:active,
@@ -991,7 +980,6 @@ background: #c5efd4;
 .this-btn:hover {
 color: #333 !important;
 background: #ddd;
-/*background: #ddd url("/assets/images/minimal/btn-hover.png") repeat-x center center;*/
 text-shadow: 0 1px 1px #c5efd4;
 }
 .btnfirst {
@@ -1004,13 +992,10 @@ padding-right: 12px !important;
 }
 
 .minibtn-left {
-	/*float: left;*/
 	padding-left: 6px;
 margin-right: 2px;
-/*background: transparent url("/assets/images/minimal/minibtn-hover-leftend.png") no-repeat left center;*/
 }
 .minibtn-left:hover {
-/*background: transparent url("/assets/images/minimal/minibtn-leftend.png") no-repeat left center;*/
 }
 .minibtn-right {
 text-decoration: none !important;
@@ -1018,12 +1003,10 @@ font-size: 7pt;
 padding-right: 6px;
 color: #333 !important;
 text-shadow: 0 1px 1px #c5efd4;
-/*background: transparent url("/assets/images/minimal/minibtn-hover.png") repeat-x right center;*/
 }
 .minibtn-right:hover,
 .minibtn-right:active {
 color: #69f !important;
-/*background: transparent url("/assets/images/minimal/minibtn.png") repeat-x right center;*/
 }
 .service {
 white-space: normal !important;
@@ -1303,6 +1286,12 @@ footer {
 
   .error-outer {
     top: 250px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #center-column, .center-column {
+    max-width: 800px;
   }
 }
 
