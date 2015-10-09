@@ -10,6 +10,7 @@
 		<meta name="generator" content="EmeRails" />
 		<meta name="keywords" content="Claudio Procida, Eidos Workshop, Emeraldion, Emeraldion Lodge, Software Development, Web Applications, Web Development, Web2.0, AJAX, Windows, Linux, Apple, Mac OS X, Macintosh, Cocoa, Dashboard Widgets" />
 		<meta name="description" content="<?php echo $this->description; ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="//fonts.googleapis.com/css?family=Fira+Sans:300|Satisfy" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.8.0/styles/github-gist.min.css" />
 		<link href="/styles/common.css" rel="stylesheet" type="text/css" />
