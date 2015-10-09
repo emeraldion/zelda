@@ -32,13 +32,12 @@ color: #444;
 @include fira(12pt);
 background-color: #fff;
 height: 100%;
-
 }
 
 body {
-margin: 0;
-position: relative;
-height: 100%;
+  overflow: auto;
+  margin: 0;
+  height: 100%;
 }
 #external,
 #external-small {
@@ -330,13 +329,25 @@ background: #4a97ad; /* Old browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a97ad', endColorstr='#55adc7',GradientType=0 ); /* IE6-9 */
 }
 #navbar {
-padding: 0 20px;
-margin: 0;
+  padding: 0 20px;
+  margin: 0;
+
+  a:link,
+  a:visited {
+    color: #000;
+  }
+
+  a.navitem:link,
+  a.navitem:visited {
+    color: #f0f0f0;
+  }
+  a.navitem:hover,
+  a.navitem:active {
+    color: #baedff;
+  }
+
 }
-#navbar a:link,
-#navbar a:visited {
-color: #000;
-}
+
 #backend-navbar {
 margin: 0 0 20px 0;
 }
@@ -356,10 +367,9 @@ margin: 10px auto 0 auto;
 .navitem,
 .subnavitem {
 display: block;
-float: left;
 padding: 7px 20px 8px 20px;
 height: 25px;
-border-left: 2px solid $medium-pink;
+border-top: 2px solid $medium-pink;
 }
 .subnavitem {
 padding: 5px 10px;
@@ -379,22 +389,11 @@ background-color: #F0F2F3;
 -moz-box-shadow: inset 10px 10px 10px -10px #666, inset -10px -10px 10px -10px #666;
 box-shadow: inset 10px 10px 10px -10px #666, inset -10px -10px 10px -10px #666;
 }
-#navbar a.navitem:link,
-#navbar a.navitem:visited {
-color: #f0f0f0;
-}
-#navbar a.navitem:hover,
-#navbar a.navitem:active {
-  color: #baedff;
-}
+
 a.here:link,
 a.here:visited {
 color: #fff;
 text-decoration: underline;
-}
-.subnavfirst ,
-.navfirst {
-border: none;
 }
 .navfirst:before,
 .subnavfirst:before {
@@ -438,15 +437,18 @@ padding-left: 14px;
 #subnavbar,
 .subnavbar {
 display: block;
-height: 40px;
 padding: 0;
 }
 #navbar li,
 #subnavbar li,
 .subnavbar li {
 display: block;
-float: left;
 padding: 0;
+text-align: center;
+text-transform: uppercase;
+  a {
+    display: block;
+  }
 }
 #page #single-central ul.subnavbar {
 margin-top: 0;
@@ -1084,9 +1086,7 @@ a, header {
 }
 
 main {
-  background: transparent url(/assets/images/cupcakes/header_bg.jpg) repeat-x 2367px -250px;
-  background-attachment: fixed;
-  padding-top: 200px;
+  margin-top: 250px;
 }
 .central, .single-central {
   background-color: #fff;
@@ -1099,6 +1099,7 @@ header {
   z-index: 10;
   top: 0;
   opacity: 1;
+  overflow: auto;
   background: $bright-pink;
   background: -moz-linear-gradient(top, $bright-pink 0%, #d6116b 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$bright-pink), color-stop(100%,#d6116b));
@@ -1248,9 +1249,23 @@ footer {
 
 @media screen and (min-width: 768px) {
   header {
+
     nav {
       float: right;
       margin: -40px 10px 0 0;
+
+      #navbar {
+        height: 40px;
+
+        li {
+          float: left;
+          text-align: left;
+
+          a {
+            display: inline;
+          }
+        }
+      }
     }
 
     h1 {
@@ -1259,7 +1274,10 @@ footer {
   }
 
   main {
+    margin-top: 0;
     padding-top: 250px;
+    background: transparent url(/assets/images/cupcakes/header_bg.jpg) repeat-x 2367px -250px;
+    background-attachment: fixed;
     background-position-x: left;
 
     #central,
@@ -1282,6 +1300,18 @@ footer {
         }
       }
     }
+  }
+
+  .navitem,
+  .subnavitem {
+    float: left;
+    border-top: none;
+    border-left: 2px solid $medium-pink;
+  }
+
+  .subnavfirst ,
+  .navfirst {
+    border: none;
   }
 
   .error-outer {
