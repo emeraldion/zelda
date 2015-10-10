@@ -8,5 +8,13 @@
     ],
     "require": {
         "emeraldion/emerails": "dev-master"
+    },
+    "scripts": {
+      "post-package-install": [
+        "cp -a vendor/emeraldion/emerails/controllers/base_controller.php controllers",
+        "cp -a vendor/emeraldion/emerails/models/* models",
+        "cp -a vendor/emeraldion/emerails/helpers/* helpers",
+        "cp -a vendor/emeraldion/emerails/include/* include"
+      ]
     }
 }
