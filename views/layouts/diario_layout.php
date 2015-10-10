@@ -9,35 +9,6 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - Diario Atom Feed" />
 		<link href="/assets/opensearch/diario.xml" rel="search" type="application/opensearchdescription+xml" title="Emeraldion Lodge - Diario" />
 		<style type="text/css">
-			label.left-aligned
-			{
-				float: left;
-				display: block;
-				width: 80px;
-				text-align:right;
-				margin-right: 10px;
-			}
-			.labeled
-			{
-				margin-left: 90px;
-			}
-			.padded-to-label
-			{
-				padding-left: 90px;
-			}
-			label.required:after
-			{
-				content: "*";
-			}
-			.diario-gravatar
-			{
-				float: left;
-			}
-			.diario-comment-text
-			{
-				margin-left: 50px;
-				min-height: 48px;
-			}
 		</style>
 	</head>
 	<body>

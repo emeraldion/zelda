@@ -1,0 +1,259 @@
+/* Created: 29/09/07 15.23 by claudio */
+
+#search-results
+{
+	position: absolute;
+	margin-left: 0;
+	margin-top: -25px;
+	width: 266px;
+	display: none;
+}
+* html #search-results
+{
+	margin-left: -86px;
+}
+
+#searchbubble-top,
+#searchbubble-top-r,
+#searchbubble-top-l,
+.toolspane-top
+{
+	height: 24px;
+	width: 266px;
+	background: transparent url("/assets/images/searchbubble-top-r.png") no-repeat top center;
+}
+#searchbubble-top-l
+{
+	background-image: url("/assets/images/searchbubble-top-l.png") !important;
+}
+* html #searchbubble-top,
+* html .toolspane-top
+{
+	background-image: url("/assets/images/searchbubble-top_ie.gif");
+}
+
+#searchbubble-body,
+.toolspane-body
+{
+	width: 236px;
+	padding: 10px 15px;
+	background: transparent url("/assets/images/searchbubble-body.png") repeat-y top center;
+	color: #fff;
+}
+.toolspane-body
+{
+	padding: 0 15px;
+}
+* html #searchbubble-body,
+* html .toolspane-body
+{
+	background-image: url("/assets/images/searchbubble-body_ie.gif");
+}
+
+#searchbubble-bottom,
+.toolspane-bottom
+{
+	height: 21px;
+	width: 266px;
+	background: transparent url("/assets/images/searchbubble-bottom.png") no-repeat top center;
+}
+* html #searchbubble-bottom,
+* html .toolspane-bottom
+{
+	background-image: url("/assets/images/searchbubble-bottom_ie.gif");
+}
+
+#search-results a:link,
+#search-results a:visited,
+.toolspane a:link,
+.toolspane a:visited
+{
+	color: #fff;
+	text-shadow: none !important;
+}
+
+#search-results a:hover,
+#search-results a:active,
+.toolspane a:hover,
+.toolspane a:active
+{
+	color: #6af !important;
+	text-shadow: none !important;
+}
+
+#search-results .lighter { color: #aaa !important; }
+#search-results .search-result
+{
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+* html #search-results .search-result
+{
+	cursor: hand;
+}
+#search-results .search-result:hover { background-color: transparent; }
+
+#search-results .dismiss-search,
+.toolspane .dismiss-search
+{
+	float: left;
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 18px 0 0 13px;
+	background: transparent url("/assets/images/searchbubble-close.png") no-repeat center center;
+}
+* html #search-results .dismiss-search,
+* html .toolspane .dismiss-search
+{
+	margin-left: 8px;
+	background-image: url("/assets/images/searchbubble-close_ie.gif");
+}
+
+.toolspane-body p
+{
+	margin: 0;
+	line-height: 1.5;
+	padding: 0.25em 0;
+}
+
+.db-debug
+{
+	font-family: "Lucida Console", "Monaco", fixed;
+	border: 4px dashed #000;
+	background-color: lightyellow;
+	padding: 1em;
+	margin: 0.5em;
+	white-space: auto !important;
+}
+
+ #consacration
+ {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 9px;
+	margin-top: 3em;
+	color: #eee;
+}
+.localization-debug
+{
+	color: magenta !important;
+}
+
+/* Code highligthing */
+.code-method
+{
+	color: #f00;
+}
+.code-class
+{
+	color: #f60;
+}
+.code-delimiter,
+.code-operator
+{
+	color: #009;
+}
+.code-literal
+{
+	color: #0c0;
+}
+.code-array-key
+{
+	color: #909;
+}
+
+input.error,
+select.error,
+textarea.error
+{
+	border: 2px solid red !important;
+}
+
+.loading
+{
+	padding: 2em 3em;
+	text-align: center;
+	color: #999;
+}
+.loading > span
+{
+	background: transparent url('/assets/images/throbber_white.gif') no-repeat center left;
+	padding-left: 16px;
+}
+.highlighted
+{
+	background-color: #FDFF5B;
+	padding: 0 2px;
+	color: #444;
+}
+.missing-file
+{
+	padding-left: 22px;
+	background: transparent url('/assets/images/warning18.gif') no-repeat center left;
+}
+.approved
+{
+	padding-left: 15px;
+	background: transparent url('/assets/images/tick_icon.gif') no-repeat center left;
+}
+
+#software-list.iconic div.software-icon
+{
+	margin: 8px;
+}
+
+#software-list.iconic h3,
+#software-list.iconic ul.version,
+#software-list.iconic p.software-abstract
+{
+	display: none;
+}
+
+.is-spam
+{
+	background: #aaa none !important;
+}
+
+label.left-aligned {
+	display: block;
+}
+.labeled {
+}
+.padded-to-label {
+}
+label.required:after {
+	content: "*";
+}
+.form-left textarea {
+  width: 90%;
+}
+
+.diario-gravatar
+{
+  float: left;
+}
+.diario-comment-text
+{
+  margin-left: 50px;
+  min-height: 48px;
+}
+
+@media screen and (min-width: 768px) {
+  label.left-aligned {
+  	float: left;
+  	display: block;
+  	width: 80px;
+  	text-align:right;
+  	margin-right: 10px;
+  }
+  .labeled {
+  	margin-left: 90px;
+  }
+  .padded-to-label {
+  	padding-left: 90px;
+  }
+  .form-left textarea {
+    width: auto;
+  }
+}
