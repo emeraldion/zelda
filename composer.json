@@ -1,0 +1,12 @@
+{
+    "name": "emeraldion/zelda",
+    "repositories": [
+        {
+           "type": "vcs",
+           "url": "https://github.com/emeraldion/emerails"
+        }
+    ],
+    "require": {
+        "emeraldion/emerails": "dev-master"
+    }
+}
