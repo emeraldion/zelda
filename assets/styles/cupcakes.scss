@@ -1343,6 +1343,7 @@ footer {
 
 @media screen and (min-width: 1400px) {
   #center-column, .center-column {
+    max-width: none;
     width: 1024px;
   }
 }

@@ -238,6 +238,14 @@ label.required:after {
   margin-left: 50px;
   min-height: 48px;
 }
+.diario-text {
+  // img, iframe {
+  //   /* sigh */
+  //   width: 100% !important;
+  //   height: auto !important;
+  //   margin: 0 !important;
+  // }
+}
 
 @media screen and (min-width: 768px) {
   label.left-aligned {
@@ -255,5 +263,13 @@ label.required:after {
   }
   .form-left textarea {
     width: auto;
+  }
+  .diario-text {
+    // img, iframe {
+    //   /* sigh */
+    //   width: auto !important;
+    //   height: auto !important;
+    //   margin: auto !important;
+    // }
   }
 }
