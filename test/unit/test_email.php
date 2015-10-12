@@ -14,14 +14,14 @@
 		 */
 		public function test_is_valid()
 		{
-			ERAssertTrue('Email::is_valid("claudio@emeraldion.it")', 'Email address is valid');
-			ERAssertTrue('Email::is_valid("claudio@burgos.emeraldion.it")', 'Email address is valid');
-			ERAssertTrue('Email::is_valid("claudio.procida@burgos.emeraldion.it")', 'Email address is valid');
-			
-			ERAssertFalse('Email::is_valid("claudio_emeraldion.it")', 'Email address is NOT valid');
-			ERAssertFalse('Email::is_valid("claudio.it")', 'Email address is NOT valid');
+			$this->assertEquals(1, Email::is_valid("claudio@emeraldion.it"), 'Email address is valid');
+			$this->assertEquals(1, Email::is_valid("claudio@burgos.emeraldion.it"), 'Email address is valid');
+			$this->assertEquals(1, Email::is_valid("claudio.procida@burgos.emeraldion.it"), 'Email address is valid');
+
+			$this->assertFalse(Email::is_valid("claudio_emeraldion.it"), 'Email address is NOT valid');
+			$this->assertFalse(Email::is_valid("claudio.it"), 'Email address is NOT valid');
 		}
-		
+
 		/**
 		 *	@fn test_class
 		 *	@short Test for class.
@@ -29,10 +29,8 @@
 		public function test_class()
 		{
 			$t = new Email();
-			ERAssertOfClass($t, 'Email', 'Wrong class');
+			$this->assertInstanceOf('Email', $t, 'Wrong class');
 		}
 	}
-	
-	$testcase = new EmailUnitTest();
-	$testcase->run();
+
 ?>

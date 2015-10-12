@@ -16,23 +16,23 @@
 		{
 			$term = 'Valentino Rossi';
 			$lang = 'it';
-			
-			$wiki_url = '"http://it.wikipedia.org/wiki/Valentino_Rossi"';
-			
-			ERAssertEqual('Wikipedia::lookup_url("' . $term . '", "' . $lang . '")',
-				$wiki_url,
+
+			$wiki_url = 'http://it.wikipedia.org/wiki/Valentino_Rossi';
+
+			$this->assertEquals($wiki_url,
+				Wikipedia::lookup_url($term, $lang),
 				'Bad wikipedia URL');
-				
-			$term = 'La Coruña';
+
+			$term = 'La CoruÃ±a';
 			$lang = 'es';
-			
-			$wiki_url = '"http://es.wikipedia.org/wiki/La_Coru%C3%B1a"';
-			
-			ERAssertEqual('Wikipedia::lookup_url("' . $term . '", "' . $lang . '")',
-				$wiki_url,
-				'Bad wikipedia URL');			
+
+			$wiki_url = 'http://es.wikipedia.org/wiki/La_Coru%C3%83%C2%B1a';
+
+			$this->assertEquals($wiki_url,
+				Wikipedia::lookup_url($term, $lang),
+				'Bad wikipedia URL');
 		}
-		
+
 		/**
 		 *	@fn test_class
 		 *	@short Test for class.
@@ -40,10 +40,7 @@
 		public function test_class()
 		{
 			$t = new Wikipedia();
-			ERAssertOfClass($t, 'Wikipedia', 'Wrong class');
+			$this->assertInstanceOf('Wikipedia', $t, 'Wrong class');
 		}
 	}
-	
-	$testcase = new WikipediaUnitTest();
-	$testcase->run();
 ?>

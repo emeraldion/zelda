@@ -17,16 +17,16 @@
 			$email = 'claudio@emeraldion.it';
 			$size = 40;
 			$default = 'http://www.emeraldion.it/images/avatar.png';
-			
-			$grav_url = '"http://www.gravatar.com/avatar.php?gravatar_id=' . md5($email) .
+
+			$grav_url = 'http://www.gravatar.com/avatar.php?gravatar_id=' . md5($email) .
 				'&amp;default=' . urlencode($default) .
-				'&amp;size=' . $size . '"';
-			
-			ERAssertEqual('Gravatar::gravatar_url("' . $email . '", "' . $size . '", "' . $default . '")',
-				$grav_url,
+				'&amp;size=' . $size;
+
+			$this->assertEquals($grav_url,
+				Gravatar::gravatar_url($email, $size, $default),
 				'Bad gravatar URL');
 		}
-		
+
 		/**
 		 *	@fn test_class
 		 *	@short Test for class.
@@ -34,10 +34,10 @@
 		public function test_class()
 		{
 			$t = new Gravatar();
-			ERAssertOfClass($t, 'Gravatar', 'Wrong class');
+			$this->assertInstanceOf('Gravatar', $t, 'Wrong class');
 		}
 	}
-	
+
 	$testcase = new GravatarUnitTest();
 	$testcase->run();
 ?>

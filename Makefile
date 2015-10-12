@@ -5,6 +5,6 @@ update:
 install:
 	php ~/dev/tools/php-composer/composer.phar install
 test: install
-	vendor/bin/phpunit test/unit/test_antispam.php
+	vendor/bin/phpunit test/unit
 docs:
 	doxygen Doxyfile
