@@ -60,7 +60,4 @@
 			$this->assertInstanceOf('Time', $t, 'Wrong class');
 		}
 	}
-
-	$testcase = new TimeUnitTest();
-	$testcase->run();
 ?>

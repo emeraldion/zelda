@@ -37,7 +37,5 @@
 			$this->assertInstanceOf('Gravatar', $t, 'Wrong class');
 		}
 	}
-
-	$testcase = new GravatarUnitTest();
-	$testcase->run();
+	
 ?>
