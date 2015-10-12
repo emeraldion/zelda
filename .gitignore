@@ -22,3 +22,4 @@ views/software/**/**/*.php
 views/software/**/**/*.php5
 node_modules
 /vendor/
+composer.lock
