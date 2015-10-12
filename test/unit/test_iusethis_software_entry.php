@@ -7,19 +7,19 @@
 	 *	@class IusethisEntryUnitTest
 	 *	@short Test case for IusethisEntry model object.
 	 */
-	class IusethisEntryUnitTest extends UnitTest
-	{		
-		/**
-		 *	@fn test_class
-		 *	@short Test for class.
-		 */
-		public function test_class()
-		{
-			$t = new IusethisEntry();
-			ERAssertOfClass($t, 'IusethisEntry', 'Wrong class');
-		}
-	}
-	
-	$testcase = new IusethisEntryUnitTest();
-	$testcase->run();
+	// class IusethisEntryUnitTest extends UnitTest
+	// {
+	// 	/**
+	// 	 *	@fn test_class
+	// 	 *	@short Test for class.
+	// 	 */
+	// 	public function test_class()
+	// 	{
+	// 		$t = new IusethisEntry();
+	// 		ERAssertOfClass($t, 'IusethisEntry', 'Wrong class');
+	// 	}
+	// }
+	//
+	// $testcase = new IusethisEntryUnitTest();
+	// $testcase->run();
 ?>

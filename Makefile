@@ -1,6 +1,10 @@
-.PHONY: docs test
+.PHONY: docs test install update
 
-test:
-	/usr/bin/find test -name test_* -exec php {} \;
+update:
+	php ~/dev/tools/php-composer/composer.phar update
+install:
+	php ~/dev/tools/php-composer/composer.phar install
+test: install
+	vendor/bin/phpunit test/unit/test_antispam.php
 docs:
 	doxygen Doxyfile
