@@ -26,7 +26,8 @@
 		 */
 		public static function minutes_for($text)
 		{
-      return floor(str_word_count(strip_tags($text)) / self::WORDS_PER_MIN);
+			$mins = floor(str_word_count(strip_tags($text)) / self::WORDS_PER_MIN);
+      return $mins > 0 ? $mins : '<1';
 		}
 	}
 

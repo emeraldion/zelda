@@ -253,7 +253,6 @@
 			// Annotates that the article has been read
 			$this->article->readings++;
 			$this->article->save();
-			$this->reading_time = ReadingTime::minutes_for($this->article->text);
 
 			$this->render(array('layout' => 'diario_read'));
 
