@@ -1,6 +1,6 @@
 <?php
 	require_once(dirname(__FILE__) . "/../../helpers/antispam.php");
-	require_once(dirname(__FILE__) . "/../test.php");
+	require_once(dirname(__FILE__) . "/../base_test.php");
 	require_once(dirname(__FILE__) . "/../fixtures/antispam.php");
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 	require_once(dirname(__FILE__) . "/../../helpers/filesystem.php");
-	require_once(dirname(__FILE__) . "/../test.php");
+	require_once(dirname(__FILE__) . "/../base_test.php");
 	require_once(dirname(__FILE__) . "/../fixtures/filesystem.php");
 
 	/**
@@ -9,12 +9,13 @@
 	 */
 	class FilesystemUnitTest extends UnitTest
 	{
-		protected function set_up()
+		protected function setUp()
 		{
-			file_put_contents(FIXTURE_FILESYSTEM_FILENAME, FIXTURE_FILESYSTEM_FILE_CONTENTS);
+			if (!file_put_contents(FIXTURE_FILESYSTEM_FILENAME, FIXTURE_FILESYSTEM_FILE_CONTENTS))
+				echo "Unable to write file";
 		}
 
-		protected function tear_down()
+		protected function tearDown()
 		{
 			unlink(FIXTURE_FILESYSTEM_FILENAME);
 		}
@@ -46,7 +47,7 @@
 		 */
 		public function test_filesize_readable()
 		{
-			$this->assertEquals(sprintf("'%s B'", strlen(FIXTURE_FILESYSTEM_FILE_CONTENTS)),
+			$this->assertEquals(sprintf('%s B', strlen(FIXTURE_FILESYSTEM_FILE_CONTENTS)),
 				Filesystem::filesize_readable(FIXTURE_FILESYSTEM_FILENAME),
 				'Bad readable file size');
 		}

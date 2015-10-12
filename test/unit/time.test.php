@@ -1,6 +1,6 @@
 <?php
 	require_once(dirname(__FILE__) . "/../../helpers/time.php");
-	require_once(dirname(__FILE__) . "/../test.php");
+	require_once(dirname(__FILE__) . "/../base_test.php");
 
 	/**
 	 *	@class TimeUnitTest
@@ -57,7 +57,7 @@
 		public function test_class()
 		{
 			$t = new Time();
-			ERAssertOfClass($t, 'Time', 'Wrong class');
+			$this->assertInstanceOf('Time', $t, 'Wrong class');
 		}
 	}
 

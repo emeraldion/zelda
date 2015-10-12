@@ -1,7 +1,7 @@
 <?php
 	// require_once(dirname(__FILE__) . "/../mock_objects/base.php");
 	require_once(dirname(__FILE__) . "/../../models/iusethis_entry.php");
-	require_once(dirname(__FILE__) . "/../test.php");
+	require_once(dirname(__FILE__) . "/../base_test.php");
 
 	/**
 	 *	@class IusethisEntryUnitTest
