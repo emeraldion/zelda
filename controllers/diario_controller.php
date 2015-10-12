@@ -9,6 +9,7 @@
 	require_once(dirname(__FILE__) . "/../helpers/gravatar.php");
 	require_once(dirname(__FILE__) . "/../helpers/time.php");
 	require_once(dirname(__FILE__) . "/../helpers/antispam.php");
+	require_once(dirname(__FILE__) . "/../helpers/reading_time.php");
 	require_once(dirname(__FILE__) . "/../helpers/wikipedia.php");
 	require_once(dirname(__FILE__) . "/../helpers/diario_comment_email.php");
 
@@ -252,6 +253,7 @@
 			// Annotates that the article has been read
 			$this->article->readings++;
 			$this->article->save();
+			$this->reading_time = ReadingTime::minutes_for($this->article->text);
 
 			$this->render(array('layout' => 'diario_read'));
 

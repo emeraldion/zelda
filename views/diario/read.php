@@ -34,7 +34,8 @@
 	<a href="<?php echo $this->article->diario_author->permalink(); ?>"><?php echo ucwords($this->article->author); ?></a>
 	<?php echo l('on'); ?>
 	<?php echo $this->article->human_readable_date(); ?>,
-	<?php printf(l('read %s times'), $this->article->readings); ?>.
+	<?php printf(l('read %s times'), $this->article->readings); ?>
+	(<?php printf(l('%s minutes read'), $this->reading_time); ?>).
 </div>
 <div class="diario-text">
 <?php
