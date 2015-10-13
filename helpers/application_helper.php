@@ -7,13 +7,13 @@
 	require_once(dirname(__FILE__) . "/time.php");
 	require_once(dirname(__FILE__) . "/login.php");
 	require_once(dirname(__FILE__) . "/localization.php");
-	
-	error_reporting(E_ALL);
+
+	error_reporting(E_ALL | E_NOTICE);
 	session_name('_eme_sid');
 	session_set_cookie_params(Time::next_year(), '/');
 	//session_save_path(dirname(__FILE__) . "/../session");
 	session_start();
-	
+
 	if (isset($_COOKIE['hl']))
 	{
 		setlocale(LC_TIME, $_COOKIE['hl']);

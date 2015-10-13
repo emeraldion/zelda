@@ -22,7 +22,12 @@
 		/**
 		 *	@short Flag that determines if the controller must log the visits.
 		 */
-		const LOG_VISITS = TRUE;
+		const LOG_VISITS = FALSE;
+
+		/**
+		 *	@short Flag that determines if the controller should block requests by IP address.
+		 */
+		const BLOCK_IPS = FALSE;
 
 		/**
 		 *	@attr credentials
@@ -124,8 +129,9 @@
 		protected function block_ip()
 		{
 			// Return if BLOCK_IPS is not set
-			if (!BLOCK_IPS)
+			if (!self::BLOCK_IPS) {
 				return;
+			}
 			if (BlockedIp::is_blocked($_SERVER['REMOTE_ADDR']))
 			{
 				$bv = new BlockedVisit();
