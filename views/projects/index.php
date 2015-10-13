@@ -8,7 +8,7 @@
   <li><a href="#mbl">MiniBatteryLogger</a> &ndash; A Mac OS X application designed to monitor the battery and log all power events.</li>
   <li><a href="#mbl-archive">MiniBatteryLogger Shared Battery Data Archive</a> &mdash; A collection of battery stats, organized by computer and battery model, produced by MiniBatteryLogger.</li>
   <li><a href="#project-mandarine">Project Mandarine</a> &mdash; A simple game implemented as a single-page JS application.</li>
-  <li><a href="#project-mandarine-cocoa">WebSMS</a> &mdash; A simple Cocoa + WebKit wrapper around the Project Mandarine game.</li>
+  <li><a href="#project-mandarine-cocoa">Project Mandarine Cocoa</a> &mdash; A simple Cocoa + WebKit wrapper around the Project Mandarine game.</li>
   <li><a href="#websms">WebSMS</a> &mdash; A widget to send free SMS messages through carriers&rsquo; web sites in a convenient way.</li>
 </ul>
 
