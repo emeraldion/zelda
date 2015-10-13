@@ -183,6 +183,10 @@ label.required:after {
   margin-left: 50px;
   min-height: 48px; }
 
+.contact-form {
+  width: 600px;
+  margin: auto; }
+
 @media screen and (min-width: 768px) {
   label.left-aligned {
     float: left;

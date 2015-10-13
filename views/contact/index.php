@@ -10,7 +10,7 @@
 		/*]]>*/
 		</script>
 		<h2><?php echo l("Fill out this form"); ?></h2>
-		<div style="width: 500px; margin:auto">
+		<div class="contact-form">
 			<form id="emailform" action="<?php echo $this->make_relative_url(array('action' => 'send')); ?>" method="post">
 				<p class="form-left">
 					<label class="left-aligned required" for="autore"><?php echo l("Name"); ?></label>

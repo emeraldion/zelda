@@ -247,6 +247,11 @@ label.required:after {
   // }
 }
 
+.contact-form {
+	width: 600px;
+	margin: auto;
+}
+
 @media screen and (min-width: 768px) {
   label.left-aligned {
   	float: left;
