@@ -3,34 +3,15 @@
 ?>
 <h2>Projects</h2>
 <ul>
-  <li><a href="#learn-sass">learn-sass</a> &ndash; Learn SASS and SCSS through a workshopper adventure.</li>
   <li><a href="#emerails">Emerails</a> &ndash; A lightweight Rails-like web application framework and ORM written in PHP.</li>
+  <li><a href="#guidatv">GuidaTV</a> &ndash; EPG application for Italian TV channels.</li>
+  <li><a href="#learn-sass">learn-sass</a> &ndash; Learn SASS and SCSS through a workshopper adventure.</li>
   <li><a href="#mbl">MiniBatteryLogger</a> &ndash; A Mac OS X application designed to monitor the battery and log all power events.</li>
   <li><a href="#mbl-archive">MiniBatteryLogger Shared Battery Data Archive</a> &mdash; A collection of battery stats, organized by computer and battery model, produced by MiniBatteryLogger.</li>
   <li><a href="#project-mandarine">Project Mandarine</a> &mdash; A simple game implemented as a single-page JS application.</li>
   <li><a href="#project-mandarine-cocoa">Project Mandarine Cocoa</a> &mdash; A simple Cocoa + WebKit wrapper around the Project Mandarine game.</li>
   <li><a href="#websms">WebSMS</a> &mdash; A widget to send free SMS messages through carriers&rsquo; web sites in a convenient way.</li>
 </ul>
-
-
-
-
-
-<a name="learn-sass"></a>
-<h2><a target="_blank" href="https://npmjs.org/package/learn-sass">learn-sass</a></h2>
-<h4>Learn SASS and SCSS through a workshopper adventure</h4>
-<p>
-  Teach yourself the basics of SASS and SCSS through simple coding exercises.
-  Based on the node workshopper adventure format popularized by
-  <a target="_blank" href="http://nodeschool.io/">NodeSchool</a>.
-  This adventure utilizes tutorials from the awesome
-  <a target="_blank" href="http://sass-lang.com/guide">Sass guide</a>.
-</p>
-<p>
-  Check out the <a target="_blank" href="https://npmjs.org/package/learn-sass">NPM module</a>
-  and the source code on the
-  <a href="https://github.com/claudiopro/learn-sass" target="_blank">GitHub repo</a>.
-</p>
 
 
 
@@ -50,6 +31,40 @@
   the <a href="//emerails.emeraldion.it/docs.html" target="_blank">Documentation</a>,
   and the source code on the
   <a href="https://github.com/emeraldion/emerails" target="_blank">GitHub repo</a>.
+</p>
+
+
+
+<a name="guidatv"></a>
+<h2><a target="_blank" href="/software/macosx/guidatv.html">GuidaTV</a></h2>
+<h4>EPG application for Italian TV channels.</h4>
+<p>
+  GuidaTV is an EPG (Electronic Program Guide) application meant to provide exhaustive
+  listing and review of the programs aired on &mdash; but not necessarily limited to &mdash;
+  Italian terrestrial and satellite TV channels.
+</p>
+<p>
+  Check out the <a target="_blank" href="/software/macosx/guidatv.html">Application</a>
+  and the source code on the
+  <a href="https://github.com/emeraldion/guidatv" target="_blank">GitHub repo</a>.
+</p>
+
+
+
+<a name="learn-sass"></a>
+<h2><a target="_blank" href="https://npmjs.org/package/learn-sass">learn-sass</a></h2>
+<h4>Learn SASS and SCSS through a workshopper adventure.</h4>
+<p>
+  Teach yourself the basics of SASS and SCSS through simple coding exercises.
+  Based on the node workshopper adventure format popularized by
+  <a target="_blank" href="http://nodeschool.io/">NodeSchool</a>.
+  This adventure utilizes tutorials from the awesome
+  <a target="_blank" href="http://sass-lang.com/guide">Sass guide</a>.
+</p>
+<p>
+  Check out the <a target="_blank" href="https://npmjs.org/package/learn-sass">NPM module</a>
+  and the source code on the
+  <a href="https://github.com/claudiopro/learn-sass" target="_blank">GitHub repo</a>.
 </p>
 
 
