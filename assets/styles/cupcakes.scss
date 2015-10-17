@@ -1186,7 +1186,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) {
+@include breakpoint(768px) {
   header {
 
     nav {
@@ -1270,13 +1270,13 @@ footer {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@include breakpoint(1024px) {
   #center-column, .center-column {
     max-width: 800px;
   }
 }
 
-@media screen and (min-width: 1400px) {
+@include breakpoint(1400px) {
   #center-column, .center-column {
     max-width: none;
     width: 1024px;
