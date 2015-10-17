@@ -3,7 +3,7 @@ html {
   color: #444;
   font-family: 'Fira Sans', Arial, sans-serif;
   font-size: 12pt;
-  background-color: $white;
+  background-color: #fff;
   height: 100%; }
 
 body {
@@ -26,7 +26,7 @@ body {
   width: 850px; }
 
 #page {
-  background-color: $white;
+  background-color: #fff;
   padding: 40px 0 0 0; }
 
 * html #external,
@@ -117,7 +117,7 @@ a.feed {
   padding: 40px 10px 0 10px;
   text-align: left;
   font-size: 9pt;
-  background: linear-gradient(to bottom, #eee 0%, $white 100%); }
+  background: linear-gradient(to bottom, #eee 0%, #fff 100%); }
 
 #right-column ul li {
   text-align: left; }
@@ -209,7 +209,7 @@ fieldset .ads {
   margin: auto; }
 
 fieldset legend {
-  background-color: $white;
+  background-color: #fff;
   color: #ccc; }
 
 #right-column fieldset p {
@@ -227,7 +227,7 @@ textarea {
 input[type=text],
 input[type=password],
 textarea {
-  background-color: $white;
+  background-color: #fff;
   padding: 6px;
   border: 1px solid #578; }
   input[type=text] .labeled,
@@ -270,7 +270,7 @@ image.picture {
     color: #000; }
   #navbar a.navitem:link,
   #navbar a.navitem:visited {
-    color: $dark-white; }
+    color: #f0f0f0; }
   #navbar a.navitem:hover,
   #navbar a.navitem:active {
     color: #baedff; }
@@ -306,7 +306,7 @@ a.this-subnavitem {
 
 a.here:link,
 a.here:visited {
-  color: $white;
+  color: #fff;
   text-decoration: underline; }
 
 .navfirst:before,
@@ -487,7 +487,7 @@ form {
 .bezel h2,
 .bezel p {
   margin: 0;
-  color: $white;
+  color: #fff;
   background: none; }
 
 .bezel h2 {
@@ -524,11 +524,11 @@ acronym {
   padding: 2px; }
 
 .today {
-  color: $white;
-  background-color: $brighter-pink; }
+  color: #fff;
+  background-color: #d6116b; }
 
 .today a {
-  color: $white; }
+  color: #fff; }
 
 #calendario-month-header a.fwd {
   padding-right: 14px;
@@ -672,7 +672,7 @@ ul.version {
   background-color: #e5f9ec;
   color: #444;
   padding: 4px 20px;
-  text-shadow: 0 1px 1px $white; }
+  text-shadow: 0 1px 1px #fff; }
 
 #language-chooser {
   float: right; }
@@ -857,7 +857,7 @@ main {
   margin-top: 250px; }
 
 .central, .single-central {
-  background-color: $white;
+  background-color: #fff;
   padding: 25px 0 60px 30px; }
 
 header {
@@ -867,12 +867,12 @@ header {
   top: 0;
   opacity: 1;
   overflow: auto;
-    background: linear-gradient(to bottom, $bright-pink 0%, $brighter-pink 100%);
+  background: linear-gradient(to bottom, #d62475 0%, #d6116b 100%);
   box-shadow: 0 0 5px #000; }
   header nav {
     float: none; }
   header h1 {
-    color: $dark-white;
+    color: #f0f0f0;
     font-size: 32pt;
     margin: 10px 20px;
     padding: 0;
