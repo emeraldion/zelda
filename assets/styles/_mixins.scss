@@ -1,0 +1,10 @@
+// Mixins
+@mixin fira($font-size) {
+  font-family: 'Fira Sans', Arial, sans-serif;
+  font-size: $font-size;
+}
+
+@mixin satisfy($font-size) {
+  font-family: Satisfy, cursive;
+  font-size: $font-size;
+}
