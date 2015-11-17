@@ -27,3 +27,5 @@ make docs
 # License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) Claudio Procida 2015
