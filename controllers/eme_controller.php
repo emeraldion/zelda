@@ -49,21 +49,35 @@
 		{
 			parent::init();
 
-			$this->description = l('Personal website of Claudio Procida, hosting my projects and my blog');
+			$this->set_title('Emeraldion Lodge');
+			$this->set_description(l('Personal website of Claudio Procida, hosting my projects and my blog'));
 			$this->credentials = $this->get_credentials();
-			$this->opengraph = new OpenGraph(array(
-				'description' => $this->description,
-				'image' => sprintf('http://%s/assets/images/claudio.jpg', $_SERVER['HTTP_HOST']),
-				'title' => $this->title,
-				'url' => $this->url_to_myself(FALSE),
-				'type' => 'website',
-			));
 
-			//$this->before_filter('spot_people');
+			$this->before_filter('init_opengraph');
 		}
 
 		public function index()
 		{
+		}
+
+		/**
+		 *	@short Sets the title for the current page.
+		 *	@override
+		 *	@param title A title for the current page.
+		 */
+		public function set_title($title)
+		{
+			$this->title = $this->opengraph->title = $title;
+		}
+
+		/**
+		 *	@short Sets the description for the current page.
+		 *	@override
+		 *	@param description A description for the current page.
+		 */
+		public function set_description($description)
+		{
+			$this->description = $this->opengraph->description = $description;
 		}
 
 		/**
@@ -244,33 +258,18 @@
 		}
 
 		/**
-		 *	@fn spot_people
-		 *	@short Filter method to identify visits from known people.
+		 *	@fn init_opengraph
+		 *	@short Filter method to initialize OpenGraph data.
 		 */
-		protected function spot_people()
+		protected function init_opengraph()
 		{
-			if (preg_match("/^194\.242\./", $_SERVER['REMOTE_ADDR']) > 0)
-			{
-				if (!isset($_COOKIE['_aknet']))
-				{
-					$email = new Email(array('name' => 'Emeraldion Lodge',
-						'email' => 'webmaster@emeraldion.it',
-						'text' => 'Ti informo che � stata effettuata una visita da aknet.it'));
-					$email->send();
-					Cookie::set('_aknet', TRUE, Time::tomorrow());
-				}
-			}
-			else if (preg_match("/^147\.163\./", $_SERVER['REMOTE_ADDR']) > 0)
-			{
-				if (!isset($_COOKIE['_unipa']))
-				{
-					$email = new Email(array('name' => 'Emeraldion Lodge',
-						'email' => 'webmaster@emeraldion.it',
-						'text' => 'Ti informo che � stata effettuata una visita da unipa.it'));
-					$email->send();
-					Cookie::set('_unipa', TRUE, Time::tomorrow());
-				}
-			}
+			$this->opengraph = new OpenGraph(array(
+				'description' => $this->description,
+				'image' => sprintf('http://%s/assets/images/claudio.jpg', $_SERVER['HTTP_HOST']),
+				'title' => $this->title,
+				'url' => $this->url_to_myself(FALSE),
+				'type' => 'website',
+			));
 		}
 
 		/**

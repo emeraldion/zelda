@@ -323,7 +323,7 @@
 			$this->_init_software();
 			$this->software->has_many('software_quotes');
 
-			$this->description = $this->software->description;
+			$this->set_description($this->software->description);
 
 			if (!isset($_REQUEST['subview']))
 			{
