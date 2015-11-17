@@ -5,14 +5,6 @@
 		array('title' => 'Emeraldion Lodge',
 			'action' => 'emeraldion_lodge'),
 		);
-/*
-	if (Login::is_logged_in())
-	{
-		$about_sections[] =
-			array('title' => 'Dorotea',
-				'action' => 'dorotea');
-	}
-*/
 ?>
 	<ul class="subnavbar">
 <?php
