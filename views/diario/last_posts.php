@@ -1,6 +1,5 @@
 		<div class="rss-feed">
-			<?php echo l('Subscribe to the'); ?>
-			<?php $this->link_to(l('Diario RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
+			<?php $this->link_to(l('RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
 		</div>
 		<h2><?php echo l('Latest Blog Entries'); ?></h2>
 <?php

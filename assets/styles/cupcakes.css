@@ -39,12 +39,12 @@ body {
 .section {
   margin-bottom: 4em; }
 
-.prev_next {
+.prev_next .fwd, .prev_next .back {
+  display: block;
   margin-bottom: 1em; }
-  .prev_next .fwd, .prev_next .back {
-    display: block; }
-  .prev_next .fwd {
-    text-align: right; }
+
+.prev_next .fwd {
+  text-align: right; }
 
 a.top,
 a.fwd,
@@ -97,7 +97,8 @@ a:active {
   text-decoration: underline; }
 
 .rss-feed {
-  float: right; }
+  text-align: right;
+  margin-bottom: 1em; }
 
 .rss-feed a,
 a.rss,

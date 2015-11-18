@@ -1,3 +1,6 @@
+<div class="rss-feed">
+	<?php $this->link_to(l('RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
+</div>
 <?php
 	$this->article->has_many('diario_comments', array('where_clause' => "`approved` = '1' " .
 		"OR (`author` = '{$this->credentials['realname']}' " .
@@ -10,10 +13,6 @@
 
 	$this->render(array('partial' => 'prev_next'));
 ?>
-<div class="rss-feed">
-	<?php echo l('Subscribe to the'); ?>
-	<?php $this->link_to(l('Diario RSS Feed'), array('controller' => 'feed', 'action' => 'diario', 'type' => 'rss')); ?>
-</div>
 <!--
 	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:dc="http://purl.org/dc/elements/1.1/"
