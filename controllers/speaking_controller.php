@@ -9,6 +9,7 @@
   {
     public function index()
     {
+      $this->render(array('layout' => 'projects'));
     }
   }
 ?>

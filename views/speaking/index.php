@@ -1,3 +1,9 @@
-<script async class="speakerdeck-embed" data-id="f4e987866c834551b42a3dc0768f64ce" data-ratio="1.41436464088398" src="//speakerdeck.com/assets/embed.js"></script>
+<h2>Speaking</h2>
 
-<script async class="speakerdeck-embed" data-id="84c8ffa00b7345f4be39d12dbc139958" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+<p>
+  I gave talks at meetups, workshops and conferences. Here's a small collection
+  of the content that
+
+<img class="slide-thumb" src="//speakerd.s3.amazonaws.com/presentations/f4e987866c834551b42a3dc0768f64ce/slide_0.jpg"/>
+
+<img class="slide-thumb" src="//speakerd.s3.amazonaws.com/presentations/84c8ffa00b7345f4be39d12dbc139958/slide_0.jpg"/>

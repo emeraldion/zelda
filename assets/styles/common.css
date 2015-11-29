@@ -200,3 +200,6 @@ label.required:after {
     padding-left: 90px; }
   .form-left textarea {
     width: auto; } }
+
+.slide-thumb {
+  width: 210px; }
