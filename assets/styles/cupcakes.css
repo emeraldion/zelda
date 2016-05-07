@@ -862,7 +862,7 @@ main {
   padding: 25px 0 60px 30px; }
 
 header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 10;
   top: 0;
@@ -968,7 +968,7 @@ footer {
   header h1 {
     text-align: inherit; }
   header.headroom--unpinned {
-    top: -75px; }
+    top: -85px; }
   main {
     margin-top: 0;
     padding-top: 250px;
