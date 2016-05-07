@@ -4,9 +4,9 @@ ErrorDocument 403 /error/403.html
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
-	
+
 	# Legacy old URLs
-	
+
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^(index|home)\.php$ / [L,R,QSA]
@@ -22,7 +22,7 @@ ErrorDocument 403 /error/403.html
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^software/widgets/versioncheck(.*)$ /router.php?controller=software&action=widgets_versioncheck [L,QSA]
-	
+
 	# Software details page
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
@@ -65,7 +65,7 @@ ErrorDocument 403 /error/403.html
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^atom/([^/]+).atom$ /router.php?controller=atom&action=$1 [L,QSA]
-		
+
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^feed/([^/]+).rss$ /router.php?controller=feed&action=$1 [L,QSA]
@@ -74,20 +74,20 @@ ErrorDocument 403 /error/403.html
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^kml/([^/]+).kml$ /router.php?controller=kml&action=$1 [L,QSA]
-	
+
 	# Errors
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^error/([^/]+).html$ /router.php?controller=error&action=_$1 [L,QSA]
-	
+
 	# Diario, by date
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule ^diario/(calendar|date)/([0-9]{4})/?([0-9]{1,2})?/?([0-9]{1,2})?/?$ /router.php?controller=diario&action=$1&year=$2&month=$3&day=$4 [L,QSA]	
-	
+	RewriteRule ^diario/(calendar|date)/([0-9]{4})/?([0-9]{1,2})?/?([0-9]{1,2})?/?$ /router.php?controller=diario&action=$1&year=$2&month=$3&day=$4 [L,QSA]
+
 	# Text assets are zipped to save bandwidth
 	RewriteRule ^assets/(javascript|styles)((/[^/]+)*)/([^/]+)\.([^\.]+)$ /router.php?controller=asset&action=index&dir=$1$2&file=$4&ext=$5 [L,QSA]
-	
+
 	# Default rules
 
 	# Controller alone
@@ -99,7 +99,7 @@ ErrorDocument 403 /error/403.html
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^([^/]+)/([^/]+)\.(html|js(on)?|png|jpe?g|css)$ /router.php?controller=$1&action=$2 [L,QSA]
-	
+
 	# Controller, action and id of target
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
