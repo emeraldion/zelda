@@ -40,40 +40,27 @@
 		</script>
 	</head>
 	<body>
-		<div id="external">
-
 <?php
-	require(dirname(__FILE__) . "/../views/_topbar.php");
+	// require(dirname(__FILE__) . "/../views/_topbar.php");
 ?>
 
-			<div id="top"></div>
-			<div id="page-bg">
-				<div id="brd_s">
-					<div id="brd_w">
-						<div id="brd_e">
-							<div id="crn_sw">
-								<div id="crn_se">
-									<div id="header"></div>
+    <header>
 <?php
 	require(dirname(__FILE__) . "/../views/_navbar.php");
 ?>
-									<div id="page" style="padding-top:0">
-										<div id="single-central">
+    </header>
+    <main>
+      <div id="single-central" class="central">
 <?php
 	$this->render(array('partial' => 'navbar'));
 	print $this->content_for_layout;
 ?>
-										</div>
+      </div>
+    </main>
+    <footer>
 <?php
 	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    </footer>
 	</body>
 </html>
