@@ -38,7 +38,7 @@
 
 		public function index()
 		{
-			$this->redirect_to(array('action' => 'software_moderation_queue'));
+			$this->redirect_to(array('action' => 'diario_post_list'));
 		}
 
 		/**
