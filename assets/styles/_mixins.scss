@@ -9,6 +9,11 @@
   font-size: $font-size;
 }
 
+@mixin courgette($font-size) {
+  font-family: Courgette, cursive;
+  font-size: $font-size;
+}
+
 @mixin breakpoint($min-width) {
   @media screen and (min-width: 768px) {
     @content;
