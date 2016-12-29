@@ -1,8 +1,7 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Referrers'));
 ?>
-<script type="text/javascript">
-/*<![CDATA[*/
+<script>
 	function load_referrers(frm)
 	{
 		return Servo.post({
@@ -29,7 +28,6 @@
 	}
 	
 	$(add_info_handlers);
-/*]]>*/
 </script>
 <form method="get" onsubmit="return !load_referrers(this)">
 	<p>

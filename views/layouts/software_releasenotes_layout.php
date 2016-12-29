@@ -4,7 +4,6 @@
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<title><?php echo h($this->title); ?></title>
 	<style type="text/css">
-	/*<![CDATA[*/
 		*
 		{
 			font-family: "Lucida Grande", Arial, sans-serif;
@@ -45,7 +44,6 @@
 			text-shadow: 0 2px 2px #000;
 			font-size: 11pt;
 		}
-	/*]]>*/
 	</style>
 </head>
 <body>

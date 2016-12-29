@@ -2,12 +2,10 @@
 		<p>
 			<?php echo l("Fill out this form to send me an email. Leave your name, your email address and your website URL. You&rsquo;ll be answered as soon as possible."); ?>
 		</p>
-		<script type="text/javascript">
-		/*<![CDATA[*/
+		<script>
 			$(function() {
 				$('#f_remember_me').click(function(){ if ($(this).attr('checked')) $('#remember_me_warning').css('display', 'block'); });
 			});
-		/*]]>*/
 		</script>
 		<h2><?php echo l("Fill out this form"); ?></h2>
 		<div class="contact-form">

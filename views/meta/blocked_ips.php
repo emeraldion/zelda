@@ -1,9 +1,7 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Blocked IPs'));
 ?>
-<script type="text/javascript">
-/*<![CDATA[*/
-
+<script>
 	function setup()
 	{
 		$('#f_q').keyup(function(e)
@@ -47,7 +45,6 @@
 	}
 	
 	$(setup);
-/*]]>*/
 </script>
 <form id="queries-frm">
 	<p>

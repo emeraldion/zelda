@@ -2,10 +2,8 @@
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Hits by host'));
 ?>
 <script type="text/javascript" src="/assets/javascript/meta/hits_by_host.js"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
+<script>
 	$(load_data);
-/*]]>*/
 </script>
 <form id="frm" name="frm" onsubmit="return false">
 	<p>

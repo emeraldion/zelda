@@ -6,7 +6,6 @@
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<style type="text/css">
-		/*<![CDATA[*/
 			div#morse_translation,
 			textarea#plain_text
 			{
@@ -21,14 +20,11 @@
 			{
 				padding-bottom: 50px;
 			}
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
+		<script>
 		</script>
 	</head>
 	<body>

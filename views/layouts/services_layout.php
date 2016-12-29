@@ -7,15 +7,11 @@
 ?>
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'software', 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?>" />
 		<style type="text/css">
-		/*<![CDATA[*/
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
+		<script>
 		</script>
 	</head>
 	<body>

@@ -14,15 +14,13 @@
 	<img id="coolpreview_picture" src="/assets/images/null.png" alt="" />
 </div>
 <div id="toplinks">
-	<script type="text/javascript">
-	/*<![CDATA[*/
+	<script>
 		$(function()
 			{
 				$('#language-chooser a').hover(
 					function(){$('#the-language').html($(this).attr('title'));},
 					function(){$('#the-language').html('&nbsp;');});
 			});
-	/*]]>*/
 	</script>
 	<div id="language-chooser">
 		<span id="the-language">&nbsp;</span>

@@ -8,7 +8,6 @@
 		<link href="/assets/styles/meta/meta.css" rel="stylesheet" type="text/css" />
 		<link href="/assets/styles/meta/hits_by_host.css" rel="stylesheet" type="text/css" />
 		<style type="text/css">
-		/*<![CDATA[*/
 			label.left-aligned
 			{
 				float: left;
@@ -29,14 +28,11 @@
 			{
 				content: "*";
 			}
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
+		<script>
 		</script>
 	</head>
 	<body>

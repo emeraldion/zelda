@@ -1,15 +1,6 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Login'));
 ?>
-
-	<script type="text/javascript">
-	/*<![CDATA[*/
-		$(function(jq){
-			$('#f_username').focus();
-			$('#f_leave_me_registered').click(function(){ if ($(this).attr('checked')) $('#leave_me_registered_warning').show(); });
-		});
-	/*]]>*/
-	</script>
 	<div id="login-pane">
 		<h2><?php echo localized("Login"); ?></h2>
 		<form action="<?php echo $this->url_to(array('action' => 'login')); ?>" method="post">

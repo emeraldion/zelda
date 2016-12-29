@@ -49,8 +49,8 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-			$(function(){
+		<script>
+			$(function() {
 				var s_f = document.getElementById('f_term');
 				if (s_f) {
 					s_f.setAttribute('type', 'search');

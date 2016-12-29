@@ -1,8 +1,7 @@
 <?php
 	$this->set_title('Emeraldion Lodge - Morse Code');
 ?>
-<script type="text/javascript">
-/*<![CDATA[*/
+<script>
 	$(function()
 	{
 		$('#plain_text').keyup(function()
@@ -31,7 +30,6 @@
 	{
 		$('#morse_translation').html('<?php echo l('Type something! It will be translated to Morse code.'); ?>');
 	}
-/*]]>*/
 </script>
 <h2><?php echo l("Morse Code"); ?></h2>
 

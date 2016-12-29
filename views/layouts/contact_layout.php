@@ -36,6 +36,6 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
+		<script>
 		</script>
 	</body>

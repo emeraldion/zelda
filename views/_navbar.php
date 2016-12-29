@@ -84,10 +84,8 @@
 		[<?php print a(l('hide'), array('href' => '#', 'onclick' => "$('#flash').css('display','none')")); ?>]
 	</div>
 	</div>
-	<script type="text/javascript">
-	/*<![CDATA[*/
+	<script>
 		$(function(){setTimeout(function(){$('#flash').fadeOut(500)}, 5000)});
-	/*]]>*/
 	</script>
 <?php
 		// unset

@@ -35,7 +35,15 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
+		<script>
+			$(function(jq) {
+				$('#f_username').focus();
+				$('#f_leave_me_registered').click(function() {
+					if ($(this).attr('checked')) {
+						$('#leave_me_registered_warning').show();
+					}
+				});
+			});
 		</script>
 	</body>
 </html>

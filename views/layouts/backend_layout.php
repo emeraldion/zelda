@@ -11,7 +11,7 @@
 		<?php
 			require(dirname(__FILE__) . "/../views/_scripts.php");
 		?>
-		<script type="text/javascript" src="/assets/javascript/backend/backend.js"></script>
+		<script src="/assets/javascript/backend/backend.js"></script>
 	</head>
 	<body>
 <?php

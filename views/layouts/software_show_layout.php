@@ -13,20 +13,17 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'sparkle', 'action' => 'index', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?>" />
 		<link href="/assets/styles/software/<?php echo $this->software->type; ?>/<?php echo $this->software->name; ?>.css" type="text/css" rel="stylesheet" />
 		<style type="text/css">
-		/*<![CDATA[*/
 			html .fb_share_link
 			{
 				padding:2px 0 0 20px;
 				height:16px;
 				background:url(http://static.ak.fbcdn.net/images/share/facebook_share_icon.gif?0:26981) no-repeat top left;
 			}
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
+		<script>
 			function increaseDownloads()
 			{
 				$('#this-version-downloads').html(parseInt($('#this-version-downloads').html(), 10) + 1);
@@ -39,7 +36,6 @@
 				window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
 				return false;
 			}
-		/*]]>*/
 		</script>
 	</head>
 	<body>
@@ -63,7 +59,7 @@
 					<div style="margin: 1em 0">
 						<a href="http://www.facebook.com/share.php?u=<?php echo urlencode($this->url_to_myself(FALSE)); ?>"
 							onclick="return fbs_click()" class="fb_share_link"><?php echo l('Share on Facebook'); ?></a>
-						<script type="text/javascript">
+						<script>
 							var digg_url = '<?php echo $this->software->permalink(FALSE); ?>';
 							var digg_skin = 'compact';
 							var digg_window = 'new';
@@ -105,7 +101,7 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
+		<script>
 		</script>
 	</body>
 </html>

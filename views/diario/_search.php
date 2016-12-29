@@ -1,6 +1,4 @@
-<script type="text/javascript">
-/*<![CDATA[*/
-	
+<script>
 	function livesearch(term)
 	{
 		if (term && term.length > 2)
@@ -26,8 +24,6 @@
 		$('#f_term').keyup(function(){livesearch(this.value);});
 		$('a.dismiss-search').click(function(){return hidebubble();});
 	});
-	
-/*]]>*/
 </script>
 <h3><?php echo l('Search'); ?></h3>
 <div id="searchbar" style="margin-bottom: 2em">

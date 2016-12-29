@@ -1,11 +1,9 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Queries'));
 ?>
-<script type="text/javascript" src="/assets/javascript/meta/queries.js"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
+<script src="/assets/javascript/meta/queries.js"></script>
+<script>
 	$(reload_queries);
-/*]]>*/
 </script>
 <form id="queries-frm" onsubmit="reload_queries(); return false">
 	<p>

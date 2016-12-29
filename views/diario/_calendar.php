@@ -14,8 +14,7 @@
 		$primo = date("w", $primo_del_mese);
 		$giorni = date("t", $primo_del_mese);
 ?>
-<script type="text/javascript">
-/*<![CDATA[*/
+<script>
 	var dt = new Date(<?php echo 1000 * $primo_del_mese; ?>);
 	function prevMonth()
 	{
@@ -55,7 +54,6 @@
 			target:document.getElementById('cal-div')
 			});
 	}
-/*]]>*/
 </script>
 <h3 class="throbber" id="month-header"><?php echo l("Calendar"); ?></h3>
 <div id="cal-div">

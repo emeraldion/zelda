@@ -6,7 +6,6 @@
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
 		<style type="text/css">
-		/*<![CDATA[*/
 			#donate-button
 			{
 				float: left;
@@ -20,14 +19,11 @@
 			{
 				margin-left: 200px;
 			}
-		/*]]>*/
 		</style>
 <?php
 	require(dirname(__FILE__) . "/../views/_scripts.php");
 ?>
-		<script type="text/javascript">
-		/*<![CDATA[*/
-		/*]]>*/
+		<script>
 		</script>
 	</head>
 	<body>
