@@ -1,36 +1,4 @@
 array (
 	'About Claudio' => 'Acerca de Claudio',
-	'Picture:' => 'Foto:',
-	'Who I am' => 'Quien soy',
-	'What I like' => 'Lo que me gusta',
-	'Hire me!' => 'Hire me!',
-	'whoiam-para1' => 'Mi nombre es Claudio, tengo %s años, vivo en Italia y soy ingeniero informático. ' .
-		'Estoy en ese punto de la vida en el que te preguntas lo que seras de mayor, tengo muchos ' .
-		'proyectos guardados y quizas no bastante energia para realizarlos todos.',
-	'whoiam-para2' => 'Soy un desarrollador software con ganas de diseño, me gusta viajar y estar con gente sincera. ' .
-		'De momento desarrollo aplicaciones Web2.0 con Javascript, HTML y CSS en la familia de productos Lotus.',
-	'whoiam-para3' => 'Trabajo para IBM en Irlanda y esta nueva aventura me absorbirá completamente en los ' .
-		'meses que vendran.',
-	'whatilike-para1' => 'Mi piace stare tra gente sincera e propositiva. Cercare l\'amicizia disinteressata. ' .
-		'Conoscere e confrontarmi con culture e tradizioni differenti. Esprimere idee e pensieri. ' .
-		'Affrontare problemi stimolanti con un buon grado di autonomia.',
-	'writeme-para1' => 'If you like what I do and want to drop me a line, feel free to <a href="/contact/index.html">contact me</a>. ' .
-		'I love to know what people think about what I do.',
-	
-	'About the Emeraldion Lodge' => 'Acerca de la Emeraldion Lodge',
-	'Latest stuff' => 'Novedades',
-	'What else?' => '¿Qué más?',
-	'about-para1' => 'Emeraldion Lodge es construida encima de EmePavilion, un ' .
-		'<acronym title="Content Management System">CMS</acronym> escrito en ' .
-		'<a href="http://www.php.net" class="external"><acronym title="PHP: Hypertext Processor">PHP</acronym></a>. ' .
-		'Es basada sobre estandar abiertos y robustos para el web: <acronym title="Cascading Style Sheets">CSS</acronym>, ' .
-		'<acronym title="eXtensible HyperText Markup Language">XHTML</acronym> y JavaScript proporcionan la capa de ' .
-		'presentación, mientras el RSS y Atom permiten gestionar y difundir los contenidos. Los datos son almacenados en una base de datos ' .
-		'<a href="http://www.mysql.com" class="external">MySQL</a>.',
-	'about-para2' => 'EmePavilion ha muerto. ¡Longa vida a EmeRails! Acolgais mi nuevo marco para aplicaciones web en paradigma MVC, con soporte ORM.',
-	'latest-para1' => 'De momento estoy trasladando las aplicaciones sobre la plataforma EmeRails.' .
-		'Sé que hubo unos errores debidos a una incorrecta configuración inicial, disculpen por las molestias.',
-	'whatelse-para1' => 'Ospita i miei progetti e gli esperimenti di apprendimento. Date un&rsquo;occhiata all&rsquo;' .
-		'<a href="http://burgos.emeraldion.it/mbl/">Archivio dati batterie condivisi</a>, un progetto per raccogliere ' .
-		'informazioni sulle prestazioni dei portatili Mac, elaborare statistiche di consumi e tanto altro.',
+	'Contact me' => 'Contacten conmigo',
 );

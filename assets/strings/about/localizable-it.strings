@@ -1,38 +1,4 @@
 array (
 	'About Claudio' => 'A proposito di Claudio',
-	'Picture:' => 'Foto:',
-	'Who I am' => 'Chi sono',
-	'What I like' => 'Cosa mi piace',
 	'Contact me' => 'Contattatemi',
-	'whoiam-para1' => 'Mi chiamo Claudio, ho %s anni e sono un ingegnere informatico italiano. ' .
-		'Mi trovo a quel punto del cammino in cui ti chiedi cosa vuoi fare della tua vita, e ' .
-		'hai ancora sufficienti libertà e forze per diventare ciò che vuoi.',
-	'whoiam-para2' => 'Sviluppo software, amo viaggiare e trovarmi in mezzo a gente sincera. ' .
-		'Attualmente sviluppo applicazioni Web2.0 con Javascript, HTML e CSS per la famiglia di prodotti Lotus.',
-	'whoiam-para3' => 'Sono stato recentemente assunto da IBM in Irlanda e sarò completamente assorbito ' .
-		'da questa nuova eccitante esperienza nei mesi a venire. La mia attività di sviluppo per Mac OS X ' .
-		'starà in sospeso per un po&rsquo;, ma il software realizzato sinora sarà comunque disponibile su questo sito.',
-	'whatilike-para1' => 'Mi piace stare tra gente sincera e propositiva. Cercare l&rsquo;amicizia disinteressata. ' .
-		'Conoscere e confrontarmi con culture e tradizioni differenti. Esprimere idee e pensieri. ' .
-		'Affrontare problemi stimolanti con un buon grado di autonomia.',
-	'writeme-para1' => 'Se desiderate scrivermi in merito al mio software o semplicemente scambiare quattro chiacchiere, ' .
-		'vi prego di utilizzare <a href="/contact/index.html">questo modulo</a>. ' .
-		'Adoro leggere ciò che la gente pensa di quel che faccio.',
-	
-	'About the Emeraldion Lodge' => 'A proposito della Emeraldion Lodge',
-	'Latest stuff' => 'Ultime novità',
-	'What else?' => 'Che altro?',
-	'about-para1' => 'L&rsquo;Emeraldion Lodge è costruita sull&rsquo;EmePavilion, un ' .
-		'<acronym title="Content Management System">CMS</acronym> scritto in ' .
-		'<a href="http://www.php.net" class="external"><acronym title="PHP: Hypertext Processor">PHP</acronym></a>. ' .
-		'&Egrave; basata su standard aperti e robusti per il web: <acronym title="Cascading Style Sheets">CSS</acronym>, ' .
-		'<acronym title="eXtensible HyperText Markup Language">XHTML</acronym> e JavaScript forniscono lo strato di ' .
-		'presentazione, mentre RSS e Atom permettono la gestione e la diffusione dei contenuti. I dati sono conservati in un database ' .
-		'<a href="http://www.mysql.com" class="external">MySQL</a>.',
-	'about-para2' => 'EmePavilion è morto. Lunga vita ad EmeRails! Dite ciao al mio nuovo framework per applicazioni web pienamente MVC, con supporto ORM.',
-	'latest-para1' => 'Sto attualmente migrando le applicazioni sulla piattaforma EmeRails. ' .
-		'Si sono verificati degli errori dovuti ad una errata configurazione iniziale, scusate per i disagi.',
-	'whatelse-para1' => 'Ospita i miei progetti e gli esperimenti di apprendimento. Date un&rsquo;occhiata all&rsquo;' .
-		'<a href="http://burgos.emeraldion.it/mbl/">Archivio dati batterie condivisi</a>, un progetto per raccogliere ' .
-		'informazioni sulle prestazioni dei portatili Mac, elaborare statistiche di consumi e tanto altro.',
 );
