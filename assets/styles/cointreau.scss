@@ -5,7 +5,7 @@ html {
 margin: 0;
 color: #444;
 @include fira(12pt);
-background-color: $white;
+background-color: #f9f3df;
 height: 100%;
 }
 
@@ -117,7 +117,7 @@ color: #0084b4;
 a:hover,
 a:focus,
 a:active {
-color: $light-pink;
+color: #b9415d;
 text-decoration: underline;
 }
 .rss-feed {
@@ -259,7 +259,8 @@ input[type=password],
 textarea {
   background-color: $white;
   padding: 6px;
-  border: 1px solid #578;
+  border: 1px solid #bbb;
+  border-radius: 2px;
 
   .labeled {
     width: 18em;
@@ -314,7 +315,8 @@ margin: 0 -1px;
   }
   a.navitem:hover,
   a.navitem:active {
-    color: #baedff;
+    background-color: #007dab;
+    color: #f0f0f0;
   }
 
 }
@@ -355,7 +357,7 @@ border-color: $light-gray;
 .this-subnavitem:hover {
 }
 .navitem.here {
-  background-color: #7cb342;
+  background-color: #007dab;
 }
 a.this-subnavitem {
 background-color: #F0F2F3;
@@ -1146,7 +1148,8 @@ label.left-aligned {
 }
 
 footer {
-  background-color: #fdf1cd;
+  background-color: #f9f3df;
+  border-top: 1px solid #f1e8ca;
 
   .footer {
     .social-icons {
@@ -1287,7 +1290,8 @@ footer {
   }
 
   footer {
-    background-color: #fdf1cd;
+    background-color: #f9f3df;
+    border-top: 1px solid #f1e8ca;
 
     .footer {
       .social-icons {

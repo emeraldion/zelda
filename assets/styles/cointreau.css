@@ -3,7 +3,7 @@ html {
   color: #444;
   font-family: 'Fira Sans', Arial, sans-serif;
   font-size: 12pt;
-  background-color: #fff;
+  background-color: #f9f3df;
   height: 100%; }
 
 body {
@@ -93,7 +93,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: #d6699b;
+  color: #b9415d;
   text-decoration: underline; }
 
 .rss-feed {
@@ -231,7 +231,8 @@ input[type=password],
 textarea {
   background-color: #fff;
   padding: 6px;
-  border: 1px solid #578; }
+  border: 1px solid #bbb;
+  border-radius: 2px; }
   input[type=text] .labeled,
   input[type=password] .labeled,
   textarea .labeled {
@@ -277,7 +278,8 @@ image.picture {
     color: #f0f0f0; }
   #navbar a.navitem:hover,
   #navbar a.navitem:active {
-    color: #baedff; }
+    background-color: #007dab;
+    color: #f0f0f0; }
 
 #backend-navbar {
   margin: 0 0 20px 0; }
@@ -305,7 +307,7 @@ image.picture {
   border-color: #eee; }
 
 .navitem.here {
-  background-color: #7cb342; }
+  background-color: #007dab; }
 
 a.this-subnavitem {
   background-color: #F0F2F3;
@@ -948,7 +950,8 @@ label.left-aligned {
   font-style: normal; }
 
 footer {
-  background-color: #fdf1cd; }
+  background-color: #f9f3df;
+  border-top: 1px solid #f1e8ca; }
   footer .footer .social-icons {
     margin: 0;
     padding: 0; }
@@ -1018,7 +1021,8 @@ footer {
       padding: 60px 0 60px 30px;
       margin-top: 0; }
   footer {
-    background-color: #fdf1cd; }
+    background-color: #f9f3df;
+    border-top: 1px solid #f1e8ca; }
     footer .footer .social-icons li {
       font-size: 24pt; }
   .navitem,
