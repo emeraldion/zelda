@@ -2,11 +2,11 @@
 @import "mixins";
 
 html {
-margin: 0;
-color: #444;
-@include fira(12pt);
-background-color: #f9f3df;
-height: 100%;
+  margin: 0;
+  color: #444;
+  @include fira(12pt);
+  background: #0084b4 linear-gradient(to bottom, #fff 0%, #fff 50%, #f9f3df 50%, #f9f3df 100%);
+  height: 100%;
 }
 
 body {
@@ -132,7 +132,7 @@ background: transparent url("/assets/images/minimal/feed12.gif") no-repeat cente
 }
 #center-column, .center-column {
   margin: auto;
-  padding-right: 30px;
+  padding-right: 20px;
 }
 #right-column {
   display: none;
@@ -161,7 +161,7 @@ h2,
 h3,
 h4 {
 text-align: left;
-line-height: 1.5;
+line-height: 1.6;
 text-transform: capitalize;
 }
 h1 {
@@ -180,11 +180,11 @@ font-weight: normal;
 margin: 0.25em 0 .5em 0;
 }
 h3 {
-@include courgette(24pt);
+@include courgette(18pt);
 margin-bottom: 0;
 }
 h4 {
-@include courgette(18pt);
+@include courgette(16pt);
 margin-bottom: 0.5em;
 }
 h3,
@@ -222,7 +222,7 @@ margin-top: 0.25em;
 }
 p {
 text-align: justify;
-line-height: 1.5;
+line-height: 1.6;
 margin: 1em 0;
 }
 p:first-letter {
@@ -340,8 +340,9 @@ margin: 10px auto 0 auto;
 .navitem,
 .subnavitem {
   display: block;
-  padding: 11px 20px 6px 20px;
-  height: 25px;
+  padding: 4px 20px;
+  height: 42px;
+  line-height: 1.6;
   border-top: 2px solid #007dab;
 }
 .subnavitem {
@@ -444,7 +445,7 @@ padding-left: 1.25em;
 }
 li {
 text-align: justify;
-line-height: 1.8;
+line-height: 1.6;
 list-style-position: outside;
 }
 #cal-div {
@@ -726,7 +727,7 @@ text-align: center;
 
 code, pre {
   font-size: 12pt;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 code {
@@ -1058,7 +1059,12 @@ main {
 }
 .central, .single-central {
   background-color: $white;
-  padding: 25px 0 60px 30px;
+  padding: 20px 0 40px 20px;
+
+  img {
+    max-width: 100%;
+    height: auto !important;
+  }
 }
 
 #login-pane {
@@ -1238,8 +1244,9 @@ footer {
   header {
 
     nav {
-      float: right;
-      margin: -47px 10px 0 0;
+      position: absolute;
+      right: 0;
+      top: 0;
 
       #navbar {
         height: 47px;
@@ -1251,7 +1258,6 @@ footer {
 
           a {
             display: inline-block;
-            height: 32px;
           }
         }
       }
@@ -1303,6 +1309,10 @@ footer {
     }
   }
 
+  #center-column, .center-column {
+    padding-right: 30px;
+  }
+
   .navitem,
   .subnavitem {
     float: left;
@@ -1335,6 +1345,22 @@ footer {
 }
 
 @include breakpoint(1400px) {
+  header {
+    h1 {
+      width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      position: absolute;
+      width: 1024px;
+      margin-left: -50%;
+      top: 0;
+      left: 100%;
+    }
+  }
+
   #center-column, .center-column {
     max-width: none;
     width: 1024px;

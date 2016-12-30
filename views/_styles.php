@@ -11,7 +11,7 @@
 		<meta name="keywords" content="Claudio Procida, Software Developer, Software Development, Web Applications, Web Development, React, JavaScript, JS, CSS, HTML, Open Source, Git, GitHub" />
 		<meta name="description" content="<?php echo $this->description; ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#d62475" />
+		<meta name="theme-color" content="#0084b4" />
 		<link href="https://fonts.googleapis.com/css?family=Courgette|Fira+Sans:300" rel="stylesheet" />
 		<link href="//cdn.jsdelivr.net/highlight.js/8.8.0/styles/github-gist.min.css" rel="stylesheet" />
 		<link href="/styles/common.css" rel="stylesheet" type="text/css" />

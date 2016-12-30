@@ -14,8 +14,8 @@
   font-size: $font-size;
 }
 
-@mixin breakpoint($min-width) {
-  @media screen and (min-width: 768px) {
+@mixin breakpoint($min-width: 768px) {
+  @media screen and (min-width: $min-width) {
     @content;
   }
 }
