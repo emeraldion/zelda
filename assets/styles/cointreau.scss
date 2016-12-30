@@ -1067,13 +1067,17 @@ main {
   }
 }
 
-#login-pane {
+#login-pane,
+#lostpass-pane {
   width: 400px;
   margin: auto;
 
   input[type=text],
   input[type=password] {
-    width: 145px;
+
+    &.labeled {
+      width: 145px;
+    }
   }
 }
 

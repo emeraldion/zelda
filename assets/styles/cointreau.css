@@ -885,11 +885,14 @@ main {
     max-width: 100%;
     height: auto !important; }
 
-#login-pane {
+#login-pane,
+#lostpass-pane {
   width: 400px;
   margin: auto; }
-  #login-pane input[type=text],
-  #login-pane input[type=password] {
+  #login-pane input[type=text].labeled,
+  #login-pane input[type=password].labeled,
+  #lostpass-pane input[type=text].labeled,
+  #lostpass-pane input[type=password].labeled {
     width: 145px; }
 
 .right-aligned {
