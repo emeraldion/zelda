@@ -3,7 +3,8 @@
 ?>
 <h2>Projects</h2>
 <ul>
-  <li><a href="#emerails">Emerails</a> &ndash; A lightweight Rails-like web application framework and ORM written in PHP.</li>
+  <li><a href="#adelia">Adelia</a> &ndash; A simple promise-based ORM for Node, loosely inspired to ActiveRecord.</li>
+  <li><a href="#emerails">EmeRails</a> &ndash; A lightweight Rails-like web application framework and ORM written in PHP.</li>
   <li><a href="#guidatv">GuidaTV</a> &ndash; EPG application for Italian TV channels.</li>
   <li><a href="#learn-sass">learn-sass</a> &ndash; Learn SASS and SCSS through a workshopper adventure.</li>
   <li><a href="#mbl">MiniBatteryLogger</a> &ndash; A Mac OS X application designed to monitor the battery and log all power events.</li>
@@ -12,6 +13,24 @@
   <li><a href="#project-mandarine-cocoa">Project Mandarine Cocoa</a> &mdash; A simple Cocoa + WebKit wrapper around the Project Mandarine game.</li>
   <li><a href="#websms">WebSMS</a> &mdash; A widget to send free SMS messages through carriers&rsquo; web sites in a convenient way.</li>
 </ul>
+
+
+<a name="adelia"></a>
+<h2><a target="_blank" href="https://github.com/emeraldion/adelia">Adelia</a></h2>
+<h4>A simple promise-based ORM for Node, loosely inspired to ActiveRecord.</h4>
+<p>
+  Adelia is meant to be a fast, simple, promise-based ORM for Node, loosely inspired
+  to Martin Fowler's <a href="http://www.martinfowler.com/eaaCatalog/activeRecord.html">ActiveRecord</a>
+  pattern popularized by <a href="http://rubyonrails.org/">Ruby on Rails</a>.
+  Due to the async IO nature of Node and DB clients, the API must be async.
+  Adelia uses <a href="https://promisesaplus.com/">Promises</a> to offer a clean,
+  uncluttered API that's easy to compose and reason about.
+</p>
+<p>
+  Check out the source code on the
+  <a href="https://github.com/emeraldion/adelia" target="_blank">GitHub repo</a>,
+  and <a href="https://travis-ci.org/emeraldion/adelia" target="_blank">Travis CI tests</a>.
+</p>
 
 
 
