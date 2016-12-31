@@ -31,7 +31,9 @@
   <a href="https://github.com/emeraldion/adelia" target="_blank">GitHub repo</a>,
   and <a href="https://travis-ci.org/emeraldion/adelia" target="_blank">Travis CI tests</a>.
 </p>
-
+<div class="lighter">
+  Tags: JavaScript, ORM, Node, Promises, Bluebird, MySQL, ActiveRecord.
+</div>
 
 
 <a name="emerails"></a>
@@ -51,14 +53,16 @@
   and the source code on the
   <a href="https://github.com/emeraldion/emerails" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: Web Application Framework, ORM, PHP, MySQL, ActiveRecord.
+</div>
 
 
 <a name="guidatv"></a>
 <h2><a target="_blank" href="/software/macosx/guidatv.html">GuidaTV</a></h2>
 <h4>EPG application for Italian TV channels.</h4>
 <p>
-  GuidaTV is an EPG (Electronic Program Guide) application meant to provide exhaustive
+  GuidaTV is an <acronym title="Electronic Program Guide">EPG</acronym> application meant to provide exhaustive
   listing and review of the programs aired on &mdash; but not necessarily limited to &mdash;
   Italian terrestrial and satellite TV channels.
 </p>
@@ -67,7 +71,9 @@
   and the source code on the
   <a href="https://github.com/emeraldion/guidatv" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: Cocoa, Mac OS X, EPG, TV.
+</div>
 
 
 <a name="learn-sass"></a>
@@ -85,7 +91,9 @@
   and the source code on the
   <a href="https://github.com/claudiopro/learn-sass" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: NodeSchool, Node, JavaScript, Sass, SCSS, Workshopper, Community, Learning, Education.
+</div>
 
 
 <a name="mbl"></a>
@@ -103,7 +111,9 @@
   and the source code on the
   <a href="https://github.com/emeraldion/minibatterylogger" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: Cocoa, Mac OS X, Monitoring, Energy, Power, Battery.
+</div>
 
 
 <a name="mbl-archive"></a>
@@ -119,7 +129,9 @@
 <p>
   Check out the <a target="_blank" href="http://burgos.emeraldion.it/mbl/">Archive</a>.
 </p>
-
+<div class="lighter">
+  Tags: Service, Monitoring, Energy, Power, Battery.
+</div>
 
 
 <a name="project-mandarine"></a>
@@ -133,7 +145,9 @@
   Check out the source code on the
   <a href="https://github.com/emeraldion/project-mandarine" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: JavaScript, Game, Fun.
+</div>
 
 
 <a name="project-mandarine-cocoa"></a>
@@ -147,7 +161,9 @@
   and the source code on the
   <a href="https://github.com/emeraldion/project-mandarine-cocoa" target="_blank">GitHub repo</a>.
 </p>
-
+<div class="lighter">
+  Tags: Cocoa, WebKit, Mac OS X, JavaScript, Game, Fun.
+</div>
 
 
 <a name="websms"></a>
@@ -164,3 +180,6 @@
   and the source code on the
   <a href="https://github.com/emeraldion/websms" target="_blank">GitHub repo</a>.
 </p>
+<div class="lighter">
+  Tags: Dashboard, Texting, Mac OS X, JavaScript, Utility.
+</div>

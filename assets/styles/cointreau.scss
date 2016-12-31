@@ -999,6 +999,13 @@ position:relative
 margin: 0 20px 0 310px;
 }
 
+.speaking-item {
+  display: block;
+  width: calc(100vw - 40px);
+  min-height: 56.25vw;
+  margin: 20px auto 0 auto;
+}
+
 @media (max-width: 800px) and (min-width: 600px) {
   #external,
   #external-small {
@@ -1339,6 +1346,11 @@ footer {
       .fwd {
         float: right;
       }
+  }
+
+  .speaking-item {
+    width: 560px;
+    min-height: 315px;
   }
 }
 
