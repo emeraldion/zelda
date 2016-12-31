@@ -16,6 +16,8 @@
 		array('title' => localized('Blog'),
 			"url" => $this->url_to(array('controller' => 'diario'))),
 			*/
+		array('title' => localized('Speaking'),
+			"url" => $this->url_to(array('controller' => 'speaking'))),
 		array('title' => localized('Photos'),
 			"url" => $this->url_to(array('controller' => 'photos'))),
 		array('title' => localized('About'),
