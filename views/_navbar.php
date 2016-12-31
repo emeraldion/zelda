@@ -67,6 +67,11 @@
 ?>
 		</ul>
 	</nav>
+<style type="text/css">
+	header.headroom--unpinned {
+    	top: <?php printf('%dpx', - ($i + 1.2) * 52); ?>;
+    }
+</style>
 <?php
 	// Ladies and gentlemen, the FLASH!
 

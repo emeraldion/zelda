@@ -29,6 +29,7 @@
 							{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 							{ name: 'links' },
 							{ name: 'insert' },
+							{ name: 'styles' },
 							{ name: 'tools' },
 							{ name: 'others' }
 						],

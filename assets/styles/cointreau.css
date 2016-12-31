@@ -354,14 +354,14 @@ a.itunes {
   #navbar li,
   #subnavbar li,
   .subnavbar li {
-    display: inline-block;
+    display: block;
     padding: 0;
     text-align: center;
     line-height: 1; }
     #navbar li a,
     #subnavbar li a,
     .subnavbar li a {
-      display: inline-block; }
+      display: block; }
 
 #page #single-central ul.subnavbar {
   margin-top: 0; }
