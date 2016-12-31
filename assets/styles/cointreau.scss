@@ -322,32 +322,32 @@ margin: 0 -1px;
 }
 
 #backend-navbar {
-margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 #toplinks {
-display: none; /* for now */
-float: right;
-margin-right: 20px;
-color: $medium-gray;
+  display: none; /* for now */
+  float: right;
+  margin-right: 20px;
+  color: $medium-gray;
 }
 * html #toplinks {
-width: 810px;
-margin: 10px auto 0 auto;
+  width: 810px;
+  margin: 10px auto 0 auto;
 }
 #toplinks a:link,
-      #toplinks a:visited {
+#toplinks a:visited {
 }
 .navitem,
 .subnavitem {
-  display: block;
+  display: inline;
   padding: 4px 20px;
   height: 42px;
   line-height: 1.6;
   border-top: 2px solid #007dab;
 }
 .subnavitem {
-padding: 5px 10px;
-border-color: $light-gray;
+  padding: 5px 10px;
+  border-color: $light-gray;
 }
 .subnavitem:hover,
 .subnavitem:active,
@@ -361,20 +361,20 @@ border-color: $light-gray;
   background-color: #007dab;
 }
 a.this-subnavitem {
-background-color: #F0F2F3;
--webkit-box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
--moz-box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
-box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
+  background-color: #F0F2F3;
+  -webkit-box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
+  -moz-box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
+  box-shadow: inset 10px 10px 10px -10px $dark-gray, inset -10px -10px 10px -10px $dark-gray;
 }
 
 a.here:link,
 a.here:visited {
-color: $white;
-text-decoration: underline;
+  color: $white;
+  text-decoration: underline;
 }
 .navfirst:before,
 .subnavfirst:before {
-content: none;
+  content: none;
 }
 
 .subnavlast,
@@ -411,37 +411,37 @@ a.itunes {
 .subnavbar {
   display: block;
   padding: 0;
-}
-#navbar li,
-#subnavbar li,
-.subnavbar li {
-  display: block;
-  padding: 0;
-  text-align: center;
-  line-height: 1;
 
-  a {
-    display: block;
+  li {
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+
+    a {
+      display: inline-block;
+    }
   }
 }
+
 #page #single-central ul.subnavbar {
-margin-top: 0;
+  margin-top: 0;
 }
 .navbox {
-padding: 2em 0 3em 0;
+  padding: 2em 0 3em 0;
 }
 hr {
-border: none;
-height: 0px;
-border-top: 1px solid #c5efd4;
+  border: none;
+  height: 0px;
+  border-top: 1px solid #c5efd4;
 }
 .centered {
-text-align: center;
+  text-align: center;
 }
 ul,
 ol {
-margin-left: 0;
-padding-left: 1.25em;
+  margin-left: 0;
+  padding-left: 1.25em;
 }
 li {
 text-align: justify;
@@ -1326,7 +1326,6 @@ footer {
 
   .navitem,
   .subnavitem {
-    float: left;
     border-top: none;
     border-left: 1px solid #007dab;
   }

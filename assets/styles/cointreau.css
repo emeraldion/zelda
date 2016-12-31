@@ -297,7 +297,7 @@ image.picture {
 
 .navitem,
 .subnavitem {
-  display: block;
+  display: inline;
   padding: 4px 20px;
   height: 42px;
   line-height: 1.6;
@@ -351,18 +351,17 @@ a.itunes {
 .subnavbar {
   display: block;
   padding: 0; }
-
-#navbar li,
-#subnavbar li,
-.subnavbar li {
-  display: block;
-  padding: 0;
-  text-align: center;
-  line-height: 1; }
-  #navbar li a,
-  #subnavbar li a,
-  .subnavbar li a {
-    display: block; }
+  #navbar li,
+  #subnavbar li,
+  .subnavbar li {
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    line-height: 1; }
+    #navbar li a,
+    #subnavbar li a,
+    .subnavbar li a {
+      display: inline-block; }
 
 #page #single-central ul.subnavbar {
   margin-top: 0; }
@@ -1042,7 +1041,6 @@ footer {
     padding-right: 30px; }
   .navitem,
   .subnavitem {
-    float: left;
     border-top: none;
     border-left: 1px solid #007dab; }
   .subnavfirst,
