@@ -622,6 +622,10 @@ margin: 2em 0 3em 0;
 #eme-logo-black {
 display: none;
 }
+#eme-logo {
+  fill: #f0f0f0;
+  vertical-align: middle;
+}
 #version {
 display: none;
 }
@@ -1121,6 +1125,10 @@ header {
     margin: 4px 15px;
     padding: 0;
     text-align: center;
+
+    .text-logo {
+      margin-left: 10px;
+    }
   }
 
   &.headroom--pinned {
@@ -1276,6 +1284,10 @@ footer {
 
     h1 {
       text-align: inherit;
+
+      .text-logo {
+        display: none;
+      }
     }
 
     &.headroom--unpinned {
@@ -1320,6 +1332,10 @@ footer {
     }
   }
 
+  #eme-logo {
+    margin-right: 0;
+  }
+
   #center-column, .center-column {
     padding-right: 30px;
   }
@@ -1356,6 +1372,14 @@ footer {
 @include breakpoint(1024px) {
   #center-column, .center-column {
     max-width: 800px;
+  }
+
+  header {
+    h1 {
+      .text-logo {
+        display: inline;
+      }
+    }
   }
 }
 
