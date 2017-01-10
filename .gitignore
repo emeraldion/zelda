@@ -24,3 +24,5 @@ node_modules
 /vendor/
 composer.lock
 npm-debug.log
+caches/*
+.DS_Store
