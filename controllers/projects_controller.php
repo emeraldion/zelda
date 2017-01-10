@@ -1,5 +1,7 @@
 <?php
 	require_once("eme_controller.php");
+	require_once(dirname(__FILE__) . "/../models/project.php");
+	require_once(dirname(__FILE__) . "/../models/tag.php");
 
 	/**
 	 *	@class ProjectsController
@@ -26,7 +28,19 @@
 
 		public function index()
 		{
-      // $this->render(array('layout' => 'software', 'action' => 'index'));
+			$project_factory = new Project();
+			$this->projects = $project_factory->find_all(array(
+				'order_by' => '`name` ASC'
+			));
+
+			foreach($this->projects as $project)
+			{
+				$project->has_and_belongs_to_many('tags');
+			}
+		}
+
+		public function index_old()
+		{
 		}
 	}
 ?>
