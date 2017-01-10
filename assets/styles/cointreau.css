@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   margin: 0;
   color: #444;
@@ -100,11 +101,14 @@ a:active {
   text-align: right;
   margin-bottom: 1em; }
 
-.rss-feed a,
-a.rss,
-a.feed {
-  padding-left: 14px;
-  background: transparent url("/assets/images/minimal/feed12.gif") no-repeat center left; }
+.rss-feed a:before,
+a.rss:before,
+a.feed:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
 #center-column, .center-column {
   margin: auto;
@@ -328,23 +332,42 @@ a.here:visited {
   background-position: center right !important;
   padding-right: 10px !important; }
 
-a.external {
-  background: url("/assets/images/minimal/external12.gif") center right no-repeat;
-  padding-right: 14px; }
+a.external:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
-.diario-controls a.comment,
-.articoli-controls a.comment {
-  padding-left: 14px; }
+.diario-controls a.comment:before,
+.articoli-controls a.comment:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
-.diario-controls a.permalink,
-.articoli-controls a.permalink {
-  padding-left: 14px; }
+.diario-controls a.permalink:before,
+.articoli-controls a.permalink:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
-a.trackback {
-  padding-left: 14px; }
+a.trackback:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
-a.itunes {
-  padding-left: 14px; }
+a.itunes:before {
+  font-family: icomoon;
+  font-size: 0.9em;
+  content: "";
+  margin-right: .25em;
+  vertical-align: baseline; }
 
 #navbar,
 #subnavbar,

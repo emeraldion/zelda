@@ -23,7 +23,7 @@
 		{
 			global $css_files;
 			
-			$this->mimetype = 'text/css';
+			$this->mimetype = 'text/css;charset=utf-8';
 			$this->response->body = '';
 			$mtime = 0;
 			foreach ($css_files as $css_file)

@@ -64,16 +64,12 @@
 ?>
 
 		<li class="plain">
-			<a class="permalink" href="<?php echo $article->permalink(); ?>">
-				<?php echo l('Permalink'); ?>
-			</a>
+			<a class="permalink" href="<?php echo $article->permalink(); ?>"><?php echo l('Permalink'); ?></a>
 		</li>
 		<li class="plain">
 			<a class="trackback" rel="nofollow"
 				href="<?php echo $article->trackback_url(); ?>"
-				title="<?php echo h(l('Use this URI for your Trackback')); ?>">
-				<?php echo l('Trackback URI'); ?>
-			</a>
+				title="<?php echo h(l('Use this URI for your Trackback')); ?>"><?php echo l('Trackback URI'); ?></a>
 		</li>
 		<li class="plain">
 			<a class="comment" href="<?php echo $article->comments_permalink(); ?>"><?php printf(l('%s Comments'), count($comments)); ?></a>
