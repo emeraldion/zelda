@@ -19,12 +19,21 @@
   font-size: $font-size;
 }
 
-@mixin icomoon-icon($content, $side: right) {
-  &:before {
-    @include icomoon(.9em);
-    content: $content;
-    margin-#{$side}: .25em;
-    vertical-align: baseline;
+@mixin icomoon-icon($content, $side: left) {
+  @if ($side == left) {
+    &:before {
+      @include icomoon(.9em);
+      content: $content;
+      margin-right: .25em;
+      vertical-align: baseline;
+    }
+  } @else {
+    &:after {
+      @include icomoon(.9em);
+      content: $content;
+      margin-left: .25em;
+      vertical-align: baseline;
+    }
   }
 }
 

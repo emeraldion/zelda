@@ -332,11 +332,11 @@ a.here:visited {
   background-position: center right !important;
   padding-right: 10px !important; }
 
-a.external:before {
+a.external:after {
   font-family: icomoon;
   font-size: 0.9em;
   content: "";
-  margin-right: .25em;
+  margin-left: .25em;
   vertical-align: baseline; }
 
 .diario-controls a.comment:before,
