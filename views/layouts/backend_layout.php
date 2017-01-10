@@ -5,14 +5,14 @@
 <?php
     require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
-        <link href="/assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
+        <link href="<?php print APPLICATION_ROOT; ?>assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
         </style>
         <?php
             require(dirname(__FILE__) . "/../views/_scripts.php");
         ?>
         <script src="https://cdn.ckeditor.com/4.6.1/standard-all/ckeditor.js"></script>
-        <script src="/assets/javascript/backend/backend.js"></script>
+        <script src="<?php print APPLICATION_ROOT; ?>assets/javascript/backend/backend.js"></script>
         <script>
         	$(function() {
         		document.querySelectorAll('textarea.rt').forEach(function(el) {

@@ -14,6 +14,6 @@
 		<meta name="theme-color" content="#0084b4" />
 		<link href="https://fonts.googleapis.com/css?family=Courgette|Fira+Sans:300" rel="stylesheet" />
 		<link href="//cdn.jsdelivr.net/highlight.js/8.8.0/styles/github-gist.min.css" rel="stylesheet" />
-		<link href="/styles/common.css" rel="stylesheet" type="text/css" />
-		<link href="/assets/images/favicon.png" rel="icon" type="image/png" />
-		<link href="/assets/images/minimal/webclip-icon.png" rel="apple-touch-icon" type="image/png" />
+		<link href="<?php print APPLICATION_ROOT; ?>styles/common.css" rel="stylesheet" type="text/css" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/images/favicon.png" rel="icon" type="image/png" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/images/minimal/webclip-icon.png" rel="apple-touch-icon" type="image/png" />

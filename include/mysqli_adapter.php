@@ -4,16 +4,16 @@
 	require_once(dirname(__FILE__) . "/db_adapter.php");
 
 	/**
-	 *	@class MysqlAdapter
-	 *	@short MySQL Database adapter.
+	 *	@class MysqliAdapter
+	 *	@short MySQLi Database adapter.
 	 */
-	class MysqlAdapter implements DbAdapter
+	class MysqliAdapter implements DbAdapter
 	{
 		/**
 		 *	@attr NAME
 		 *	@short Name of this adapter
 		 */
-		const NAME = "mysql";
+		const NAME = "mysqli";
 
 		/**
 		 *	@attr queries_count
@@ -45,10 +45,12 @@
 		 */
 		public function connect()
 		{
-			if (!is_resource($this->link) || get_resource_type($this->link) != "mysql link")
+			if (!is_object($this->link))
 			{
-				$this->link = mysql_connect(DB_HOST, DB_USER, DB_PASS);
-				mysql_select_db(DB_NAME) or die("Cannot connect: " . mysql_error());
+				$this->link = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+				if ($this->link->connect_errno) {
+					die("Cannot connect: " . $this->link->connect_error);
+				}
 			}
 		}
 
@@ -60,7 +62,7 @@
 		public function select_db($database_name)
 		{
 			$this->connect();
-			return mysql_select_db($database_name, $this->link);
+			return $this->link->select_db($database_name);
 		}
 
 		/**
@@ -69,7 +71,7 @@
 		 */
 		public function close()
 		{
-			mysql_close($this->link);
+			$this->link->close();
 		}
 
 		/**
@@ -87,7 +89,7 @@
 			{
 				for ($i = 1; $i < $args_len; $i++)
 				{
-					$query = str_replace('{' . $i . '}', mysql_real_escape_string($args[$i], $this->link), $query);
+					$query = str_replace('{' . $i . '}', $this->link->real_escape_string($args[$i]), $query);
 				}
 			}
 			$this->query = $query;
@@ -103,8 +105,8 @@
 		public function exec()
 		{
 			$this->connect();
-			$this->result = mysql_query($this->query, $this->link) or die(DB_DEBUG ?
-				("Error ({$this->query}): " . mysql_error()) : "DB unavailable");
+			$this->result = $this->link->query($this->query) or die(DB_DEBUG ?
+				"Error ({$this->query}): {$this->link->error}" : "DB unavailable");
 
 			self::$queries_count++;
 
@@ -117,7 +119,7 @@
 		 */
 		public function insert_id()
 		{
-			return mysql_insert_id($this->link);
+			return $this->link->insert_id;
 		}
 
 		/**
@@ -128,7 +130,7 @@
 		public function escape($value)
 		{
 			$this->connect();
-			return mysql_real_escape_string($value, $this->link);
+			return $this->link->real_escape_string($value);
 		}
 
 
@@ -140,7 +142,21 @@
 		 */
 		public function result($pos = 0, $colname = NULL)
 		{
-			return mysql_result($this->result, $pos, $colname);
+			// Adapted from http://stackoverflow.com/questions/2089590/mysqli-equivalent-of-mysql-result
+			$numrows = $this->result->num_rows;
+			if ($numrows && $pos <= ($numrows - 1) && $pos >= 0)
+			{
+				if (!$this->result->data_seek($pos))
+				{
+					return FALSE;
+				}
+				$resrow = (is_numeric($colname)) ? $this->result->fetch_row() : $this->result->fetch_assoc();
+				if (isset($resrow[$col]))
+				{
+					return $resrow[$col];
+				}
+			}
+			return FALSE;
 		}
 
 		/**
@@ -149,7 +165,7 @@
 		 */
 		public function num_rows()
 		{
-			return mysql_num_rows($this->result);
+			return $this->result->num_rows;
 		}
 
 		/**
@@ -158,7 +174,7 @@
 		 */
 		public function affected_rows()
 		{
-			return mysql_affected_rows($this->link);
+			return $this->link->affected_rows;
 		}
 
 		/**
@@ -167,7 +183,7 @@
 		 */
 		public function fetch_assoc()
 		{
-			return mysql_fetch_assoc($this->result);
+			return $this->result->fetch_assoc();
 		}
 
 		/**
@@ -176,7 +192,7 @@
 		 */
 		public function fetch_array()
 		{
-			return mysql_fetch_array($this->result);
+			return $this->result->fetch_array();
 		}
 
 		/**
@@ -185,7 +201,7 @@
 		 */
 		public function free_result()
 		{
-			mysql_free_result($this->result);
+			$this->result->free();
 		}
 
 		/**
@@ -200,5 +216,5 @@ EOT;
 		}
 	}
 
-	Db::register_adapter(new MysqlAdapter(), MysqlAdapter::NAME);
+	Db::register_adapter(new MysqliAdapter(), MysqliAdapter::NAME);
 ?>

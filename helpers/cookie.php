@@ -1,5 +1,12 @@
 <?php
-
+	/**
+	 *	Project EmeRails - Codename Ocarina
+	 *
+	 *	Copyright (c) 2008, 2017 Claudio Procida
+	 *	http://www.emeraldion.it
+	 *
+	 */
+	
 	require_once(dirname(__FILE__) . "/time.php");
 	
 	/**

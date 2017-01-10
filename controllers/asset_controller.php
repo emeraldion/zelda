@@ -14,7 +14,7 @@
 			// Call parent's init method
 			parent::init();
 			
-			$this->after_filter('compress');
+			$this->after_filter('rewrite', 'compress');
 		}
 		
 		public function index()
@@ -48,6 +48,14 @@
 			$this->response->add_header('Expires', gmstrftime('%a, %d %b %Y %H:%M:%S %Z', time() + 86400));
 
 			$this->render(NULL);
+		}
+
+		protected function rewrite()
+		{
+			if (APPLICATION_ROOT !== '/')
+			{
+				$this->response->body = preg_replace('/\/assets\//i', APPLICATION_ROOT . 'assets/', $this->response->body);
+			}
 		}
 	}
 ?>

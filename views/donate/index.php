@@ -2,7 +2,7 @@
 
 	<p id="donate-button">
 		<a href="http://cri.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/145"><img
-			src="/assets/images/donate/cri-donate.png" alt="Donate to Italian Red Cross" /></a>
+			src="<?php print APPLICATION_ROOT; ?>assets/images/donate/cri-donate.png" alt="Donate to Italian Red Cross" /></a>
 	</p>
 
 	<p class="donate-caption">

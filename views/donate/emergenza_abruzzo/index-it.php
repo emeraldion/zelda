@@ -2,7 +2,7 @@
 
 <p id="donate-button">
 	<a href="http://www.cri.it/code_new/index.php?page=index&amp;website=630_cri_EmergenzaSismaAbruzzo"><img
-		src="/assets/images/donate/cri-donate.png" alt="Dona alla Croce Rossa Italiana" /></a>
+		src="<?php print APPLICATION_ROOT; ?>assets/images/donate/cri-donate.png" alt="Dona alla Croce Rossa Italiana" /></a>
 </p>
 
 <p class="donate-caption">

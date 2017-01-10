@@ -2,12 +2,10 @@
 	/**
 	 *	Project EmeRails - Codename Ocarina
 	 *
-	 *	� 2008 Claudio Procida
+	 *	Copyright (c) 2008, 2017 Claudio Procida
 	 *	http://www.emeraldion.it
 	 *
 	 */
-
-	require_once(dirname(__FILE__) . '/../helpers/localization.php');
 
 	$irregular_nouns = array(
 		'person' => 'people',
@@ -15,6 +13,11 @@
 		'man' => 'men',
 		'woman' => 'women',
 		);
+
+	function default_to($value, $default)
+	{
+		return empty($value) ? $default : $value;
+	}
 
 	function http_error($code)
 	{
@@ -47,7 +50,7 @@
 		}
 		if (ends_with($term, 's') ||
 			ends_with($term, 'x') ||
-			ends_with($term, 'o'))
+			(ends_with($term, 'o') && !ends_with($term, 'oo')))
 		{
 			return $term . 'es';
 		}
@@ -112,7 +115,9 @@
 
 	function joined_lower_to_camel_case($text)
 	{
-		return preg_replace('/(^[a-z])|_([a-z])/e', 'strtoupper(\'$1$2\')', $text);
+		return preg_replace_callback('/(^[a-z])|_([a-z])/', function ($match) {
+			return strtoupper(@$match[1] . @$match[2]);
+		}, $text);
 	}
 
 	function camel_case_to_joined_lower($text)
@@ -137,8 +142,9 @@
 	}
 
 	/**
-	 *	@fn l($str)
+	 *	@fn l
 	 *	@short Shorthand method for the Localization::localize method.
+	 *	@param str The string to localize
 	 */
 	function l($str)
 	{

@@ -1,7 +1,7 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Hits by host'));
 ?>
-<script type="text/javascript" src="/assets/javascript/meta/hits_by_host.js"></script>
+<script type="text/javascript" src="<?php print APPLICATION_ROOT; ?>assets/javascript/meta/hits_by_host.js"></script>
 <script>
 	$(load_data);
 </script>

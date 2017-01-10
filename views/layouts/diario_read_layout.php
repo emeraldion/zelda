@@ -9,7 +9,7 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'feed', 'action' => 'diario_comments', 'id' => $_REQUEST['id'], 'type' => 'rss')); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - RSS Feed of comments on <?php echo htmlentities($this->article->title); ?>" />
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - Diario Atom Feed" />
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'diario_comments', 'id' => $_REQUEST['id'], 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - Atom Feed of comments on <?php echo htmlentities($this->article->title); ?>" />
-		<link href="/assets/opensearch/diario.xml" rel="search" type="application/opensearchdescription+xml" title="Emeraldion Lodge - Diario" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/opensearch/diario.xml" rel="search" type="application/opensearchdescription+xml" title="Emeraldion Lodge - Diario" />
 		<style type="text/css">
 		</style>
 	</head>

@@ -11,7 +11,7 @@
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?>" />
 		<link href="<?php echo $this->url_to(array('controller' => 'atom', 'action' => 'software', 'id' => $this->software->id, 'type' => 'atom')); ?>" rel="alternate" type="application/atom+xml" title="Emeraldion Lodge - <?php print h(l('Software')); ?> - <?php print h($this->software->title); ?>" />
 		<link href="<?php echo $this->url_to(array('controller' => 'sparkle', 'action' => 'index', 'id' => $this->software->id)); ?>" rel="alternate" type="application/rss+xml" title="Emeraldion Lodge - <?php print h(sprintf(l('Sparkle appcast for %s'), $this->software->title)); ?>" />
-		<link href="/assets/styles/software/<?php echo $this->software->type; ?>/<?php echo $this->software->name; ?>.css" type="text/css" rel="stylesheet" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/styles/software/<?php echo $this->software->type; ?>/<?php echo $this->software->name; ?>.css" type="text/css" rel="stylesheet" />
 		<style type="text/css">
 			html .fb_share_link
 			{

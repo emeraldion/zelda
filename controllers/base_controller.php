@@ -2,7 +2,7 @@
 	/**
 	 *	Project EmeRails - Codename Ocarina
 	 *
-	 *	� 2008 Claudio Procida
+	 *	Copyright (c) 2008, 2017 Claudio Procida
 	 *	http://www.emeraldion.it
 	 *
 	 */
@@ -13,6 +13,7 @@
 	require_once(dirname(__FILE__) . "/../helpers/http.php");
 	require_once(dirname(__FILE__) . "/../helpers/response.php");
 	require_once(dirname(__FILE__) . "/../helpers/request.php");
+	require_once(dirname(__FILE__) . "/../helpers/query_string.php");
 
 	/**
 	 *	@class BaseController
@@ -23,66 +24,78 @@
 	class BaseController
 	{
 		/**
+		 *	@attr name
 		 *	@short The name of the controller.
 		 */
 		public $name;
 
 		/**
+		 *	@attr action
 		 *	@short The name of the action.
 		 */
 		public $action;
 
 		/**
+		 *	@attr title
 		 *	@short A title for the page.
 		 */
 		public $title;
 
 		/**
+		 *	@attr type
 		 *	@short An extension for action pages.
 		 */
 		protected $type = 'html';
 
 		/**
+		 *	@attr mimetype
 		 *	@short A MIME type for the response.
 		 */
 		protected $mimetype = 'text/html';
 
 		/**
+		 *	@attr headers
 		 *	@short An array of headers for the response.
 		 */
 		private $headers;
 
 		/**
+		 *	@attr rendered
 		 *	@short Flag to tell if the response has been already rendered.
 		 */
 		private $rendered = FALSE;
 
 		/**
+		 *	@attr before_filters
 		 *	@short Array of filters that should be called before the response has been rendered.
 		 */
 		private $before_filters = array();
 
 		/**
+		 *	@attr after_filters
 		 *	@short Array of filters that should be called after the response has been rendered.
 		 */
 		private $after_filters = array();
 
 		/**
+		 *	@attr pages_cached
 		 *	@short Array of pages that should be cached.
 		 */
 		private $pages_cached = array();
 
 		/**
+		 *	@attr actions_cached
 		 *	@short Array of actions that should be cached.
 		 */
 		private $actions_cached = array();
 
 		/**
+		 *	@fn __construct
 		 *	@short Default constructor for controller objects.
 		 *	@details Subclassers should not override this method. Do your specialized
 		 *	initialization in the <tt>init</tt> method.
 		 */
-		public function BaseController()
+		public function __construct()
 		{
 			$this->response = new Response();
 			$this->request = new Request();
@@ -91,6 +104,7 @@
 		}
 
 		/**
+		 *	@fn initialize
 		 *	@short Initializes the controller object.
 		 *	@details Subclassers should not override this method. Do your specialized
 		 *	initialization in the <tt>init</tt> method.
@@ -98,7 +112,7 @@
 		protected function initialize()
 		{
 			$classname = get_class($this);
-			$this->name = camel_case_to_joined_lower(substr($classname, 0, strpos($classname, 'Controller')));
+			$this->name = camel_case_to_joined_lower(substr($classname, 0, strpos($classname, "Controller")));
 			if (isset($_REQUEST['action']) && !empty($_REQUEST['action']))
 			{
 				$action = basename($_REQUEST['action']);
@@ -117,10 +131,11 @@
 				$this->action = 'index';
 			}
 
-			$this->set_title('EmeRails');
+			$this->title = "EmeRails";
 		}
 
 		/**
+		 *	@fn init
 		 *	@short Custom initialization for the controller object.
 		 *	@details Subclassers should override this method to perform specialized
 		 *	initialization. The default implementation does nothing.
@@ -135,6 +150,7 @@
 		 */
 
 		/**
+		 *	@fn before_filter($filter, $params)
 		 *	@short Registers a function as a filter to be executed before the action is invoked.
 		 *	@details EmeRails allows the developer to call one or more functions before the action is actually invoked.
 		 *
@@ -178,6 +194,7 @@
 		}
 
 		/**
+		 *	@fn after_filter($filter, $params)
 		 *	@short Registers a function as a filter to be executed after the action is invoked.
 		 *	@details EmeRails allows the developer to call one or more functions after the action has been invoked.
 		 *
@@ -220,6 +237,7 @@
 		}
 
 		/**
+		 *	@fn filter_applicable($conditions)
 		 *	@short Determines if a filter is applicable for the current action.
 		 *	@details This method checks the <tt>conditions</tt> argument in order to determine if
 		 *	the filter (whatever it is) can be applied for the current action.
@@ -267,6 +285,7 @@
 		 */
 
 		/**
+		 *	@fn caches_page($page)
 		 *	@short Requests that a page be cached.
 		 *	@details This method registers the page <tt>page</tt> to be cached after it has been
 		 *	executed and rendered.
@@ -286,6 +305,7 @@
 		}
 
 		/**
+		 *	@fn conditionally_caches_page($page, $condition)
 		 *	@short Requests that a page be cached when a condition is verified.
 		 *	@details Convenience method to cache the requested page only if the
 		 *	<tt>condition</tt> argument evaluates as <tt>TRUE</tt>.
@@ -301,6 +321,7 @@
 		}
 
 		/**
+		 *	@fn caches_action($page)
 		 *	@short Requests that an action be cached.
 		 *	@details This method is currently unused.
 		 *	@param page The name of a page that should be cached.
@@ -311,6 +332,7 @@
 		}
 
 		/**
+		 *	@fn cached_page_exists
 		 *	@short Checks if a cached version of the current action exists.
 		 *	@details This method checks the existence of the file whose name is returned by <tt>cached_page_filename</tt>.
 		 */
@@ -320,19 +342,21 @@
 		}
 
 		/**
+		 *	@fn cached_page_filename
 		 *	@short Returns a name for the cached page of current action.
 		 *	@details This method creates a filename that is uniquely associated with the current controller, action,
-		 *	argument identifier and and language.
+		 *	argument identifier and language.
 		 */
 		protected function cached_page_filename()
 		{
-			$lang = isset($_COOKIE['hl']) && !empty($_COOKIE['hl']) ? $_COOKIE['hl'] : 'en';
-			$id = isset($_REQUEST['id']) ? ('@' . $_REQUEST['id']) : '';
-			$cachefile = dirname(__FILE__) . '/../caches/' . $this->name . '/' . $this->action . $id . '-' . $lang . '.cached';
+			$lang = isset($_COOKIE['hl']) ? $_COOKIE['hl'] : 'en';
+			$id = isset($_REQUEST['id']) ? "@{$_REQUEST['id']}" : '';
+			$cachefile = dirname(__FILE__) . "/../caches/{$this->name}/{$this->action}{$id}-{$lang}.cached";
 			return $cachefile;
 		}
 
 		/**
+		 *	@fn expire_cached_page($params)
 		 *	@short Requests that the page(s) defined by <tt>params</tt> be removed from the caches.
 		 *	@details This method removes from the caches all pages that match the <tt>params</tt> argument
 		 *	for every supported language.
@@ -341,13 +365,13 @@
 		{
 			$controller = isset($params['controller']) ? $params['controller'] : $this->name;
 			$action = isset($params['action']) ? $params['action'] : $this->action;
-			$id = isset($params['id']) ? ('@' . $params['id']) : '';
+			$id = isset($params['id']) ? "@{$params['id']}" : '';
 
 			$langs = Localization::$languages;
 
 			foreach ($langs as $lang)
 			{
-				$cachefile = dirname(__FILE__) . '/../caches/' . $controller . '/' . $action . $id . '-' . $lang . '.cached';
+				$cachefile = dirname(__FILE__) . "/../caches/{$controller}/{$action}{$id}-{$lang}.cached";
 				@unlink($cachefile);
 			}
 		}
@@ -357,6 +381,7 @@
 		 */
 
 		/**
+		 *	@fn redirect_to($params)
 		 *	@short Redirects the response to another action, or URL.
 		 *	@details This method can either redirect the response to
 		 *	an URL, or another action, whose parameters are contained in
@@ -369,36 +394,38 @@
 			if (is_array($params))
 			{
 				$URL = sprintf("http://%s%s",
-					$_SERVER['HTTP_HOST'],
+					$_SERVER["HTTP_HOST"],
 					$this->url_to($params));
 				if (!isset($params['after']))
 				{
-					$this->response->add_header('Location', $URL);
+					$this->response->add_header("Location", $URL);
 					$this->response->flush();
 				}
 				else
 				{
-					$this->response->add_header('Refresh', $params['after'] . ';url=' . $URL);
+					$this->response->add_header("Refresh", "{$params['after']};url={$URL}");
 				}
 			}
 			else
 			{
-				$this->response->add_header('Location', $params);
+				$this->response->add_header("Location", $params);
 				$this->response->flush();
 			}
 		}
 
 		/**
+		 *	@fn refresh($after)
 		 *	@short Refreshes current page after a given amount of time.
 		 *	@details Same as <tt>redirect_to</tt>, except that the destination is the same page.
 		 *	@param after Number of seconds after which perform a refresh.
 		 */
-		protected function refresh($amount = 10)
+		protected function refresh($amount)
 		{
 			$this->redirect_to(array('after' => $amount));
 		}
 
 		/**
+		 *	@fn redirect_to_referrer($or_else)
 		 *	@short Redirects the response to the URL which is contained
 		 *	in the <tt>HTTP_REFERER</tt> server variable (i.e., performs a
 		 *	back redirection). If no <tt>HTTP_REFERER</tt> is set, and if passed
@@ -424,6 +451,7 @@
 		 */
 
 		/**
+		 *	@fn link_to($text, $params)
 		 *	@short Links to another action.
 		 *	@details This method creates a hyperlink to another action, as
 		 *	specified in the <tt>params</tt> argument. This <tt>params</tt> array
@@ -448,6 +476,7 @@
 		}
 
 		/**
+		 *	@fn link_to_remote($text, $params)
 		 *	@short Links to another action, with AJAX support.
 		 *	@details This method behaves like <tt>link_to</tt>, except that
 		 *	it also adds an AJAX handler to replace the contents of the element with id
@@ -476,6 +505,7 @@
 		}
 
 		/**
+		 *	@fn button_to($text, $params)
 		 *	@short Creates a button that links to another action.
 		 *	@details This method creates a button that links to another action, as
 		 *	specified in the <tt>params</tt> argument. This <tt>params</tt> array
@@ -490,7 +520,7 @@
 			$params['href'] = isset($params['href']) ?
 				$params['href'] : $this->make_relative_url($params);
 
-			$params['onclick'] = 'location.href=\'' . $params['href'] . '\'';
+			$params['onclick'] = "location.href='{$params['href']}'";
 
 			unset($params['action']);
 			unset($params['controller']);
@@ -501,12 +531,31 @@
 			print button(joined_lower($text), $text, $params);
 		}
 
+		/**
+		 *	@fn unknown_action()
+		 *	@short Fallback handler for unknown action.
+		 *	@details This method implements the default action handler which
+		 *	sends a 404 Not Found error back to the client.
+		 */
 		protected function unknown_action()
 		{
-			HTTP::error(404);
+			$this->send_error(404);
 		}
 
 		/**
+		 *	@fn send_error($status)
+		 *	@short Sends an HTTP error to the client.
+		 *	@details This method sends an HTTP error to the client with the
+		 *	status code of choice.
+		 *	@param status Status code.
+		 */
+		protected function send_error($status)
+		{
+			HTTP::error($status);
+		}
+
+		/**
+		 *	@fn url_to($params)
 		 *	@short Creates a URL to an action.
 		 *	@details This method builds a URL to an action, as
 		 *	specified in the <tt>params</tt> argument. The <tt>params</tt> array
@@ -519,6 +568,7 @@
 		}
 
 		/**
+		 *	@fn url_to_myself($relative)
 		 *	@short Creates a URL to the current action.
 		 *	@details This method builds a URL to the current action.
 		 *	@param relative Whether the URL should contain only the path,
@@ -535,6 +585,7 @@
 		}
 
 		/**
+		 *	@fn make_relative_url($params)
 		 *	@short Creates a URL to an action.
 		 *	@details This method builds a URL to an action, as
 		 *	specified in the <tt>params</tt> argument. The <tt>params</tt> array
@@ -552,7 +603,7 @@
 		public function make_relative_url($params)
 		{
 			$controller = (!isset($params['controller']) || empty($params['controller'])) ?
-				$this->name : $params['controller'];
+				(isset($this->_name) ? $this->_name : $this->name) : $params['controller'];
 			$type = (isset($params['type']) && !empty($params['type'])) ?
 				$params['type'] : $this->type;
 			if (isset($params['action']) && !empty($params['action']))
@@ -583,11 +634,11 @@
 			}
 			if (isset($params['query_string']))
 			{
-				$href .= '?' . $params['query_string'];
+				$href .= "?{$params['query_string']}";
 			}
 			if (isset($params['hash']))
 			{
-				$href .= '#' . $params['hash'];
+				$href .= "#{$params['hash']}";
 			}
 			return $href;
 		}
@@ -597,6 +648,7 @@
 		 */
 
 		/**
+		 *	@fn render($params)
 		 *	@short Requests the rendering of the response.
 		 *	@details This method is responsible of loading the view and layout
 		 *	relative to the current controller and action, parsing their content,
@@ -631,7 +683,7 @@
 				$partial = basename($params['partial']);
 
 				// Get part file
-				$partfile = dirname(__FILE__) . '/../views/' . $this->name . '/_' . $partial . '.php';
+				$partfile = dirname(__FILE__) . "/../views/{$this->name}/_{$partial}.php";
 
 				// Connect main object
 				if (isset($params['object']))
@@ -659,7 +711,7 @@
 					basename($params['action']) : $this->action;
 
 				// Get part file
-				$partfile = dirname(__FILE__) . '/../views/' . $this->name . '/' . $action . '.php';
+				$partfile = dirname(__FILE__) . "/../views/{$this->name}/{$action}.php";
 
 				// Start output buffering
 				ob_start();
@@ -700,6 +752,7 @@
 		}
 
 		/**
+		 *	@fn render_as_string($params)
 		 *	@short Requests the rendering of the response as a string.
 		 *	@details This method calls <tt>render</tt> by passing the <tt>return</tt>
 		 *	parameter to <tt>TRUE</tt>, and returns the rendered response as a string.
@@ -714,6 +767,7 @@
 		}
 
 		/**
+		 *	@fn render_layout($params)
 		 *	@short Renders the layout for the current view.
 		 *	@details This method is responsible of loading the layout
 		 *	as defined in the <tt>params</tt> argument, parsing it and
@@ -734,11 +788,11 @@
 			ob_start();
 
 			// Get part file
-			$partfile = dirname(__FILE__) . '/../views/layouts/' . $layout . '_layout.php';
+			$partfile = dirname(__FILE__) . "/../views/layouts/{$layout}_layout.php";
 			if (!file_exists($partfile))
 			{
 				// Fall back to default layout
-				$partfile = dirname(__FILE__) . '/../views/layouts/default_layout.php';
+				$partfile = dirname(__FILE__) . "/../views/layouts/default_layout.php";
 			}
 
 			// Evaluate and send to buffer
@@ -751,6 +805,7 @@
 		}
 
 		/**
+		 *	@fn render_page
 		 *	@short Renders the page as a response for the current request.
 		 *	@details This method is responsible for building the response
 		 *	for the current request.
@@ -797,7 +852,7 @@
 				}
 				else
 				{
-					HTTP::error(500);
+					$this->send_error(500);
 				}
 				// Call render on the controller
 				// This won't have effect if the controller has already rendered
@@ -812,7 +867,7 @@
 					$caches_dir = dirname($this->cached_page_filename());
 					if (!file_exists($caches_dir))
 					{
-						mkdir($caches_dir, 0700, true);
+						mkdir($caches_dir, 0700);
 					}
 					file_put_contents($this->cached_page_filename(), $this->response->body);
 				}
@@ -838,6 +893,7 @@
 		}
 
 		/**
+		 *	@fn render_component($params)
 		 *	@short Renders a view from a controller other than self.
 		 *	@details This method renders a view from a controller other than self,
 		 *	for example when embedding a view into another view.
@@ -864,17 +920,19 @@
 				$controller_name = basename($params['controller']);
 
 				// Include the controller class file
-				require_once(dirname(__FILE__) . '/../controllers/' . $controller_name . '_controller.php');
+				require_once(dirname(__FILE__) . "/../controllers/{$controller_name}_controller.php");
 
 				// Load localization table
 				Localization::add_strings_table($controller_name);
 			}
 
 			// Create class name
-			$classname = joined_lower_to_camel_case($controller_name) . 'Controller';
+			$classname = joined_lower_to_camel_case($controller_name) . "Controller";
 
 			// Instantiate controller
 			$controller = new $classname();
+			$controller->_name = $this->name;
+			$controller->_action = $this->action;
 
 			// Unset controller key from params (why?)
 			unset($params['controller']);
@@ -885,6 +943,14 @@
 				$action = basename($params['action']);
 
 				$controller->action = $action;
+			}
+
+			if (isset($params['props']))
+			{
+				foreach($params['props'] as $key => $val)
+				{
+					$controller->$key = $val;
+				}
 			}
 
 			// Invoke action method
@@ -898,6 +964,7 @@
 		}
 
 		/**
+		 *	@fn load_part_contents($filename)
 		 *	@short Loads the contents of the desired view file.
 		 *	@details This method returns the contents of the requested view file
 		 *	without parsing.
@@ -907,13 +974,14 @@
 		{
 			if (!file_exists($filename))
 			{
-				HTTP::error(500);
+				$this->send_error(500);
 			}
 			$contents = file_get_contents($filename);
 			return $this->strip_external_php_tags($contents);
 		}
 
 		/**
+		 *	@fn strip_external_php_tags($php_code)
 		 *	@short Strips beginning and ending delimiters from the given PHP code.
 		 *	@details This method removes the beginning and ending PHP code delimiters
 		 *	to enable subsequent parsing with <tt>eval</tt>.
@@ -921,17 +989,17 @@
 		 */
 		protected function strip_external_php_tags($php_code)
 		{
-			if (($start = strpos($php_code, '<?php')) === 0)
+			if (($start = strpos($php_code, "<?php")) === 0)
 			{
-				$php_code = substr($php_code, $start + strlen('<?php'));
+				$php_code = substr($php_code, $start + strlen("<?php"));
 			}
 			else
 			{
 				$php_code = "?>\n" . $php_code;
 			}
-			if (($end = strrpos($php_code, '?>')) === strlen($php_code) - strlen('?>'))
+			if (($end = strrpos($php_code, "?>")) === strlen($php_code) - strlen("?>"))
 			{
-				$php_code = substr($php_code, 0, strrpos($php_code, '?>'));
+				$php_code = substr($php_code, 0, strrpos($php_code, "?>"));
 			}
 			else
 			{
@@ -945,6 +1013,7 @@
 		 */
 
 		/**
+		 *	@fn set_title($title)
 		 *	@short Sets the title for the current page.
 		 *	@param title A title for the current page.
 		 */
@@ -954,6 +1023,7 @@
 		}
 
 		/**
+		 *	@fn abort_and_flush
 		 *	@short Interrupts the processing of the request.
 		 */
 		private function abort_and_flush()
@@ -967,6 +1037,7 @@
 		 */
 
 		/**
+		 *	@fn flash($message, $type)
 		 *	@short Shows a message to the user, with an optional type qualifier.
 		 *	@details The flash is a facility to store messages that should be visualized
 		 *	as a result of some event, or as a response to the user's previous request.
@@ -984,6 +1055,7 @@
 		 */
 
 		/**
+		 *	@fn index
 		 *	@short This is the default action method.
 		 */
 		public function index()
@@ -996,6 +1068,7 @@
 		 */
 
 		/**
+		 *	@fn compress
 		 *	@short Compresses the response with gzip encoding.
 		 *	@details This after-filter is capable of compressing the response with gzip encoding,
 		 *	in order to save bandwidth. If the client does not support gzip encoding, the response

@@ -1,4 +1,11 @@
 <?php
+	/**
+	 *	Project EmeRails - Codename Ocarina
+	 *
+	 *	Copyright (c) 2008, 2017 Claudio Procida
+	 *	http://www.emeraldion.it
+	 *
+	 */
 
 	function select($name, $values, $default_value, $params = array())
 	{

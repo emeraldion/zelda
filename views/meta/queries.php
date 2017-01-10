@@ -1,7 +1,7 @@
 <?php
 	$this->set_title('Emeraldion Lodge - ' . l('Meta') . ' - ' . l('Queries'));
 ?>
-<script src="/assets/javascript/meta/queries.js"></script>
+<script src="<?php print APPLICATION_ROOT; ?>assets/javascript/meta/queries.js"></script>
 <script>
 	$(reload_queries);
 </script>

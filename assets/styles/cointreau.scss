@@ -821,6 +821,15 @@ ul.version {
   }
 }
 
+.localization-debug {
+  &::before {
+    content: '{L::';
+  }
+  &::after {
+    content: '::L}';
+  }
+}
+
 .throbber,
 .throbber_indeterminate,
 .throbber_active,

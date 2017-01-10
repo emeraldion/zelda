@@ -3,7 +3,7 @@
 	/**
 	 *	@class OpenGraph
 	 *	@short Defines methods and properties for the Open Graph protocol.
-   *  For a full description see http://ogp.me
+	 *  For a full description see http://ogp.me
 	 */
 	class OpenGraph
 	{

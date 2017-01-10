@@ -687,6 +687,12 @@ ul.version {
   ul.version li + li:before {
     content: " - "; }
 
+.localization-debug::before {
+  content: '{L::'; }
+
+.localization-debug::after {
+  content: '::L}'; }
+
 .throbber,
 .throbber_indeterminate,
 .throbber_active,

@@ -1,4 +1,11 @@
 <?php
+   /**
+    *      Project EmeRails - Codename Ocarina
+    *
+    *      Copyright (c) 2008, 2017 Claudio Procida
+    *      http://www.emeraldion.it
+    *
+    */
 
 	/**
 	 *	@class Time
@@ -14,7 +21,7 @@
 		{
 			return time() + 24 * 3600;
 		}
-		
+
 		/**
 		 *	@fn yesterday
 		 *	@short Returs the number of seconds elapsed from the Unix Epoch to yesterday.
@@ -38,7 +45,7 @@
 				date('d', $now),
 				date('Y', $now));
 		}
-		
+
 		/**
 		 *	@fn next_year
 		 *	@short Returs the number of seconds elapsed from the Unix Epoch to next year.
@@ -53,7 +60,7 @@
 				date('d', $now),
 				date('Y', $now) + 1);
 		}
-		
+
 		/**
 		 *	@fn ago($time_amount)
 		 *	@short Returs the number of seconds elapsed from the Unix Epoch to a given date.

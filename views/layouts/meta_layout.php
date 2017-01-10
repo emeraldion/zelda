@@ -5,8 +5,8 @@
 <?php
 	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
-		<link href="/assets/styles/meta/meta.css" rel="stylesheet" type="text/css" />
-		<link href="/assets/styles/meta/hits_by_host.css" rel="stylesheet" type="text/css" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/styles/meta/meta.css" rel="stylesheet" type="text/css" />
+		<link href="<?php print APPLICATION_ROOT; ?>assets/styles/meta/hits_by_host.css" rel="stylesheet" type="text/css" />
 		<style type="text/css">
 			label.left-aligned
 			{

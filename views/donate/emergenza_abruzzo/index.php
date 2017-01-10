@@ -2,7 +2,7 @@
 
 	<p id="donate-button">
 		<a href="http://www.cri.it/code_new/index.php?website=631_cri_AbruzzoEarthquake"><img
-			src="/assets/images/donate/cri-donate.png" alt="Donate to Italian Red Cross" /></a>
+			src="<?php print APPLICATION_ROOT; ?>assets/images/donate/cri-donate.png" alt="Donate to Italian Red Cross" /></a>
 	</p>
 
 	<p class="donate-caption">

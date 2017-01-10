@@ -1,4 +1,11 @@
 <?php
+   /**
+    *      Project EmeRails - Codename Ocarina
+    *
+    *      Copyright (c) 2008, 2017 Claudio Procida
+    *      http://www.emeraldion.it
+    *
+    */
 
 	/**
 	 *	@class Request
@@ -11,20 +18,20 @@
 		 *	@short The query string used in the HTTP request.
 		 */
 		public $querystring;
-		
+
 		/**
 		 *	@short The method used in the HTTP request (e.g. POST).
 		 */
 		public $method;
-		
+
 		/**
-		 *	@fn Request
+		 *	@fn __construct
 		 *	@short Default constructor.
 		 */
-		public function Request()
+		public function __construct()
 		{
 			$this->querystring = self::purge_querystring();
-			$this->method = strtoupper($_SERVER['REQUEST_METHOD']);
+			$this->method = strtoupper(@$_SERVER['REQUEST_METHOD']);
 		}
 
 		/**
@@ -35,7 +42,7 @@
 		{
 			return self::is_method('GET');
 		}
-		
+
 		/**
 		 *	@fn is_post
 		 *	@short Returns <tt>TRUE</tt> if the request method is <tt>POST</tt>.
@@ -44,7 +51,7 @@
 		{
 			return self::is_method('POST');
 		}
-		
+
 		/**
 		 *	@fn is_delete
 		 *	@short Returns <tt>TRUE</tt> if the request method is <tt>DELETE</tt>.
@@ -53,7 +60,7 @@
 		{
 			return self::is_method('DELETE');
 		}
-		
+
 		/**
 		 *	@fn is_put
 		 *	@short Returns <tt>TRUE</tt> if the request method is <tt>PUT</tt>.
@@ -62,7 +69,7 @@
 		{
 			return self::is_method('PUT');
 		}
-		
+
 		/**
 		 *	@fn is_head
 		 *	@short Returns <tt>TRUE</tt> if the request method is <tt>HEAD</tt>.
@@ -71,7 +78,7 @@
 		{
 			return self::is_method('HEAD');
 		}
-		
+
 		/**
 		 *	@fn is_method($method)
 		 *	@short Returns <tt>TRUE</tt> if the request method is <tt>method</tt>.
@@ -79,9 +86,9 @@
 		 */
 		public static function is_method($method)
 		{
-			return !strncmp($_SERVER['REQUEST_METHOD'], $method, strlen($method));
+			return !strncmp(@$_SERVER['REQUEST_METHOD'], $method, strlen($method));
 		}
-		
+
 		/**
 		 *	@fn get_parameter($name)
 		 *	@short Returns the value of the requested parameter.
@@ -90,9 +97,9 @@
 		 */
 		public function get_parameter($name)
 		{
-			return $_REQUEST[$name];
+			return @$_REQUEST[$name];
 		}
-		
+
 		/**
 		 *	@fn purge_querystring
 		 *	@short Purges framework related values from the query string
@@ -100,7 +107,7 @@
 		 */
 		protected static function purge_querystring()
 		{
-			$pairs = explode('&', $_SERVER['QUERY_STRING']);
+			$pairs = explode('&', @$_SERVER['QUERY_STRING']);
 			$newpairs = array();
 			foreach ($pairs as $pair)
 			{

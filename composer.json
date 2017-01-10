@@ -13,11 +13,13 @@
       "phpunit/phpunit": "4.8.*"
     },
     "scripts": {
-      "post-package-install": [
+      "copy-emerails-resources": [
         "cp -a vendor/emeraldion/emerails/controllers/base_controller.php controllers",
         "cp -a vendor/emeraldion/emerails/models/* models",
         "cp -a vendor/emeraldion/emerails/helpers/* helpers",
-        "cp -a vendor/emeraldion/emerails/include/* include"
-      ]
+        "cp -a vendor/emeraldion/emerails/include/* include",
+        "cp -a vendor/emeraldion/emerails/scripts/* scripts"
+      ],
+      "post-update-cmd": "@copy-emerails-resources"
     }
 }

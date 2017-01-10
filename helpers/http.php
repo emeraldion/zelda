@@ -1,6 +1,14 @@
 <?php
-	require_once(dirname(__FILE__) . "/../models/server_error.php");
+	/**
+	 *	Project EmeRails - Codename Ocarina
+	 *
+	 *	Copyright (c) 2008, 2017 Claudio Procida
+	 *	http://www.emeraldion.it
+	 *
+	 */
 	
+	require_once(dirname(__FILE__) . "/../models/server_error.php");
+
 	/**
 	 *	@class HTTP
 	 *	@short Helper class to manipulate HTTP error codes.
@@ -24,7 +32,7 @@
 					'occurred_at' => date('Y-m-d H:i:s')));
 				$error->save();
 			}
-			
+
 			foreach($headers as $header => $value)
 			{
 				header("$header: $value");
