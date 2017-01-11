@@ -1,9 +1,9 @@
 .PHONY: docs test install update
 
 update:
-	php ~/dev/tools/php-composer/composer.phar update
+	composer update
 install:
-	php ~/dev/tools/php-composer/composer.phar install
+	composer install
 create_test_db:
 	mysql -u root -p < schemas/zelda_test.sql
 test: install
