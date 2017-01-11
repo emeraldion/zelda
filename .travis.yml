@@ -1,0 +1,24 @@
+language: php
+
+php:
+- 5.6
+- 7.0
+- 7.1
+- nightly
+
+addons:
+  apt:
+    packages:
+    - doxygen
+
+services:
+  - mysql
+
+env:
+  - php_env=travisci
+
+before_script:
+  - echo 'variables_order = "EGPCS"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - mysql < schemas/zelda_test.sql
+
+script: make test
