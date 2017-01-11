@@ -18,8 +18,11 @@
 			$this->assertEquals(1, Email::is_valid("claudio@burgos.emeraldion.it"), 'Email address is valid');
 			$this->assertEquals(1, Email::is_valid("claudio.procida@burgos.emeraldion.it"), 'Email address is valid');
 
-			$this->assertFalse(Email::is_valid("claudio_emeraldion.it"), 'Email address is NOT valid');
-			$this->assertFalse(Email::is_valid("claudio.it"), 'Email address is NOT valid');
+			$this->assertEquals(0, Email::is_valid("claudio_emeraldion.it"), 'Email address is NOT valid');
+			$this->assertEquals(0, Email::is_valid("claudio.it"), 'Email address is NOT valid');
+
+			$this->assertTrue(!Email::is_valid("claudio_emeraldion.it"), 'Email address is NOT valid');
+			$this->assertTrue(!Email::is_valid("claudio.it"), 'Email address is NOT valid');
 		}
 
 		/**

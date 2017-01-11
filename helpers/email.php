@@ -59,13 +59,13 @@
 		 */
 		public function Email($params = array())
 		{
-			$this->name = $params['name'];
-			$this->email = $params['email'];
+			$this->name = @$params['name'];
+			$this->email = @$params['email'];
 			$this->subject = !empty($params['subject']) ?
 				$params['subject'] : self::default_subject;
 			$this->recipient = self::default_recipient;
-			$this->headers = "From: {$params['name']}<{$params['email']}>";
-			$this->text = get_magic_quotes_gpc() ? stripslashes($params['text']) : $params['text'];
+			$this->headers = "From: {$this->name}<{$this->email}>";
+			$this->text = get_magic_quotes_gpc() ? stripslashes(@$params['text']) : @$params['text'];
 			$this->date = date("d/m/Y H:i:s");
 		}
 
@@ -110,7 +110,7 @@ EOT;
 		 */
 		public static function is_valid($address)
 		{
-			return ereg("^[_a-z0-9\-]+(\.[_a-z0-9\-]+)*@[a-z0-9-]+(\.[a-z0-9\-]+)+$",
+			return preg_match('/^[_a-z0-9\-]+(\.[_a-z0-9\-]+)*@[a-z0-9-]+(\.[a-z0-9\-]+)+$/',
 				$address);
 		}
 	}
