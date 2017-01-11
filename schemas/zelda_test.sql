@@ -7,10 +7,10 @@
 -- Server version: 5.1.49
 -- PHP Version: 4.3.10-22
 -- 
--- Database: `zelda`
+-- Database: `zelda_test`
 -- 
-CREATE DATABASE `zelda` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `zelda`;
+CREATE DATABASE `zelda_test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `zelda_test`;
 
 -- --------------------------------------------------------
 
