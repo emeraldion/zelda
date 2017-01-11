@@ -327,11 +327,6 @@ a.here:visited {
 .subnavfirst:before {
   content: none; }
 
-.subnavlast,
-.navlast {
-  background-position: center right !important;
-  padding-right: 10px !important; }
-
 a.external:after {
   font-family: icomoon;
   font-size: 0.9em;

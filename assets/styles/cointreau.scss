@@ -376,11 +376,6 @@ a.here:visited {
   content: none;
 }
 
-.subnavlast,
-.navlast {
-background-position: center right !important;
-padding-right: 10px !important;
-}
 a.external {
   @include icomoon-icon('\ea7d', 'right');
 }
