@@ -25,7 +25,7 @@
 		 */
 		public static function error($code = 500, $headers = array())
 		{
-			if ($code != 400)
+			if ($code != 400 && $code != 503)
 			{
 				$error = new ServerError(array('code' => $code,
 					'description' => var_export($_SERVER, TRUE),

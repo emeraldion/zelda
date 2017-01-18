@@ -17,6 +17,7 @@
 			'403' => 'Forbidden',
 			'405' => 'Method Not Supported',
 			'500' => 'Internal Server Error',
+			'503' => 'Service Temporarily Unavailable',
 			);
 			
 		protected function init()
@@ -69,6 +70,15 @@
 		}
 
 		/**
+		 *	@fn _503
+		 *	@short Handles 503 Service Temporarily Unavailable HTTP errors.
+		 */
+		public function _503()
+		{
+			$this->generate_error(503);
+		}
+
+		/**
 		 *	@fn generate_error($code)
 		 *	@short Private common error handler.
 		 *	@param code An error code.
@@ -82,7 +92,7 @@
 				unset($_SESSION['error_processed']);
 				return;
 			}
-			if ($code == 404)
+			if ($code == 404 || $code == 503)
 			{
 				return;
 			}

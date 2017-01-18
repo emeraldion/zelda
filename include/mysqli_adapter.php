@@ -49,7 +49,7 @@
 			{
 				$this->link = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 				if ($this->link->connect_errno) {
-					die("Cannot connect: " . $this->link->connect_error);
+					trigger_error("Cannot connect: " . $this->link->connect_error, E_USER_ERROR);
 				}
 			}
 		}
@@ -105,8 +105,8 @@
 		public function exec()
 		{
 			$this->connect();
-			$this->result = $this->link->query($this->query) or die(DB_DEBUG ?
-				"Error ({$this->query}): {$this->link->error}" : "DB unavailable");
+			$this->result = $this->link->query($this->query) or trigger_error(DB_DEBUG ?
+				"Error ({$this->query}): {$this->link->error}" : "DB unavailable", E_USER_ERROR);
 
 			self::$queries_count++;
 

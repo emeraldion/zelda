@@ -52,6 +52,7 @@
 			$this->set_title('Emeraldion Lodge');
 			$this->set_description(l('Personal website of Claudio Procida, hosting my projects and my blog'));
 			$this->credentials = $this->get_credentials();
+			$this->set_fail_toast();
 
 			$this->before_filter('init_opengraph');
 		}
@@ -324,6 +325,29 @@
 				}
 				include($filename);
 			}
+		}
+
+		protected function set_fail_toast()
+		{
+			$this->old_error_handler = set_error_handler(array($this, 'fail_toast'));
+		}
+
+		public function fail_toast($errno, $errstr, $errfile, $errline)
+		{
+			if (!(error_reporting() & $errno)) {
+				// This error code is not included in error_reporting, so let it fall
+				// through to the standard PHP error handler
+				return FALSE;
+			}
+
+			switch ($errno) {
+				case E_USER_ERROR:
+					$this->redirect_to(array('controller' => 'error', 'action' => '503'));
+					return TRUE;
+			}
+
+			// Don't execute PHP internal error handler
+			return FALSE;
 		}
 	}
 ?>

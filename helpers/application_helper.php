@@ -17,7 +17,7 @@
 	require_once(dirname(__FILE__) . "/login.php");
 	require_once(dirname(__FILE__) . "/localization.php");
 
-	error_reporting(E_ALL | E_STRICT);
+	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
 	session_name('_eme_sid');
 	session_set_cookie_params(Time::next_year(), '/');
 	//session_save_path(dirname(__FILE__) . "/../session");

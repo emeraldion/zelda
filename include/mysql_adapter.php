@@ -47,8 +47,8 @@
 		{
 			if (!is_resource($this->link) || get_resource_type($this->link) != "mysql link")
 			{
-				$this->link = mysql_connect(DB_HOST, DB_USER, DB_PASS);
-				mysql_select_db(DB_NAME) or die("Cannot connect: " . mysql_error());
+				$this->link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or trigger_error("Cannot connect: " . mysql_error(), E_USER_ERROR);
+				mysql_select_db(DB_NAME) or trigger_error("Cannot connect: " . mysql_error(), E_USER_ERROR);
 			}
 		}
 
@@ -103,8 +103,8 @@
 		public function exec()
 		{
 			$this->connect();
-			$this->result = mysql_query($this->query, $this->link) or die(DB_DEBUG ?
-				("Error ({$this->query}): " . mysql_error()) : "DB unavailable");
+			$this->result = mysql_query($this->query, $this->link) or trigger_error(DB_DEBUG ?
+				("Error ({$this->query}): " . mysql_error()) : "DB unavailable", E_USER_ERROR);
 
 			self::$queries_count++;
 
