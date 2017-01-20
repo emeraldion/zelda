@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title><?php print h($this->title); ?></title>
+	<head>
+		<title><?php print h($this->title); ?></title>
 <?php
-    require(dirname(__FILE__) . "/../views/_headers.php");
+	require(dirname(__FILE__) . "/../views/_headers.php");
 ?>
-        <link href="<?php print APPLICATION_ROOT; ?>assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
-        <style type="text/css">
-        </style>
-        <?php
-            require(dirname(__FILE__) . "/../views/_scripts.php");
-        ?>
-        <script src="https://cdn.ckeditor.com/4.6.1/standard-all/ckeditor.js"></script>
-        <script src="<?php print APPLICATION_ROOT; ?>assets/javascript/backend/backend.js"></script>
-        <script>
-        	$(function() {
-        		document.querySelectorAll('textarea.rt').forEach(function(el) {
-        			CKEDITOR.replace(el, {
-        				extraPlugins: 'autogrow',
-        				autoGrow_onStartup: true,
+		<link href="<?php print APPLICATION_ROOT; ?>assets/styles/backend/backend.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+		</style>
+		<?php
+			require(dirname(__FILE__) . "/../views/_scripts.php");
+		?>
+		<script src="https://cdn.ckeditor.com/4.6.1/standard-all/ckeditor.js"></script>
+		<script src="<?php print APPLICATION_ROOT; ?>assets/javascript/backend/backend.js"></script>
+		<script>
+			$(function() {
+				document.querySelectorAll('textarea.rt').forEach(function(el) {
+					CKEDITOR.replace(el, {
+						extraPlugins: 'autogrow',
+						autoGrow_onStartup: true,
 						// Define changes to default configuration here.
 						// For complete reference see:
 						// http://docs.ckeditor.com/#!/api/CKEDITOR.config
@@ -27,6 +27,7 @@
 						toolbarGroups: [
 							{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 							{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+							{ name: 'basicstyles', groups: [ 'basicstyles' ] },
 							{ name: 'links' },
 							{ name: 'insert' },
 							{ name: 'styles' },
@@ -41,34 +42,34 @@
 						// Dialog windows are also simplified.
 						removeDialogTabs: 'link:advanced'
 					});
-        		});
-        	})
-        </script>
-    </head>
-    <body>
+				});
+			})
+		</script>
+	</head>
+	<body>
 <?php
 //  require(dirname(__FILE__) . "/../views/_topbar.php");
 ?>
-        <header>
+		<header>
 <?php
-    require(dirname(__FILE__) . "/../views/_navbar.php");
+	require(dirname(__FILE__) . "/../views/_navbar.php");
 ?>
-        </header>
-        <main>
-            <div id="central" class="central">
-                <div id="center-column">
+		</header>
+		<main>
+			<div id="central" class="central">
+				<div id="center-column">
 <?php
-    include(dirname(__FILE__) . "/../views/backend/_navbar.php");
+	include(dirname(__FILE__) . "/../views/backend/_navbar.php");
 
-    print $this->content_for_layout;
+	print $this->content_for_layout;
 ?>
-                </div><!-- center-column -->
-            </div>
-        </main>
-        <footer>
+				</div><!-- center-column -->
+			</div>
+		</main>
+		<footer>
 <?php
-    require(dirname(__FILE__) . "/../views/_footer.php");
+	require(dirname(__FILE__) . "/../views/_footer.php");
 ?>
-        </footer>
-    </body>
+		</footer>
+	</body>
 </html>
