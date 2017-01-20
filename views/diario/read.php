@@ -10,6 +10,7 @@
 	$comments = $this->article->diario_comments;
 
 	$this->set_title('Emeraldion Lodge - ' . l('Diario') . " - {$this->article->title}");
+	$this->set_description(substr($this->article->get_stripped_text(), 0, 200));
 
 	$this->render(array('partial' => 'prev_next'));
 ?>

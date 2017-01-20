@@ -10,5 +10,4 @@ Disallow: /controllers
 Disallow: /backend
 Disallow: /meta
 Disallow: /maintenance
-Disallow: /diario
 Disallow: /trackback
